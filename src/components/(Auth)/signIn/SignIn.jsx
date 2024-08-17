@@ -1,5 +1,5 @@
 "use client";
-import { AllImages } from "@/assets/AllImages";
+
 import Container from "@/components/ui/Container";
 import {
   Button,
@@ -13,6 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { AllImages } from "../../../../public/assets/AllImages";
 
 const SignIn = () => {
   const navigate = useRouter();
@@ -39,7 +40,7 @@ const SignIn = () => {
             <div className="flex flex-col justify-center items-center">
               <div>
                 <Image
-                  src={AllImages.largeLogo}
+                  src={AllImages.logoLg}
                   alt="largeLogo"
                   width={0}
                   height={0}

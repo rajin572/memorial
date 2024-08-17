@@ -2,8 +2,8 @@
 import { Button, ConfigProvider, Form, Input } from "antd";
 import Container from "@/components/ui/Container";
 import Image from "next/image";
-import { AllImages } from "@/assets/AllImages";
 import { useRouter } from "next/navigation";
+import { AllImages } from "../../../../public/assets/AllImages";
 
 const ForgotPassword = () => {
   const navigate = useRouter();

@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import { AllImages } from "@/assets/AllImages";
 import { Button, ConfigProvider, Form, Input, Typography } from "antd";
 import Container from "@/components/ui/Container";
 import Link from "next/link";
+import { AllImages } from "../../../../public/assets/AllImages";
 
 const SignUp = () => {
   const onFinish = (values) => {
@@ -16,7 +16,7 @@ const SignUp = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center gap-10 min-h-screen py-10">
           <div>
             <Image
-              src={AllImages.largeLogo}
+              src={AllImages.logoLg}
               alt="largeLogo"
               width={0}
               height={0}

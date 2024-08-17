@@ -1,10 +1,10 @@
 "use client";
-import { AllImages } from "@/assets/AllImages";
 import Container from "@/components/ui/Container";
 import { Button, ConfigProvider, Form, Input, Typography } from "antd";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { AllImages } from "../../../../public/assets/AllImages";
 
 const UpdatePassword = () => {
   const navigate = useRouter();

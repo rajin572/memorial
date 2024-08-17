@@ -3,10 +3,10 @@ import { Button, ConfigProvider, Form, Input } from "antd";
 import { useState } from "react";
 import Container from "@/components/ui/Container";
 import Image from "next/image";
-import { AllImages } from "@/assets/AllImages";
 import { useRouter } from "next/navigation";
 import OTPInput from "react-otp-input";
 import Link from "next/link";
+import { AllImages } from "../../../../public/assets/AllImages";
 
 const OtpVerification = () => {
   const navigate = useRouter();
