@@ -1,7 +1,10 @@
 import React from "react";
+import RecentStories from "../../../components/SiteComponents/RecentStories";
 
-const demoPage = () => {
-  return <div>Delete when start fronted</div>;
-};
-
-export default demoPage;
+export default function Home() {
+  return (
+    <div>
+      <RecentStories />
+    </div>
+  );
+}

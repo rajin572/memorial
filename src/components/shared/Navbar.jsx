@@ -4,7 +4,7 @@ import { Button, Dropdown, ConfigProvider } from "antd";
 import Image from "next/image";
 import { IoMenu } from "react-icons/io5";
 import { usePathname } from "next/navigation";
-import { AllImages } from "@/assets/AllImages";
+import { AllImages } from "../../../public/assets/AllImages";
 import Link from "next/link";
 import Container from "../ui/Container";
 
@@ -61,24 +61,20 @@ const Navbar = () => {
 
   const menu = [
     {
-      name: "RentX. for you",
-      link: "/rentx-for-you",
+      name: "Home",
+      link: "/home",
     },
     {
-      name: "Pay rent",
-      link: "/pay-rent",
+      name: "About Us",
+      link: "/about-us",
     },
     {
-      name: "Neighborhood",
-      link: "/neighborhood",
+      name: "Stories",
+      link: "/stories",
     },
     {
-      name: "Travel",
-      link: "/travel",
-    },
-    {
-      name: "Rent card",
-      link: "/rent-card",
+      name: "Pricing",
+      link: "/pricing",
     },
   ];
 
@@ -155,7 +151,7 @@ const Navbar = () => {
       label: (
         <Link href="/sign-in">
           <Button
-            className="w-full text-base py-3 text-white border-secoundary-color bg-transparent border hover:bg-secoundary-color hover:text-black font-bold duration-200 delay-75"
+            className="w-full text-base py-3 text-white border-secondary-color bg-transparent border hover:bg-secondary-color hover:text-black font-bold duration-200 delay-75"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
@@ -184,7 +180,7 @@ const Navbar = () => {
                   <Button
                     className={`px-2 gap-0 cursor-pointer capitalize font-medium text-lg duration-200 hover:scale-105  ${
                       item.link === path
-                        ? "text-primary-color border-0 rounded-none border-b-2 border-b-secoundary-color"
+                        ? "text-primary-color border-0 rounded-none border-b-2 border-b-secondary-color"
                         : "text-primary-color border-none"
                     }`}
                     style={{
@@ -193,13 +189,13 @@ const Navbar = () => {
                     }}
                     onClick={() => select(index)}
                   >
-                    {item.icon && (
+                    {/* {item.icon && (
                       <Image
                         src={item.icon}
                         alt={item.name}
                         className="inline-block h-6 w-6"
                       />
-                    )}
+                    )} */}
                     {item.name}
                   </Button>
                 </Link>
@@ -208,10 +204,9 @@ const Navbar = () => {
             <div className="lg:flex items-center hidden">
               {path === "/" ? (
                 <>
-                  {" "}
                   <Link href="/signup">
                     <Button
-                      className=" text-base py-5 mx-3 bg-secoundary-color border-none text-site-color font-bold shadow-inner shadow-[#00000040] duration-200 delay-75"
+                      className="py-5 mx-3 bg-secondary-color text-white border-none text-site-color font-semibold  hover:bg-white hover:text-black hover:border-secondary-color duration-200 delay-75"
                       onMouseEnter={handleMouseEnter2}
                       onMouseLeave={handleMouseLeave2}
                     >
@@ -220,7 +215,7 @@ const Navbar = () => {
                   </Link>
                   <Link href="/sign-in">
                     <Button
-                      className="text-base py-5 text-white border-secoundary-color mx-3 bg-transparent border hover:bg-secoundary-color hover:text-black font-bold duration-200 delay-75"
+                      className="py-5 text-black border-secondary-color mx-3 bg-transparent border hover:bg-secondary-color hover:text-white font-bold duration-200 delay-75"
                       onMouseEnter={handleMouseEnter}
                       onMouseLeave={handleMouseLeave}
                     >
@@ -242,7 +237,7 @@ const Navbar = () => {
                   </Link>
                   <Link href="/">
                     <Button
-                      className=" text-base py-5 mx-2 bg-secoundary-color border-none text-site-color font-bold shadow-inner shadow-[#00000040] duration-200 delay-75"
+                      className=" text-base py-5 mx-2 bg-secondary-color border-none text-site-color font-bold shadow-inner shadow-[#00000040] duration-200 delay-75"
                       onMouseEnter={handleMouseEnter2}
                       onMouseLeave={handleMouseLeave2}
                     >
