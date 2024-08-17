@@ -65,7 +65,7 @@ const Navbar = () => {
       link: "/home",
     },
     {
-      name: "About Us",
+      name: "About App",
       link: "/about-us",
     },
     {
@@ -204,7 +204,7 @@ const Navbar = () => {
             <div className="lg:flex items-center hidden">
               {path === "/" ? (
                 <>
-                  <Link href="/signup">
+                  <Link href="/sign-up">
                     <Button
                       className="py-5 mx-3 bg-secondary-color text-white border-none text-site-color font-semibold duration-200 delay-75"
                       onMouseEnter={handleMouseEnter2}

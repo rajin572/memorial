@@ -5,6 +5,7 @@ import AboutUs from "../components/SiteComponents/AboutUs";
 import AboutApp from "../components/SiteComponents/AboutApp";
 import PricingPlan from "../components/SiteComponents/PricingPlan";
 import Footer from "../components/shared/Footer";
+import DownloadAppSection from "@/components/SiteComponents/DownloadAppSection";
 
 const HomePage = () => {
   return (
@@ -13,7 +14,8 @@ const HomePage = () => {
       <Banner />
       <RecentStories />
       <AboutUs />
-      <AboutApp />
+      {/* <AboutApp /> */}
+      <DownloadAppSection />
       <PricingPlan />
       <Footer />
     </div>

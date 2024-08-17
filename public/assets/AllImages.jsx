@@ -6,6 +6,7 @@ import forgotPasswordImg from "./images/forgotPasswordImg.png";
 import logInImg from "./images/logInImg.png";
 import otpImg from "./images/otpImg.png";
 import setPassImg from "./images/setPassImg.png";
+import dualSmartPhone from "./images/dualSmartPhone.png";
 
 import facebook from "../assets/icons/facebook.png";
 import insta from "../assets/icons/insta.png";
@@ -24,6 +25,7 @@ export const AllImages = {
   facebook,
   insta,
   linkedIn,
+  dualSmartPhone,
 };
 export const allIcons = {
   facebook,
