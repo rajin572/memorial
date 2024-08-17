@@ -1,30 +1,40 @@
 "use client";
-import Image from "next/image";
 import { AllImages } from "@/assets/AllImages";
-import { Button, ConfigProvider, Form, Input, Typography } from "antd";
 import Container from "@/components/ui/Container";
-import Link from "next/link";
+import { Button, ConfigProvider, Form, Input, Typography } from "antd";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import React from "react";
 
-const SignUp = () => {
+const UpdatePassword = () => {
+  const navigate = useRouter();
   const onFinish = (values) => {
-    console.log("user:", values);
+    console.log("passwords:", values);
+    navigate.push("/sign-in");
   };
-
   return (
-    <div>
+    <div className="text-primary-color">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center gap-10 min-h-screen py-10">
-          <div>
+        <div className="flex flex-col lg:flex-row justify-center gap-10 items-center min-h-screen bg-site-color py-10">
+          <div className="w-full md:w-[80%] lg:w-[50%] flex justify-center items-center">
             <Image
-              src={AllImages.largeLogo}
-              alt="largeLogo"
+              src={AllImages.setPassImg}
+              alt="Log_In_Img"
               width={0}
               height={0}
               sizes="100vw"
-              className="h-[180px] w-[260px] md:h-[260px] md:w-[360px]"
+              className="h-[250px] w-[320px] md:h-[280px] md:w-[380px] lg:h-[390px] lg:w-[520px]"
             />
           </div>
-          <div className="w-full md:w-[80%] lg:w-full mx-auto">
+          <div className="h-[80vh] w-[2px] bg-[#A3D3F9] hidden lg:block"></div>
+          <div className="w-full md:w-[80%] lg:w-[50%]">
+            {/* -------- update Password Page Header ------------ */}
+            <div className="mb-8">
+              <h1 className="text-3xl sm:text-4xl font-medium mb-4">
+                Set new password
+              </h1>
+            </div>
+            {/* -------- Form Start ------------ */}
             <ConfigProvider
               theme={{
                 components: {
@@ -40,56 +50,20 @@ const SignUp = () => {
                 onFinish={onFinish}
               >
                 <Typography.Title level={4} style={{ color: "#1A1A1A" }}>
-                  Full name
-                </Typography.Title>
-                <Form.Item
-                  rules={[
-                    {
-                      required: true,
-                      message: "Fullname is Required",
-                    },
-                  ]}
-                  name="fullName"
-                  className="text-primary-color "
-                >
-                  <Input
-                    placeholder="Enter your Full Name"
-                    className="py-2 px-3 text-xl bg-site-color border border-[#97C6EA] text-primary-color hover:bg-transparent hover:border-secoundary-color focus:bg-transparent focus:border-secoundary-color"
-                  />
-                </Form.Item>
-                <Typography.Title level={4} style={{ color: "#1A1A1A" }}>
-                  Email
-                </Typography.Title>
-                <Form.Item
-                  rules={[
-                    {
-                      required: true,
-                      message: "Email is Required",
-                    },
-                  ]}
-                  name="email"
-                  className="text-primary-color"
-                >
-                  <Input
-                    placeholder="Enter your email"
-                    className="py-2 px-3 text-xl bg-site-color border border-[#97C6EA] text-primary-color hover:bg-transparent hover:border-secoundary-color focus:bg-transparent focus:border-secoundary-color"
-                  />
-                </Form.Item>
-                <Typography.Title level={4} style={{ color: "#1A1A1A" }}>
                   Password
                 </Typography.Title>
                 <Form.Item
                   rules={[
                     {
                       required: true,
-                      message: "Password is Required",
+                      message: "New Password is Required",
                     },
                   ]}
                   name="password"
                   className="text-primary-color"
                 >
                   <Input.Password
-                    placeholder="Enter your password"
+                    placeholder="Enter new password"
                     className="py-2 px-3 text-xl bg-site-color border border-[#97C6EA] text-primary-color hover:bg-transparent hover:border-secoundary-color focus:bg-transparent focus:border-secoundary-color"
                   />
                 </Form.Item>
@@ -101,7 +75,7 @@ const SignUp = () => {
                   rules={[
                     {
                       required: true,
-                      message: "Please confirm your password!",
+                      message: "Please confirm your new password!",
                     },
                     ({ getFieldValue }) => ({
                       validator(_, value) {
@@ -136,23 +110,15 @@ const SignUp = () => {
                     }}
                   >
                     <Button
-                      className="w-full py-6 border border-btn-primary hover:border-btn-primary text-xl text-base-color bg-btn-primary font-semibold rounded-2xl mt-10"
+                      className="w-full py-6 border border-btn-primary hover:border-btn-primary text-xl text-base-color bg-btn-primary font-semibold rounded-2xl mt-8"
                       htmlType="submit"
                     >
-                      Sign Up
+                      Change Password
                     </Button>
                   </ConfigProvider>
                 </Form.Item>
               </Form>
             </ConfigProvider>
-            <p className="text-center mt-4">
-              Already have account?
-              <span>
-                <Link href="/sign-in" className="text-[#F48E48] underline ml-2">
-                  Sign In
-                </Link>
-              </span>{" "}
-            </p>
           </div>
         </div>
       </Container>
@@ -160,4 +126,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default UpdatePassword;
