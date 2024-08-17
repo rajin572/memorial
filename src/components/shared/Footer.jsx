@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Button, Divider, Space } from "antd";
 import Image from "next/image";
 import { AllImages, allIcons } from "../../../public/assets/AllImages";

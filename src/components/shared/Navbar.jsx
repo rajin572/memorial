@@ -163,7 +163,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="sticky top-0 left-0 sm:py-3 w-full z-50 bg-base-color shadow-lg">
+    <div className="sticky top-0 left-0 w-full z-50 bg-base-color shadow-lg">
       <Container>
         <div className="flex items-center justify-between py-1 ">
           <div className="flex justify-between w-full items-center">
@@ -171,14 +171,14 @@ const Navbar = () => {
               <Image
                 src={AllImages.logo}
                 alt="logo"
-                className="w-[170px] h-[80px]"
+                className="w-[150px] h-[70px]"
               />
             </Link>
-            <div className="ml-8 hidden lg:flex space-x-4">
+            <div className="ml-8 hidden lg:flex gap-x-10 space-x-4">
               {menu.map((item, index) => (
                 <Link href={item.link} key={index}>
                   <Button
-                    className={`px-2 gap-0 cursor-pointer capitalize font-medium text-lg duration-200 hover:scale-105  ${
+                    className={`px-2 gap-0 cursor-pointer capitalize font-medium text-lg duration-200 hover:scale-105 shadow-none ${
                       item.link === path
                         ? "text-primary-color border-0 rounded-none border-b-2 border-b-secondary-color"
                         : "text-primary-color border-none"
@@ -206,7 +206,7 @@ const Navbar = () => {
                 <>
                   <Link href="/signup">
                     <Button
-                      className="py-5 mx-3 bg-secondary-color text-white border-none text-site-color font-semibold  hover:bg-white hover:text-black hover:border-secondary-color duration-200 delay-75"
+                      className="py-5 mx-3 bg-secondary-color text-white border-none text-site-color font-semibold duration-200 delay-75"
                       onMouseEnter={handleMouseEnter2}
                       onMouseLeave={handleMouseLeave2}
                     >
