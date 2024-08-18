@@ -1,5 +1,10 @@
 import React from "react";
+import PricingPlan from "../../../components/SiteComponents/PricingPlan";
 
 export default function Pricing() {
-  return <div>Pricing</div>;
+  return (
+    <div>
+      <PricingPlan />
+    </div>
+  );
 }

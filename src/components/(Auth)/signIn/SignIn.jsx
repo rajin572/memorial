@@ -1,6 +1,6 @@
 "use client";
 
-import Container from "@/components/ui/Container";
+import Container from "../../ui/Container";
 import {
   Button,
   Checkbox,

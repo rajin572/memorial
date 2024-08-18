@@ -4,10 +4,9 @@ import Navbar from "../../components/shared/Navbar";
 
 const MainLayout = ({ children }) => {
   return (
-    <div className="relative">
+    <div>
       <Navbar />
-      <Banner />
-      <div>{children}</div>
+      <div className="mx-80 my-12">{children}</div>
       <Footer />
     </div>
   );

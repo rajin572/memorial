@@ -9,12 +9,12 @@ export default function Banner() {
       <Image
         src={AllImages.banner}
         alt="banner-image"
-        layout="fill"
-        objectFit="cover"
-        className="object-cover absolute mix-blend-overlay w-full h-full"
+        fill
+        style={{ objectFit: "cover" }}
+        className="absolute mix-blend-overlay w-full h-full"
       />
-      <div className="relative z-10 text-white flex flex-col justify-center items-center h-full">
-        <p className="text-5xl font-bold text-black px-4 py-2 rounded">
+      <div className="relative z-10 text-white flex flex-col justify-center items-center h-full pt-96 xl:right-72">
+        <p className="text-5xl font-bold text-black">
           Memorial Moments Magazine
         </p>
       </div>

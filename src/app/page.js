@@ -5,14 +5,14 @@ import AboutUs from "../components/SiteComponents/AboutUs";
 import AboutApp from "../components/SiteComponents/AboutApp";
 import PricingPlan from "../components/SiteComponents/PricingPlan";
 import Footer from "../components/shared/Footer";
-import DownloadAppSection from "@/components/SiteComponents/DownloadAppSection";
+import DownloadAppSection from "../components/SiteComponents/DownloadAppSection";
 
 const HomePage = () => {
   return (
     <div>
       <Navbar />
       <Banner />
-      <RecentStories />
+      <RecentStories showAll={false} />
       <AboutUs />
       {/* <AboutApp /> */}
       <DownloadAppSection />

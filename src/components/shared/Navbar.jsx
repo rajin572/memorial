@@ -66,7 +66,7 @@ const Navbar = () => {
     },
     {
       name: "About App",
-      link: "/about-us",
+      link: "/about-the-app",
     },
     {
       name: "Stories",

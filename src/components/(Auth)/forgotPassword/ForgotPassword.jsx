@@ -1,6 +1,6 @@
 "use client";
 import { Button, ConfigProvider, Form, Input } from "antd";
-import Container from "@/components/ui/Container";
+import Container from "../../ui/Container";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { AllImages } from "../../../../public/assets/AllImages";
