@@ -9,7 +9,6 @@ import {
   CommentOutlined,
   BookFilled,
 } from "@ant-design/icons";
-import Meta from "antd/es/card/Meta";
 
 export default function RecentStories({ showAll }) {
   const [stories, setStories] = useState([]);

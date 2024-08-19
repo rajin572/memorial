@@ -2,10 +2,12 @@ import React from "react";
 
 export default function AboutUs() {
   return (
-    <div>
-      <p className="text-3xl font-semibold text-[#3598F1]">About Us</p>
+    <div className="px-3 md:px-5 lg:px-8 xl:px-0">
+      <p className="text-center sm:text-start text-lg sm:text-3xl font-semibold text-[#3598F1]">
+        About Us
+      </p>
       <div className="border-t border-[#1A1A1A] my-5"></div>
-      <div className="flex flex-col gap-6 text-lg">
+      <div className="flex flex-col gap-6 text-xs sm:text-lg">
         <p>
           Memorial Moments Magazine is your Magazine; let me explain: When you
           pick up a magazine, Better Living, Jet, Ebony, Vogue and open it……Let
@@ -50,7 +52,7 @@ export default function AboutUs() {
         </p>
         <div className="flex flex-col gap-1">
           <p>Peace and Blessings,</p>
-          <p className="text-xl font-semibold">
+          <p className="sm:text-xl font-semibold">
             Dr. Bruce B. Matthews, President and CEO.
           </p>
         </div>

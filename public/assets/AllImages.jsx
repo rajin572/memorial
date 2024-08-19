@@ -14,9 +14,18 @@ import linkedIn from "./icons/linkedIn.png";
 import appleStore from "./icons/appleStore.png";
 import playstore from "./icons/playstore.png";
 
-import belovedGrandPa from "./images/stories/belovedGrandPa.png";
-import loveablePet from "./images/stories/loveablePet.png";
-import veterans from "./images/stories/veterans.png";
+import beloved1 from "./images/stories/beloved/beloved1.png";
+import beloved2 from "./images/stories/beloved/beloved2.png";
+import beloved3 from "./images/stories/beloved/beloved3.png";
+
+import pet1 from "./images/stories/pet/pet1.png";
+import pet2 from "./images/stories/pet/pet2.png";
+import pet3 from "./images/stories/pet/pet3.png";
+import pet4 from "./images/stories/pet/pet4.png";
+import pet5 from "./images/stories/pet/pet5.png";
+
+import veterans1 from "./images/stories/veterans/veterans.png";
+import veterans2 from "./images/stories/veterans/veterans2.png";
 
 import about1 from "./images/about/about1.png";
 import about2 from "./images/about/about2.png";
@@ -45,9 +54,6 @@ export const allIcons = {
   appleStore,
 };
 export const storiesImg = {
-  belovedGrandPa,
-  loveablePet,
-  veterans,
 };
 
 export const aboutImg = {
