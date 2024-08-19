@@ -58,6 +58,22 @@ export const allIcons = {
   breed,
 };
 export const storiesImg = {
+  beloved: {
+    beloved1,
+    beloved2,
+    beloved3,
+  },
+  pets: {
+    pet1,
+    pet2,
+    pet3,
+    pet4,
+    pet5,
+  },
+  veterans: {
+    veterans1,
+    veterans2,
+  },
 };
 
 export const aboutImg = {
