@@ -7,12 +7,14 @@ import logInImg from "./images/authImg/logInImg.png";
 import otpImg from "./images/authImg/otpImg.png";
 import setPassImg from "./images/authImg/setPassImg.png";
 import dualSmartPhone from "./images/dualSmartPhone.png";
+import profile from "./images/profile.png";
 
 import facebook from "./icons/facebook.png";
 import insta from "./icons/insta.png";
 import linkedIn from "./icons/linkedIn.png";
 import appleStore from "./icons/appleStore.png";
 import playstore from "./icons/playstore.png";
+import breed from "./icons/breed.png";
 
 import beloved1 from "./images/stories/beloved/beloved1.png";
 import beloved2 from "./images/stories/beloved/beloved2.png";
@@ -45,6 +47,7 @@ export const AllImages = {
   insta,
   linkedIn,
   dualSmartPhone,
+  profile,
 };
 export const allIcons = {
   facebook,
@@ -52,6 +55,7 @@ export const allIcons = {
   linkedIn,
   playstore,
   appleStore,
+  breed,
 };
 export const storiesImg = {
 };

@@ -151,11 +151,16 @@ const Navbar = () => {
       label: (
         <Link href="/sign-in">
           <Button
-            className="w-full text-base py-3 text-white border-secondary-color bg-transparent border hover:bg-secondary-color hover:text-black font-bold duration-200 delay-75"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            className="text-[#010515] border-[#010515] mt-3  w-full"
+            style={{
+              color: "white",
+              backgroundColor: hovered2 ? "#97C6EA" : "#97C6EA",
+              border: "1px solid #97C6EA",
+            }}
+            onMouseEnter={handleMouseEnter2}
+            onMouseLeave={handleMouseLeave2}
           >
-            Sign Out
+            Sign out
           </Button>
         </Link>
       ),
@@ -227,7 +232,7 @@ const Navbar = () => {
                 <>
                   <Link href="/profile">
                     <Image
-                      src={AllImages.user}
+                      src={AllImages.profile}
                       alt="profile_img"
                       width={0}
                       height={0}
@@ -235,9 +240,9 @@ const Navbar = () => {
                       className="h-[35px] w-[35px]"
                     />
                   </Link>
-                  <Link href="/">
+                  <Link href="/sign-in">
                     <Button
-                      className=" text-base py-5 mx-2 bg-secondary-color border-none text-site-color font-bold shadow-inner shadow-[#00000040] duration-200 delay-75"
+                      className="py-5 mx-3 bg-secondary-color text-white border-none text-site-color font-semibold duration-200 delay-75"
                       onMouseEnter={handleMouseEnter2}
                       onMouseLeave={handleMouseLeave2}
                     >
