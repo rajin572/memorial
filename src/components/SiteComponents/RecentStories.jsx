@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { stories as storiesData } from "../../../public/demoData/storiesData";
-import { Badge, Card, Col, Row } from "antd";
+import { Badge, Card, Col, Row, Carousel } from "antd";
 import {
   CalendarOutlined,
   CommentOutlined,
@@ -39,7 +39,7 @@ export default function RecentStories({ showAll }) {
   return (
     <div className="my-20 flex flex-col items-center gap-16">
       <Container>
-        <div className="flex  justify-center flex-row gap-1 sm:gap-2 items-center mx-auto">
+        <div className="flex justify-center flex-row gap-1 sm:gap-2 items-center mx-auto">
           <div className="flex flex-col items-center md:items-end">
             <hr className="w-[60px] md:w-[100px] mr-10 md:mr-14 border-t-2 border-[#F6A56D]" />
             <hr className="w-[60px] md:w-[100px] mt-1 md:mr-5 border-t-2 border-[#0259A9]" />
@@ -48,7 +48,7 @@ export default function RecentStories({ showAll }) {
             Recent Stories
           </p>
           <div className="flex flex-col items-center md:items-start">
-            <hr className="w-[60px] md:w-[100px] ml-10 md:ml-14  border-t-2 border-[#0259A9]" />
+            <hr className="w-[60px] md:w-[100px] ml-10 md:ml-14 border-t-2 border-[#0259A9]" />
             <hr className="w-[60px] md:w-[100px] mt-1 md:ml-5 border-t-2 border-[#F6A56D]" />
           </div>
         </div>
@@ -59,9 +59,11 @@ export default function RecentStories({ showAll }) {
         <div className="w-[90%] mx-auto relative">
           {/* stories data */}
           {!showAll && (
-            <p className="text-xs sm:text-base text-end absolute right-4 -top-7 text-blue-600 cursor-pointer underline">
-              View All
-            </p>
+            <Link href="/stories">
+              <p className="text-xs sm:text-base text-end absolute right-4 -top-7 text-blue-600 cursor-pointer underline">
+                View All
+              </p>
+            </Link>
           )}
           <Row gutter={[16, 16]} className="flex flex-wrap justify-center ">
             {displayedStories.map((story, index) => (
@@ -72,15 +74,20 @@ export default function RecentStories({ showAll }) {
                   style={{ width: "100%", height: "500px" }}
                   cover={
                     <div className="relative h-2/3">
-                      <Image
-                        src={story.img}
-                        alt={story.title}
-                        width={500}
-                        height={450}
-                        style={{ objectFit: "cover" }}
-                        className="rounded-lg"
-                        // height={100}
-                      />
+                      <Carousel autoplay>
+                        {story.images.map((img, i) => (
+                          <div key={i}>
+                            <Image
+                              src={img}
+                              alt={story.title}
+                              width={500}
+                              height={450}
+                              style={{ objectFit: "cover" }}
+                              className="rounded-lg"
+                            />
+                          </div>
+                        ))}
+                      </Carousel>
                       {/* Overlay date badge */}
                       <Badge
                         count={
@@ -94,7 +101,7 @@ export default function RecentStories({ showAll }) {
                     </div>
                   }
                 >
-                  <div className="bg-[#F7F6FA]  h-1/3 flex flex-col justify-between gap-2">
+                  <div className="bg-[#F7F6FA] h-1/3 flex flex-col justify-between gap-2">
                     <Link href="/stories/1">
                       <h3 className="text-lg font-bold mb-1">{story.title}</h3>
                     </Link>
