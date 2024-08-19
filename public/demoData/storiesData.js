@@ -17,13 +17,7 @@ export const stories = [
   },
   {
     title: "My Lovable Pet.",
-    images: [
-      storiesImg.pets.pet1,
-      storiesImg.pets.pet2,
-      storiesImg.pets.pet3,
-      storiesImg.pets.pet4,
-      storiesImg.pets.pet5,
-    ],
+    img: storiesImg.loveablePet,
     date: "2024-08-05",
     desc: "My only pet which i loved most.",
     comments: [
@@ -36,7 +30,7 @@ export const stories = [
   },
   {
     title: "Veterans Memorial Moments.",
-    images: [storiesImg.veterans.veterans1, storiesImg.veterans.veterans2],
+    img: storiesImg.veterans,
     date: "2024-08-10",
     desc: "Soldiers giving salute and respect to their mate.",
     comments: [
@@ -52,11 +46,7 @@ export const stories = [
   },
   {
     title: "My Beloved Grandpa",
-    images: [
-      storiesImg.beloved.beloved1,
-      storiesImg.beloved.beloved2,
-      storiesImg.beloved.beloved3,
-    ],
+    img: storiesImg.belovedGrandPa,
     date: "2024-08-01",
     desc: "A family that are going to the cemetery for their family person.",
     comments: [
@@ -66,7 +56,7 @@ export const stories = [
   },
   {
     title: "Veterans Memorial Moments.",
-    images: [storiesImg.veterans.veterans1, storiesImg.veterans.veterans2],
+    img: storiesImg.veterans,
     date: "2024-08-10",
     desc: "Soldiers giving salute and respect to their mate.",
     comments: [
@@ -82,13 +72,7 @@ export const stories = [
   },
   {
     title: "My Lovable Pet.",
-    images: [
-      storiesImg.pets.pet1,
-      storiesImg.pets.pet2,
-      storiesImg.pets.pet3,
-      storiesImg.pets.pet4,
-      storiesImg.pets.pet5,
-    ],
+    img: storiesImg.loveablePet,
     date: "2024-08-05",
     desc: "My only pet which i loved most.",
     comments: [

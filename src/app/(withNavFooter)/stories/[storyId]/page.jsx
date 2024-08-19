@@ -9,15 +9,17 @@ import { MdOutlineDateRange, MdOutlinePets } from "react-icons/md";
 import { FaTransgender } from "react-icons/fa";
 import Image from "next/image";
 import { allIcons, AllImages } from "../../../../../public/assets/AllImages";
+import ImageLayout from "@/components/ui/ImageLayout";
 
 const StoryDeatils = () => {
   const images = [
     AllImages.details1,
-    AllImages.details2,
     AllImages.details3,
+    AllImages.details2,
     AllImages.details4,
     AllImages.details5,
   ];
+
   const [category, setCategory] = useState("veteran");
   return (
     <div className="my-20">
@@ -27,8 +29,51 @@ const StoryDeatils = () => {
           <h1 className="text-center text-3xl md:text-4xl lg:text-5xl text-secondary-color font-semibold mb-16">
             My Veteran Friend
           </h1>
-          <div>{}</div>
-          <div>
+          <div
+            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center items-center gap-5 `}
+          >
+            <Image
+              src={AllImages.details1}
+              alt="huddai"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className={`w-[420px] h-[300px] col-span-1 `}
+            />
+            <Image
+              src={AllImages.details3}
+              alt="huddai"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className={`w-[420px] h-[300px] md:h-full col-span-1 md:row-span-2`}
+            />
+            <Image
+              src={AllImages.details2}
+              alt="huddai"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className={`w-[420px] h-[300px] col-span-1`}
+            />
+            <Image
+              src={AllImages.details4}
+              alt="huddai"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className={`w-[420px] h-[300px] col-span-1`}
+            />
+            <Image
+              src={AllImages.details5}
+              alt="huddai"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className={`w-[420px] h-[300px] col-span-1`}
+            />
+          </div>
+          <div className="mt-12">
             <h2 className="text-2xl md:text-3xl lg:text-4xl text-primary-color font-semibold mb-5">
               A Story About My Veteran Friend.
             </h2>
