@@ -11,6 +11,7 @@ import {
 } from "@ant-design/icons";
 import Meta from "antd/es/card/Meta";
 import Container from "../ui/Container";
+import Link from "next/link";
 
 export default function RecentStories({ showAll }) {
   const [stories, setStories] = useState([]);
@@ -94,7 +95,9 @@ export default function RecentStories({ showAll }) {
                   }
                 >
                   <div className="bg-[#F7F6FA]  h-1/3 flex flex-col justify-between gap-2">
-                    <h3 className="text-lg font-bold mb-1">{story.title}</h3>
+                    <Link href="/stories/1">
+                      <h3 className="text-lg font-bold mb-1">{story.title}</h3>
+                    </Link>
                     <p className="text-sm mb-1 text-[#625F68]">
                       {truncateDescription(story.desc)}
                     </p>

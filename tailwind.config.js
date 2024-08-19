@@ -18,6 +18,7 @@ module.exports = {
         "secondary-color": "#3598F1",
         "base-color": "#F3F3F3",
         "btn-primary": "#013564",
+        "btn-secoundary": "#8BC4F7",
       },
     },
   },
