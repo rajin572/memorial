@@ -8,9 +8,16 @@ import { TbTopologyStarRing3 } from "react-icons/tb";
 import { MdOutlineDateRange, MdOutlinePets } from "react-icons/md";
 import { FaTransgender } from "react-icons/fa";
 import Image from "next/image";
-import { allIcons } from "../../../../../public/assets/AllImages";
+import { allIcons, AllImages } from "../../../../../public/assets/AllImages";
 
 const StoryDeatils = () => {
+  const images = [
+    AllImages.details1,
+    AllImages.details2,
+    AllImages.details3,
+    AllImages.details4,
+    AllImages.details5,
+  ];
   const [category, setCategory] = useState("veteran");
   return (
     <div className="my-20">
@@ -20,6 +27,7 @@ const StoryDeatils = () => {
           <h1 className="text-center text-3xl md:text-4xl lg:text-5xl text-secondary-color font-semibold mb-16">
             My Veteran Friend
           </h1>
+          <div>{}</div>
           <div>
             <h2 className="text-2xl md:text-3xl lg:text-4xl text-primary-color font-semibold mb-5">
               A Story About My Veteran Friend.

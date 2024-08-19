@@ -29,6 +29,12 @@ import pet5 from "./images/stories/pet/pet5.png";
 import veterans1 from "./images/stories/veterans/veterans.png";
 import veterans2 from "./images/stories/veterans/veterans2.png";
 
+import details1 from "./images/details/details1.png";
+import details2 from "./images/details/details2.png";
+import details3 from "./images/details/details3.png";
+import details4 from "./images/details/details4.png";
+import details5 from "./images/details/details5.png";
+
 import about1 from "./images/about/about1.png";
 import about2 from "./images/about/about2.png";
 import about3 from "./images/about/about3.png";
@@ -48,6 +54,11 @@ export const AllImages = {
   linkedIn,
   dualSmartPhone,
   profile,
+  details1,
+  details2,
+  details3,
+  details4,
+  details5,
 };
 export const allIcons = {
   facebook,
@@ -57,8 +68,7 @@ export const allIcons = {
   appleStore,
   breed,
 };
-export const storiesImg = {
-};
+export const storiesImg = {};
 
 export const aboutImg = {
   about1,
