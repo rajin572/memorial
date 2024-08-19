@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { stories as storiesData } from "../../../public/demoData/storiesData";
-import { Badge, Card, Col, Row, Carousel } from "antd";
+import { Badge, Card, Col, Row, Carousel, Button } from "antd";
 import {
   CalendarOutlined,
   CommentOutlined,
@@ -12,6 +12,7 @@ import {
 import Meta from "antd/es/card/Meta";
 import Container from "../ui/Container";
 import Link from "next/link";
+import { CiSquarePlus } from "react-icons/ci";
 
 export default function RecentStories({ showAll }) {
   const [stories, setStories] = useState([]);
@@ -56,6 +57,15 @@ export default function RecentStories({ showAll }) {
         <h1 className="text-lg md:text-2xl lg:text-3xl font-semibold text-center mt-10 mb-16">
           Cherishing the Moments and Celebrating Lives Well Lived.
         </h1>
+        <Link href="/story-upload">
+          <Button
+            type="primary"
+            className="ml-auto mb-5 flex items-center gap-1 px-6 py-5 text-primary-color text-lg md:text-xl font-semibold bg-btn-secoundary border border-btn-secoundary text-site-color rounded-xl"
+          >
+            <CiSquarePlus className="text-primary-color" />
+            Upload Story
+          </Button>
+        </Link>
         <div className="w-[90%] mx-auto relative">
           {/* stories data */}
           {!showAll && (
