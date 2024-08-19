@@ -3,7 +3,7 @@ import { storiesImg } from "../assets/AllImages.jsx";
 export const stories = [
   {
     title: "My Beloved Grandpa",
-    img: storiesImg.belovedGrandPa,
+    img: storiesImg.beloved.beloved1,
     date: "2024-08-01",
     desc: "A family that are going to the cemetery for their family person.",
     comments: [
@@ -13,7 +13,7 @@ export const stories = [
   },
   {
     title: "My Lovable Pet.",
-    img: storiesImg.loveablePet,
+    img: storiesImg.pets.pet1,
     date: "2024-08-05",
     desc: "My only pet which i loved most.",
     comments: [
@@ -26,7 +26,7 @@ export const stories = [
   },
   {
     title: "Veterans Memorial Moments.",
-    img: storiesImg.veterans,
+    img: storiesImg.veterans.veterans1,
     date: "2024-08-10",
     desc: "Soldiers giving salute and respect to their mate.",
     comments: [
@@ -42,7 +42,7 @@ export const stories = [
   },
   {
     title: "My Beloved Grandpa",
-    img: storiesImg.belovedGrandPa,
+    img: storiesImg.beloved.beloved2,
     date: "2024-08-01",
     desc: "A family that are going to the cemetery for their family person.",
     comments: [
@@ -52,7 +52,7 @@ export const stories = [
   },
   {
     title: "Veterans Memorial Moments.",
-    img: storiesImg.veterans,
+    img: storiesImg.veterans.veterans2,
     date: "2024-08-10",
     desc: "Soldiers giving salute and respect to their mate.",
     comments: [
@@ -68,7 +68,7 @@ export const stories = [
   },
   {
     title: "My Lovable Pet.",
-    img: storiesImg.loveablePet,
+    img: storiesImg.pets.pet2,
     date: "2024-08-05",
     desc: "My only pet which i loved most.",
     comments: [
