@@ -6,17 +6,18 @@ import React from "react";
 import { AllImages } from "../../../public/assets/AllImages";
 import { usePathname } from "next/navigation";
 
-// Extract the part of the path after the "/"
-const pathSegment = pathname.split("/")[1]; // This will take the part after "/"
-
-// Capitalize the first letter
-const capitalizedPathSegment = pathSegment
-  ? pathSegment.charAt(0).toUpperCase() + pathSegment.slice(1)
-  : "";
-
 export default function Banner() {
   const pathname = usePathname();
   console.log(pathname);
+
+  // Extract the part of the path after the "/"
+  const pathSegment = pathname.split("/")[1]; // This will take the part after "/"
+
+  // Capitalize the first letter
+  const capitalizedPathSegment = pathSegment
+    ? pathSegment.charAt(0).toUpperCase() + pathSegment.slice(1)
+    : "";
+
   return (
     <div className="relative h-screen">
       <Image
