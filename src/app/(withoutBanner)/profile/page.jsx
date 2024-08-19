@@ -59,7 +59,6 @@ const Profile = () => {
         </h1>
 
         <div className="mb-10 sm:mb-0">
-          {" "}
           {isOnlyView ? (
             <Button
               onClick={toggleOnlyView}

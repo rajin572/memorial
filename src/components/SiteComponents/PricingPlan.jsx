@@ -34,7 +34,7 @@ export default function PricingPlan() {
 
   return (
     <div className="my-28 flex flex-col items-center gap-20">
-      <div className="flex flex-col md:flex-row gap-2 md:gap-6 lg:gap-8 items-center mx-auto">
+      <div className="flex flex-col md:flex-row gap-2 md:gap-6 lg:gap-4 items-center mx-auto">
         <div className="flex flex-col items-center md:items-end">
           <hr className="w-[60px] md:w-[120px] lg:w-[240px] md:mr-16 lg:mr-24 border-t-2 border-[#F6A56D]" />
           <hr className="w-[60px] md:w-[120px] lg:w-[240px] mt-1 sm:mt-2 md:mr-24 lg:mr-32 border-t-2 border-[#0259A9]" />
@@ -50,7 +50,7 @@ export default function PricingPlan() {
 
       <Row gutter={[16, 16]} className="w-full flex justify-center">
         {plans.map((plan, index) => (
-          <Col key={index} xs={32} sm={12} md={8} lg={4}>
+          <Col key={index} xs={32} sm={12} md={10} lg={8} xl={4}>
             <Card
               bordered={false}
               className="rounded-lg shadow-lg flex flex-col items-center"
