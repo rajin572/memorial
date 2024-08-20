@@ -1,23 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import { aboutImg } from "../../../public/assets/AllImages";
+import SectionHeader from "../ui/SectionHeader";
 
 export default function AboutUs() {
   return (
     <div className="my-12 sm:my-28 flex flex-col items-center gap-5 sm:gap-16">
-      <div className="flex flex-col md:flex-row gap-2 md:gap-6 lg:gap-8 items-center mx-auto">
-        <div className="flex flex-col items-center md:items-end">
-          <hr className="w-[100px] md:w-[180px] lg:w-[240px] md:mr-16 lg:mr-24 border-t-2 border-[#F6A56D]" />
-          <hr className="w-[100px] md:w-[180px] lg:w-[240px] mt-1 sm:mt-2 md:mr-24 lg:mr-32 border-t-2 border-[#0259A9]" />
-        </div>
-        <p className="text-lg md:text-2xl lg:text-3xl font-bold text-center md:text-left">
-          About Us
-        </p>
-        <div className="flex flex-col items-center md:items-start">
-          <hr className="w-[100px] md:w-[180px] lg:w-[240px] md:ml-24 lg:ml-32 border-t-2 border-[#0259A9]" />
-          <hr className="w-[100px] md:w-[180px] lg:w-[240px] mt-1 sm:mt-2 md:ml-16 lg:ml-24 border-t-2 border-[#F6A56D]" />
-        </div>
-      </div>
+      {/* page name */}
+      <SectionHeader>About Us</SectionHeader>
       <div className="flex flex-col lg:flex-row gap-5">
         <Image
           src={aboutImg.about1}

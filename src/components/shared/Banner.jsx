@@ -42,8 +42,11 @@ export default function Banner() {
       </div>
       {/* Conditionally render the User Guide button */}
       {pathname !== "/" && pathname !== "/user-guide" && (
-        <Link href="/user-guide" className="flex justify-end pr-80 pb-10">
-          <Button className="bg-[#3598F1] text-white font-bold text-lg px-8 py-5 rounded-full">
+        <Link
+          href="/user-guide"
+          className="flex justify-end pr-2 md:pr-20 lg:pr-80 pb-10"
+        >
+          <Button className="bg-[#3598F1] text-white font-bold text-xs sm:text-lg sm:px-8 sm:py-5 rounded-full">
             User Guide
           </Button>
         </Link>

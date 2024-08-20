@@ -12,6 +12,7 @@ import {
 import Container from "../ui/Container";
 import Link from "next/link";
 import { CiSquarePlus } from "react-icons/ci";
+import SectionHeader from "../ui/SectionHeader";
 
 export default function RecentStories({ showAll }) {
   const [stories, setStories] = useState([]);
@@ -39,21 +40,9 @@ export default function RecentStories({ showAll }) {
   return (
     <div className="my-20 flex flex-col items-center gap-16">
       <Container>
-        <div className="flex justify-center flex-row gap-1 sm:gap-2 items-center mx-auto">
-          <div className="flex flex-col items-center md:items-end">
-            <hr className="w-[60px] md:w-[100px] mr-10 md:mr-14 border-t-2 border-[#F6A56D]" />
-            <hr className="w-[60px] md:w-[100px] mt-1 md:mr-5 border-t-2 border-[#0259A9]" />
-          </div>
-          <p className="text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center md:text-left">
-            Recent Stories
-          </p>
-          <div className="flex flex-col items-center md:items-start">
-            <hr className="w-[60px] md:w-[100px] ml-10 md:ml-14 border-t-2 border-[#0259A9]" />
-            <hr className="w-[60px] md:w-[100px] mt-1 md:ml-5 border-t-2 border-[#F6A56D]" />
-          </div>
-        </div>
+        <SectionHeader>Recent Stories</SectionHeader>
 
-        <h1 className="text-lg md:text-2xl lg:text-3xl font-semibold text-center mt-10 mb-16">
+        <h1 className="text-medium md:text-2xl lg:text-3xl font-semibold text-center mt-10 mb-16">
           Cherishing the Moments and Celebrating Lives Well Lived.
         </h1>
 

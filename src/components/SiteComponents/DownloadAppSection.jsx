@@ -24,10 +24,9 @@ const DownloadAppSection = () => {
               Relive Your Greatest Moments
             </h2>
             <p className="text-primary-color md:text-lg">
-              The RentX Reward System allows you to earn points on every rental
-              payment with options for exclusive opportunities and additional
-              points through the RentX Mastercard, offering rewards regardless
-              of your payment method or location.
+              Experience the joy of revisiting your most cherished memories. Our
+              platform allows you to relive and celebrate your greatest moments,
+              preserving them for you to enjoy forever.
             </p>
             <Button
               type="primary"

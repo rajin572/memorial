@@ -19,7 +19,7 @@ export default function Footer() {
             sizes="100vw"
             className="w-[200px] md:w-[250px] lg:w-[300px]"
           />
-          <p className="text-[#1A1A1A] mt-4 text-lg lg:text-xl mb-12 w-4/5">
+          <p className="text-[#1A1A1A] mt-4 text-sm sm:text-lg lg:text-xl mb-12 w-4/5">
             Memorial Moments Magazine celebrates life's treasured memories,
             capturing heartfelt stories and inspiring moments. Join us in
             honoring unforgettable experiences.
@@ -61,9 +61,9 @@ export default function Footer() {
         </div>
 
         {/* 2nd */}
-        <div className="lg:w-1/3 flex flex-col gap-6 items-start justify-start">
+        <div className="lg:w-1/3 flex flex-col gap-6 items-start justify-center lg:justify-start">
           <p className="font-semibold text-xl mb-2 text-[#037EEE]">Links</p>
-          <div className="flex flex-col gap-6">
+          <div className="flex lg:flex-col gap-6">
             <div>
               <Link href="/">Home</Link>
             </div>
@@ -80,7 +80,7 @@ export default function Footer() {
         </div>
 
         {/* 3rd */}
-        <div className="lg:w-1/3 flex flex-col gap-6 items-start justify-start">
+        <div className="lg:w-1/3 flex flex-col gap-6 items-start justify-start mt-6 lg:mt-0">
           <p className="font-semibold text-xl mb-2 text-[#037EEE]">Links</p>
           <div className="flex space-x-4 mb-4">
             <div className="p-2 rounded-full bg-[#E6F2FD]">
@@ -124,15 +124,15 @@ export default function Footer() {
       </div>
       <div className="container mx-auto px-4 ">
         <div className="border-t border-[#1A1A1A] mt-10"></div>
-        <div className="flex flex-col lg:flex-row lg:justify-end lg:items-center gap-10 mt-10">
+        <div className="flex md:flex-col lg:flex-row justify-between lg:justify-end lg:items-center gap-2 sm:gap-10 mt-4 sm:mt-10 text-sm sm:text-xl">
           <Link href="/about-us">
-            <p className="text-[#1A1A1A] text-xl">About Us</p>
+            <p className="text-[#1A1A1A]">About Us</p>
           </Link>
           <Link href="/privacy-policy">
-            <p className="text-[#1A1A1A] text-xl">Privacy Policy</p>
+            <p className="text-[#1A1A1A]">Privacy Policy</p>
           </Link>
           <Link href="/terms-of-use">
-            <p className="text-[#1A1A1A] text-xl">Terms of Use</p>
+            <p className="text-[#1A1A1A]">Terms of Use</p>
           </Link>
         </div>
       </div>
