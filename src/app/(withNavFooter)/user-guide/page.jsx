@@ -1,5 +1,10 @@
+import UserGuideSection from "@/components/SiteComponents/UserGuideSection";
 import React from "react";
 
 export default function UserGuide() {
-  return <div>UserGuide</div>;
+  return (
+    <div>
+      <UserGuideSection />
+    </div>
+  );
 }

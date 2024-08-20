@@ -1,8 +1,9 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 
 export default function TermsOfUse() {
   return (
-    <div className="px-3 md:px-5 lg:px-8 xl:px-0 text-sm sm:text-lg">
+    <div className="px-3 md:px-5 lg:px-8 xl:px-0 text-sm sm:text-lg my-14 md:my-20">
       <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-2">
           <div>

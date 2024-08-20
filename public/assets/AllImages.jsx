@@ -41,6 +41,11 @@ import about3 from "./images/about/about3.png";
 
 import aboutApp from "./images/aboutApp.png";
 
+import userGuideRegister from "./images/userGuide/userGuideRegister.png";
+import useGuideSubscription from "./images/userGuide/useGuideSubscription.png";
+import useGuideUploadStory from "./images/userGuide/useGuideUploadStory.png";
+import useGuideBroadcastStory from "./images/userGuide/useGuideBroadcastStory.png";
+
 export const AllImages = {
   logo,
   logoLg,
@@ -91,6 +96,13 @@ export const aboutImg = {
   about1,
   about2,
   about3,
+};
+
+export const userGuide = {
+  userGuideRegister,
+  useGuideSubscription,
+  useGuideUploadStory,
+  useGuideBroadcastStory,
 };
 
 export const appAboutImg = aboutApp;

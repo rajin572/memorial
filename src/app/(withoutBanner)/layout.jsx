@@ -1,3 +1,4 @@
+import Container from "@/components/ui/Container";
 import Banner from "../../components/shared/Banner";
 import Footer from "../../components/shared/Footer";
 import Navbar from "../../components/shared/Navbar";
@@ -6,7 +7,9 @@ const MainLayout = ({ children }) => {
   return (
     <div>
       <Navbar />
-      <div className="xl:mx-80 my-12">{children}</div>
+      <div>
+        <Container>{children}</Container>
+      </div>
       <Footer />
     </div>
   );

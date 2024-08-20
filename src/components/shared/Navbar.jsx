@@ -257,12 +257,12 @@ const Navbar = () => {
           <div className="flex gap-2 items-center lg:hidden">
             <Link href="/profile">
               <Image
-                src={AllImages.user}
+                src={AllImages.profile}
                 alt="profile_img"
                 width={0}
                 height={0}
                 sizes="100vw"
-                className="h-[35px] w-[40px]"
+                className="h-[30px] w-[40px]"
               />
             </Link>
             <div className="lg:hidden">

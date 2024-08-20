@@ -12,7 +12,6 @@ import {
   ConfigProvider,
   DatePicker,
   Form,
-  Image,
   Input,
   Modal,
   Select,
@@ -30,6 +29,7 @@ import {
 } from "@ant-design/icons";
 import Link from "next/link";
 import { storiesImg } from "../../../../public/assets/AllImages";
+import Image from "next/image";
 
 const story = {
   title: "My Beloved Grandpa",
@@ -100,12 +100,13 @@ const UploadStory = () => {
                   {story.images.map((img, i) => (
                     <div key={i}>
                       <Image
-                        src={img.src}
+                        src={img}
                         alt={story.title}
-                        width="100%"
-                        height={300}
+                        width={0}
+                        height={0}
+                        sizes="100vw"
                         style={{ objectFit: "cover" }}
-                        className="rounded-lg"
+                        className="w-full max-h-[300px]"
                       />
                     </div>
                   ))}

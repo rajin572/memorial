@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AboutUs() {
   return (
-    <div className="px-3 md:px-5 lg:px-8 xl:px-0">
+    <div className="px-3 md:px-5 lg:px-8 xl:px-0 my-14 md:my-20">
       <p className="text-center sm:text-start text-lg sm:text-3xl font-semibold text-[#3598F1]">
         About Us
       </p>

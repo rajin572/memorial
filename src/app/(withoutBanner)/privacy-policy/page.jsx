@@ -1,8 +1,9 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 
 export default function PrivacyPolicys() {
   return (
-    <div className="px-3 md:px-5 lg:px-8 xl:px-0">
+    <div className="px-3 md:px-5 lg:px-8 xl:px-0 my-14 md:my-20">
       <p className="text-sm text-center sm:text-start sm:text-3xl font-semibold text-[#3598F1]">
         Privacy Policy
       </p>
