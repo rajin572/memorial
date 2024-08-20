@@ -10,10 +10,12 @@ import {
   Upload,
 } from "antd";
 import { CalendarOutlined, DownOutlined } from "@ant-design/icons";
+import { CiLocationOn } from "react-icons/ci";
+import { BiMessageDetail } from "react-icons/bi";
 import Image from "next/image";
 import React, { useState } from "react";
 import TextArea from "antd/es/input/TextArea";
-import { AllImages } from "../../../../public/assets/AllImages";
+import { AllImages, storiesImg } from "../../../../public/assets/AllImages";
 
 const Profile = () => {
   const [isOnlyView, setIsOnlyView] = useState(true);
@@ -315,6 +317,67 @@ const Profile = () => {
           </div>
         </Form>
       </ConfigProvider>
+      <div className="mt-10">
+        <Typography.Title
+          className="mb-5"
+          level={2}
+          style={{ color: " #3598F1" }}
+        >
+          Upload story
+        </Typography.Title>
+        <div className="flex items-center flex-wrap gap-5">
+          <div className="max-w-md bg-base-color shadow-md rounded-lg overflow-hidden">
+            <Image
+              src={storiesImg.veterans.veterans1.src}
+              alt="Military Officer"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-2">
+              <div>
+                <BiMessageDetail className="ml-auto text-[#F6A56D] size-5" />
+              </div>
+              <h2 className="text-xl font-semibold text-primary-color">
+                William David Johnson
+              </h2>
+              <p className="text-primary-color text-sm flex items-center mt-2">
+                <CiLocationOn className="mr-1" />
+                Via Luigi Alamanni, 3, 50123 Firenze
+              </p>
+              <p className="text-primary-color mt-2">
+                August 25, 1996 to June 06, 2019
+              </p>
+            </div>
+          </div>
+          <div className="max-w-md bg-base-color shadow-md rounded-lg overflow-hidden">
+            <Image
+              src={storiesImg.pets.pet1.src}
+              alt="Military Officer"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-2">
+              <div>
+                <BiMessageDetail className="ml-auto text-[#F6A56D] size-5" />
+              </div>
+              <h2 className="text-xl font-semibold text-primary-color">
+                My Lovable Pet.
+              </h2>
+              <p className="text-primary-color text-sm flex items-center mt-2">
+                <CiLocationOn className="mr-1" />
+                Via Luigi Alamanni, 3, 50123 Firenze
+              </p>
+              <p className="text-primary-color mt-2">
+                August 25, 1996 to June 06, 2019
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

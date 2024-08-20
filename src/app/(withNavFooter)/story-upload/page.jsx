@@ -5,10 +5,14 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import { PiUploadSimpleBold } from "react-icons/pi";
 import React, { useState } from "react";
 import {
+  Badge,
   Button,
+  Card,
+  Carousel,
   ConfigProvider,
   DatePicker,
   Form,
+  Image,
   Input,
   Modal,
   Select,
@@ -17,11 +21,30 @@ import {
 } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import {
+  BookFilled,
   CalendarOutlined,
+  CommentOutlined,
   DownOutlined,
   PlusOutlined,
   UploadOutlined,
 } from "@ant-design/icons";
+import Link from "next/link";
+import { storiesImg } from "../../../../public/assets/AllImages";
+
+const story = {
+  title: "My Beloved Grandpa",
+  images: [
+    storiesImg.beloved.beloved1,
+    storiesImg.beloved.beloved2,
+    storiesImg.beloved.beloved3,
+  ],
+  date: "2024-08-01",
+  desc: "A family that are going to the cemetery for their family person.",
+  comments: [
+    { user: "JohnDoe", text: "Amazing story!" },
+    { user: "JaneSmith", text: "Loved the twist at the end." },
+  ],
+};
 
 const UploadStory = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -40,6 +63,14 @@ const UploadStory = () => {
   const onChange = (value) => {
     setCategory(value);
   };
+
+  const truncateDescription = (desc) => {
+    if (desc.length > 60) {
+      return desc.substring(0, 60) + "...";
+    }
+    return desc;
+  };
+
   return (
     <div className="my-20">
       <Container>
@@ -49,16 +80,72 @@ const UploadStory = () => {
           Magazine. Our stories capture the essence of life's most extraordinary
           moments, inspiring, touching, and delighting readers everywhere.
         </p>
-        <div className="mt-20">
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch justify-center gap-5">
           <div
             onClick={showModal}
-            className="flex flex-col items-center text-center justify-center w-48 h-64 border-2 border-dashed border-[#00000080] rounded-lg cursor-pointer hover:border-primary-color"
+            className="flex flex-col items-center text-center justify-center h-full border-2 border-dashed border-[#00000080] rounded-lg cursor-pointer hover:border-primary-color w-full"
           >
             <PiUploadSimpleBold className="size-10 text-primary-color" />
             <p className="mt-4 text-primary-color font-semibold text-2xl">
               Upload
             </p>
           </div>
+          <Card
+            className="relative overflow-hidden rounded-lg shadow-lg bg-[#F7F6FA]"
+            hoverable
+            style={{ width: "100%", height: "500px" }}
+            cover={
+              <div className="relative h-2/3">
+                <Carousel autoplay>
+                  {story.images.map((img, i) => (
+                    <div key={i}>
+                      <Image
+                        src={img.src}
+                        alt={story.title}
+                        width="100%"
+                        height={300}
+                        style={{ objectFit: "cover" }}
+                        className="rounded-lg"
+                      />
+                    </div>
+                  ))}
+                </Carousel>
+                {/* Overlay date badge */}
+                <Badge
+                  count={
+                    <div className="bg-[#C3E2FF] bg-opacity-90 p-1 rounded">
+                      <CalendarOutlined className="mr-1" />
+                      {story.date}
+                    </div>
+                  }
+                  className="absolute top-2 right-2"
+                />
+              </div>
+            }
+          >
+            <div className="bg-[#F7F6FA] h-1/3 flex flex-col justify-between gap-2">
+              <Link href="/stories/1">
+                <h3 className="text-lg font-bold mb-1 text-primary-color">
+                  {story.title}
+                </h3>
+              </Link>
+              <p className="text-sm mb-1 text-[#625F68]">
+                {truncateDescription(story.desc)}
+              </p>
+              <div className="flex flex-col justify-between gap-1 text-sm text-gray-600">
+                <div className="flex items-center">
+                  <CommentOutlined className="mr-1" />
+                  {story.comments.length} Comments
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>{story.desc.split(" ").length} Words</span>
+                  <p>
+                    <BookFilled size={50} />
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Card>
         </div>
       </Container>
       <ConfigProvider
