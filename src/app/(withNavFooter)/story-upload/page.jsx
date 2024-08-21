@@ -48,7 +48,7 @@ const story = {
 
 const UploadStory = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [category, setCategory] = useState("pet");
+  const [category, setCategory] = useState("");
 
   const showModal = () => {
     setIsModalVisible(true);
@@ -197,7 +197,7 @@ const UploadStory = () => {
               <Typography.Title level={5} style={{ color: "#010515" }}>
                 Category
               </Typography.Title>
-              <Form.Item name="category">
+              <Form.Item required={true} name="category">
                 <Select
                   onChange={onChange}
                   placeholder="Create story"

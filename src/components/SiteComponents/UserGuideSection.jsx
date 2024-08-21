@@ -19,7 +19,7 @@ const UserGuideSection = () => {
   const handleScroll = () => {
     sections.forEach((section) => {
       const element = document.getElementById(section.id);
-      if (element && window.scrollY >= element.offsetTop - 0) {
+      if (element && window.scrollY >= element.offsetTop + 400) {
         setActiveSection(section.id);
       }
     });
@@ -35,7 +35,7 @@ const UserGuideSection = () => {
       <Container>
         <div className="flex flex-col lg:flex-row relative my-28 ">
           <div className="flex-shrink-0 lg:w-1/5 py-5 ">
-            <nav className="space-y-4 sticky lg:top-52 lg:mt-10 lg:mb-80 border-l border-primary-color py-8">
+            <nav className="space-y-4 sticky lg:top-52 lg:mt-10 lg:mb-60 border-l border-primary-color py-8">
               {sections.map((section) => (
                 <div className="-ml-[6px]  flex items-center" key={section.id}>
                   <span
@@ -49,7 +49,7 @@ const UserGuideSection = () => {
                     className={classNames(
                       "block text-lg font-semibold ps-10",
                       activeSection === section.id
-                        ? "text-secondary-color ps-8 scale-110"
+                        ? "text-secondary-color ps-8 transition ease-in-out scale-110"
                         : "text-primary-color"
                     )}
                   >
