@@ -1,0 +1,43 @@
+{
+  "pricing": [
+    {
+      "title": "Basic",
+      "subtitle": "Quarter Page",
+      "price": "07",
+      "period": "per story",
+      "features": [
+        "All People Stories",
+        "Veteran Stories",
+        "2 pictures",
+        "Active 30 days",
+        "Consist of 80 words"
+      ]
+    },
+    {
+      "title": "Advance",
+      "subtitle": "Half Page",
+      "price": "09",
+      "period": "per story",
+      "features": [
+        "All People Stories",
+        "Veteran Stories",
+        "3 pictures",
+        "Active 6 months",
+        "Consist of 220 words"
+      ]
+    },
+    {
+      "title": "Premium",
+      "subtitle": "Full Page",
+      "price": "12",
+      "period": "per story",
+      "features": [
+        "All People Stories",
+        "Veteran Stories",
+        "5 pictures",
+        "Active 1 year",
+        "Consist of 500 words"
+      ]
+    }
+  ]
+}

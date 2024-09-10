@@ -1,0 +1,48 @@
+"use client";
+
+import Image from "next/image";
+import React from "react";
+
+import { AllImages } from "../../../public/assets/AllImages";
+// import { usePathname } from "next/navigation";
+// import Link from "next/link";
+// import { Button } from "antd";
+
+export default function Banner() {
+  // const pathname = usePathname();
+  // console.log(pathname);
+
+  // Extract the part of the path after the "/"
+  // const pathSegment = pathname.split("/")[1];
+
+  // const formattedPathSegment = pathSegment
+  //   ? pathSegment
+  //       .split("-")
+  //       .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
+  //       .join(" ")
+  //       .toUpperCase()
+  //   : "";
+
+  return (
+    <div className="relative h-[90vh]">
+      <Image
+        src={AllImages.banner}
+        alt="banner-image"
+        fill
+        style={{ objectFit: "cover" }}
+        className="absolute mix-blend-overlay  sm:w-full h-full"
+      />
+      <div className="relative z-10 text-white flex flex-col justify-end  items-start h-full pt-0 pb-20 sm:pb-20 lg:pb-40 ps-5 sm:ps-20 lg:ps-28 xl:ps-40">
+        <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black">
+          Memorial Moments Magazine
+        </p>
+        <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mt-3 text-black">
+          Every Life Matters
+        </p>
+        {/* <p className="sm:text-2xl lg:text-5xl font-bold">
+          {formattedPathSegment}
+        </p> */}
+      </div>
+    </div>
+  );
+}
