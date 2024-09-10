@@ -3,7 +3,7 @@
     {
       "title": "Basic",
       "subtitle": "Quarter Page",
-      "price": 7,
+      "price": "07",
       "period": "per story",
       "features": [
         "All People Stories",
@@ -16,7 +16,7 @@
     {
       "title": "Advance",
       "subtitle": "Half Page",
-      "price": 9,
+      "price": "09",
       "period": "per story",
       "features": [
         "All People Stories",
@@ -29,7 +29,7 @@
     {
       "title": "Premium",
       "subtitle": "Full Page",
-      "price": 12,
+      "price": "12",
       "period": "per story",
       "features": [
         "All People Stories",

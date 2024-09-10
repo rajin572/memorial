@@ -1,5 +1,6 @@
 import logo from "./logo/logo.png";
 import logoLg from "./logo/logoLg.png";
+import signupLogo from "./logo/signup-logo.png";
 
 import banner from "./images/banner.png";
 import forgotPasswordImg from "./images/authImg/forgotPasswordImg.png";
@@ -38,6 +39,12 @@ import details5 from "./images/details/details5.png";
 import about1 from "./images/about/about1.png";
 import about2 from "./images/about/about2.png";
 import about3 from "./images/about/about3.png";
+import lovedOne1 from "./images/about/lovedOne1.png";
+import lovedOne2 from "./images/about/lovedOne2.png";
+import aboutVeterans1 from "./images/about/veterans1.png";
+import aboutVeterans2 from "./images/about/veterans2.png";
+import aboutPet1 from "./images/about/pet1.png";
+import aboutPet2 from "./images/about/pet2.png";
 
 import aboutApp from "./images/aboutApp.png";
 
@@ -49,6 +56,7 @@ import useGuideBroadcastStory from "./images/userGuide/useGuideBroadcastStory.pn
 export const AllImages = {
   logo,
   logoLg,
+  signupLogo,
   banner,
   forgotPasswordImg,
   logInImg,
@@ -96,6 +104,12 @@ export const aboutImg = {
   about1,
   about2,
   about3,
+  aboutPet1,
+  aboutPet2,
+  lovedOne1,
+  lovedOne2,
+  aboutVeterans1,
+  aboutVeterans2,
 };
 
 export const userGuide = {

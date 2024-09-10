@@ -39,28 +39,28 @@ export default function PricingPlan() {
 
       <Row gutter={[16, 16]} className="w-full flex justify-center">
         {plans.map((plan, index) => (
-          <Col key={index} xs={32} sm={12} md={10} lg={8} xl={4}>
-            <Card
-              bordered={false}
-              className="rounded-lg shadow-lg flex flex-col items-center"
-            >
-              <div className="mx-10">
-                <p className="text-2xl font-bold mb-2">{plan.title}</p>
-                <p className="text-xl font-semibold mb-2">{plan.subtitle}</p>
+          <Col key={index} xs={32} sm={12} md={10} lg={8} xl={6} xxl={5}>
+            <Card bordered={false} className="rounded-lg shadow-lg ">
+              <div className="mb-5 xl:mx-8 flex flex-col">
+                <p className="text-3xl font-bold mb-2">{plan.title}</p>
+                <p className="text-2xl font-semibold mb-2">{plan.subtitle}</p>
                 <div className="flex gap-2">
-                  <p className="text-5xl font-bold mb-1">${plan.price}</p>
-                  <p className="text-lg text-gray-500 mt-5 mb-4">
+                  <p className="text-6xl font-bold mb-1">${plan.price}</p>
+                  <p className="text-lg font-bold text-primary-color mt-7 mb-4">
                     {plan.period}
                   </p>
                 </div>
               </div>
-              <ul className="list-none mb-4 text-left">
+              <ul className="list-none mb-8 text-left xl:mx-6">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="mb-1 py-0.5">
-                    <span className="text-[#aca8c5] bg-[#e1f0fd] rounded-full p-0.5 mr-2">
+                  <li
+                    key={i}
+                    className="mb-1 py-0.5 flex items-center gap-x-1 text-[#037EEE]"
+                  >
+                    <span className="text-[#037EEE] bg-[#e1f0fd] rounded-full p-0.5 mr-2">
                       ✔
                     </span>
-                    {feature}
+                    <span className="text-lg text-[#484848]">{feature}</span>
                   </li>
                 ))}
               </ul>

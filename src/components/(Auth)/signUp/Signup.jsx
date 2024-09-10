@@ -16,12 +16,12 @@ const SignUp = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center gap-10 min-h-screen py-10">
           <div>
             <Image
-              src={AllImages.logoLg}
+              src={AllImages.signupLogo}
               alt="largeLogo"
               width={0}
               height={0}
               sizes="100vw"
-              className="h-[180px] w-[260px] md:h-[260px] md:w-[360px]"
+              className="h-[260px] w-[260px] md:h-[360px] md:w-[360px]"
             />
           </div>
           <div className="w-full md:w-[80%] lg:w-full mx-auto">

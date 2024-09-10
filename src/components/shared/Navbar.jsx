@@ -2,11 +2,12 @@
 import { useEffect, useState } from "react";
 import { Button, Dropdown, ConfigProvider } from "antd";
 import Image from "next/image";
-import { IoMenu } from "react-icons/io5";
+import { IoLogOut, IoMenu } from "react-icons/io5";
 import { usePathname } from "next/navigation";
 import { AllImages } from "../../../public/assets/AllImages";
 import Link from "next/link";
 import Container from "../ui/Container";
+import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
   const path = usePathname();
@@ -75,6 +76,13 @@ const Navbar = () => {
     {
       name: "Pricing",
       link: "/pricing",
+    },
+  ];
+
+  const profile = [
+    {
+      name: "Personal information",
+      link: "/profile",
     },
   ];
 
@@ -149,23 +157,45 @@ const Navbar = () => {
     dropdownItems.push({
       key: "signIn",
       label: (
-        <Link href="/sign-in">
-          <Button
-            className="text-[#010515] border-[#010515] mt-3  w-full"
-            style={{
-              color: "white",
-              backgroundColor: hovered2 ? "#97C6EA" : "#97C6EA",
-              border: "1px solid #97C6EA",
-            }}
-            onMouseEnter={handleMouseEnter2}
-            onMouseLeave={handleMouseLeave2}
-          >
-            Sign out
-          </Button>
-        </Link>
+        <Button
+          className="py-5 w-full bg-secondary-color text-white border-none text-site-color font-semibold duration-200 delay-75 rounded-full shadow-inner shadow-[#ffffff85]"
+          onMouseEnter={handleMouseEnter2}
+          onMouseLeave={handleMouseLeave2}
+        >
+          Download App
+        </Button>
       ),
     });
   }
+
+  const profileItems = profile.map((item, index) => ({
+    key: String(index),
+    label: (
+      <Link href={item.link} key={index}>
+        <Button
+          className={`capitalize text-start font-medium flex justify-start items-center border-none hover:text-site-color shadow-none text-lg w-full ${
+            path === item.link ? "text-[#000106]" : "text-[#000106]"
+          }`}
+          onClick={() => select(index)}
+        >
+          <FaUserCircle className="text-site-color size-6 text-secondary-color" />
+          {item.name}
+        </Button>
+      </Link>
+    ),
+  }));
+
+  profileItems.push({
+    key: "signOut",
+    label: (
+      <Button
+        className={`capitalize text-start font-medium flex justify-start items-center border-none hover:text-site-color shadow-none text-lg w-full `}
+      >
+        <IoLogOut className="text-site-color size-6 text-secondary-color" />
+        Log out
+      </Button>
+    ),
+  });
 
   return (
     <div className="sticky top-0 left-0 w-full z-50 bg-base-color shadow-lg">
@@ -176,7 +206,7 @@ const Navbar = () => {
               <Image
                 src={AllImages.logo}
                 alt="logo"
-                className="w-[150px] h-[70px]"
+                className="w-[80px] h-[80px]"
               />
             </Link>
             <div className="ml-8 hidden lg:flex gap-x-10 space-x-4">
@@ -230,47 +260,72 @@ const Navbar = () => {
                 </>
               ) : (
                 <>
-                  <Link href="/profile">
-                    <Image
-                      src={AllImages.profile}
-                      alt="profile_img"
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      className="h-[35px] w-[35px]"
-                    />
-                  </Link>
-                  <Link href="/sign-in">
-                    <Button
-                      className="py-5 mx-3 bg-secondary-color text-white border-none text-site-color font-semibold duration-200 delay-75"
-                      onMouseEnter={handleMouseEnter2}
-                      onMouseLeave={handleMouseLeave2}
+                  <ConfigProvider
+                    theme={{
+                      components: {
+                        Dropdown: {},
+                      },
+                    }}
+                  >
+                    <Dropdown
+                      menu={{ items: profileItems }}
+                      placement="bottomCenter"
                     >
-                      Sign Out
-                    </Button>
-                  </Link>
+                      <Image
+                        src={AllImages.profile}
+                        alt="profile_img"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        className="xl:h-[35px] h-[30px] w-[30px] xl:w-[35px]"
+                      />
+                    </Dropdown>
+                  </ConfigProvider>
+
+                  <Button
+                    className="py-5 px-5 mx-3 bg-secondary-color text-white border-none text-site-color font-semibold duration-200 delay-75 rounded-full shadow-inner shadow-[#ffffff85]"
+                    onMouseEnter={handleMouseEnter2}
+                    onMouseLeave={handleMouseLeave2}
+                  >
+                    Download App
+                  </Button>
                 </>
               )}
             </div>
           </div>
 
           <div className="flex gap-2 items-center lg:hidden">
-            <Link href="/profile">
-              <Image
-                src={AllImages.profile}
-                alt="profile_img"
-                width={0}
-                height={0}
-                sizes="100vw"
-                className="h-[30px] w-[40px]"
-              />
-            </Link>
+            {path !== "/" ? (
+              <ConfigProvider
+                theme={{
+                  components: {
+                    Dropdown: {},
+                  },
+                }}
+              >
+                <Dropdown
+                  menu={{ items: profileItems }}
+                  placement="bottomRight"
+                >
+                  <Image
+                    src={AllImages.profile}
+                    alt="profile_img"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="xl:h-[35px] h-[30px] w-[30px] xl:w-[35px]"
+                  />
+                </Dropdown>
+              </ConfigProvider>
+            ) : (
+              <div></div>
+            )}
             <div className="lg:hidden">
               <ConfigProvider
                 theme={{
                   components: {
                     Dropdown: {
-                      colorBgElevated: "rgb(1,5,21)",
+                      colorBgElevated: "#F3F3F3",
                     },
                   },
                 }}

@@ -1,31 +1,152 @@
+/* eslint-disable react/no-unescaped-entities */
+"use client";
+import React, { useState, useEffect } from "react";
+import classNames from "classnames";
+import Container from "../ui/Container";
 import Image from "next/image";
-import React from "react";
-import { appAboutImg } from "../../../public/assets/AllImages";
+import { userGuide } from "../../../public/assets/AllImages";
 import SectionHeader from "../ui/SectionHeader";
 
-export default function AboutApp() {
+const sections = [
+  { id: "register", label: "Register" },
+  { id: "subscription", label: "Subscription" },
+  { id: "upload-story", label: "Upload Story" },
+  { id: "broadcast-story", label: "Broadcast Story" },
+];
+
+const AboutApp = () => {
+  const [activeSection, setActiveSection] = useState(sections[0].id);
+
+  const handleScroll = () => {
+    sections.forEach((section) => {
+      const element = document.getElementById(section.id);
+      if (element && window.scrollY >= element.offsetTop + 400) {
+        setActiveSection(section.id);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="my-28 sm:w-2/3 lg:w-1/2 mx-auto lg:mx-auto flex flex-col md:flex-row items-center gap-10">
-      <div className="w-full md:w-1/3 flex justify-center">
-        <Image
-          src={appAboutImg}
-          alt="About The App"
-          className="h-auto w-auto"
-        />
-      </div>
-      <div className="w-full md:w-2/3 flex flex-col items-center md:items-center justify-center">
-        <SectionHeader> About The App</SectionHeader>
-        <div className="mt-6 sm:w-2/3 ">
-          <p className="text-center text-sm sm:text-sm lg:text-base px-2 sm:px-0">
-            Welcome to Memorial Moments Magazine, where we celebrate life's
-            treasured memories. Our magazine captures heartfelt stories and
-            inspiring moments, honoring the past and embracing the present. Join
-            us in creating a future filled with beautiful, unforgettable
-            experiences. Explore our stories, share your own, and be inspired by
-            the moments that make life extraordinary.
-          </p>
+    <div className="text-[#F4F6FC]">
+      <Container>
+        <div className="mt-16">
+          <SectionHeader>User flow</SectionHeader>
         </div>
-      </div>
+        <div className="flex flex-col lg:flex-row relative my-28 ">
+          <div className="flex-shrink-0 lg:w-1/5 py-5 ">
+            <nav className="space-y-4 sticky lg:top-52 lg:mt-10 lg:mb-60 border-l border-primary-color py-8">
+              {sections.map((section) => (
+                <div className="-ml-[6px]  flex items-center" key={section.id}>
+                  <span
+                    className={classNames(
+                      "h-3 w-3 rounded-full bg-[#F48E48]",
+                      activeSection === section.id ? "block" : "hidden"
+                    )}
+                  ></span>
+                  <a
+                    href={`#${section.id}`}
+                    className={classNames(
+                      "block text-lg font-semibold ps-10",
+                      activeSection === section.id
+                        ? "text-secondary-color ps-8 transition ease-in-out scale-110"
+                        : "text-primary-color"
+                    )}
+                  >
+                    {section.label}
+                  </a>
+                </div>
+              ))}
+            </nav>
+          </div>
+          <div className="text-primary-color flex-grow flex flex-col w-full gap-y-28 mt-16 lg:mt-0">
+            {/* Register  */}
+            <section
+              id="register"
+              className="w-full flex flex-col justify-center items-center gap-10"
+            >
+              <Image
+                src={userGuide.userGuideRegister}
+                alt="userGuideRegister"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="h-[500px] w-[250px] md:w-[300px] md:h-[600px] lg:h-[600px] "
+              />
+              <p className="md:text-xl w-full md:w-[80%] lg:w-[70%] text-center">
+                Welcome! Sign in to your account or sign up for a new one. Use
+                OTP for secure access. Forgot your password? Update it easily.
+                Join us today and enjoy a seamless experience.
+              </p>
+            </section>
+            {/* Subscription  */}
+            <section
+              id="subscription"
+              className="w-full flex flex-col justify-center items-center gap-10"
+            >
+              <Image
+                src={userGuide.useGuideSubscription}
+                alt="useGuideSubscription"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="h-[300px] w-[500px] md:w-[750px] md:h-[500px] lg:h-[500px] "
+              />
+              <p className="md:text-xl w-full md:w-[80%] lg:w-[70%] text-center">
+                Subscribe to Memorable Moments Magazine and never miss an issue.
+                Enjoy exclusive stories, timeless tributes, and heartwarming
+                content delivered straight to your inbox. Join our community and
+                keep your memories alive every month.
+              </p>
+            </section>
+            {/* Upload Story  */}
+            <section
+              id="upload-story"
+              className="w-full flex flex-col justify-center items-center gap-10"
+            >
+              <Image
+                src={userGuide.useGuideUploadStory}
+                alt="useGuideUploadStory"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="h-[300px] w-[500px] md:w-[750px] md:h-[500px] lg:h-[500px] "
+              />
+              <p className="md:text-xl w-full md:w-[80%] lg:w-[70%] text-center">
+                Share your cherished memories with the world by uploading your
+                story. Whether it's a heartfelt tribute or a special moment, let
+                your words and photos preserve the memories that matter most to
+                you.
+              </p>
+            </section>
+            {/* Broadcast Story  */}
+            <section
+              id="broadcast-story"
+              className="w-full flex flex-col justify-center items-center gap-10"
+            >
+              <Image
+                src={userGuide.useGuideBroadcastStory}
+                alt="useGuideBroadcastStory"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="h-[500px] w-[250px] md:w-[300px] md:h-[600px] lg:h-[600px] "
+              />
+              <p className="md:text-xl w-full md:w-[80%] lg:w-[70%] text-center">
+                Welcome! Sign in to your account or sign up for a new one. Use
+                OTP for secure access. Forgot your password? Update it easily.
+                Join us today and enjoy a seamless experience.
+              </p>
+            </section>
+          </div>
+        </div>
+      </Container>
     </div>
   );
-}
+};
+
+export default AboutApp;

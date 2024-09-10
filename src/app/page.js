@@ -12,7 +12,11 @@ const HomePage = () => {
     <div>
       <Navbar />
       <Banner />
-      <RecentStories showAll={false} />
+      <RecentStories
+        title="Recent Stories"
+        description="Cherishing the Moments and Celebrating Lives Well Lived."
+        showAll={false}
+      />
       <AboutUs />
       {/* <AboutApp /> */}
       <DownloadAppSection />

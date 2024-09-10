@@ -7,7 +7,7 @@ export default function AboutUs() {
         About Us
       </p>
       <div className="border-t border-[#1A1A1A] my-5"></div>
-      <div className="flex flex-col gap-6 text-xs sm:text-lg">
+      <div className="flex flex-col gap-6 text-xs sm:text-lg text-justify">
         <p>
           Memorial Moments Magazine is your Magazine; let me explain: When you
           pick up a magazine, Better Living, Jet, Ebony, Vogue and open it……Let

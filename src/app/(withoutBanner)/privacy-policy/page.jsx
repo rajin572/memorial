@@ -8,7 +8,7 @@ export default function PrivacyPolicys() {
         Privacy Policy
       </p>
       <div className="border-t border-[#1A1A1A] my-5"></div>
-      <div className="flex flex-col gap-6 text-lg">
+      <div className="flex flex-col gap-6 text-lg text-justify">
         <p className="text-sm sm:text-lg">
           This Privacy Policy describes how Memorial Moments ("we", "us", or
           "our") collects, uses, and shares your information when you use our

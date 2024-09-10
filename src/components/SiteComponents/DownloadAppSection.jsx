@@ -6,21 +6,21 @@ import { allIcons, AllImages } from "../../../public/assets/AllImages";
 
 const DownloadAppSection = () => {
   return (
-    <div className="py-20 bg-[#C3E2FF]">
-      <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 items-end">
-          <div className="justify-self-center lg:justify-self-start">
+    <div className="py-40 bg-[#C3E2FF]">
+      <Container className="max-w-[1450px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-5 gap-x-10 items-end">
+          <div className="justify-self-center lg:justify-self-start xl:col-span-3">
             <Image
               src={AllImages.dualSmartPhone}
               alt="play_store"
               width={0}
               height={0}
               sizes="100vw"
-              className="h-[300px] w-[400px] md:h-[450px] md:w-[500px] lg:h-[550px]  lg:w-full"
+              className="h-[300px] md:h-[450px] lg:h-[500px] xl:h-[600px] w-[400px] md:w-[500px]  lg:w-[800px]"
             />
           </div>
-          <div className="text-center lg:justify-self-start mt-10 lg:mt-0">
-            <h2 className="text-secondary-color text-3xl md:text-4xl lg:text-5xl font-bold mb-7">
+          <div className="text-center lg:justify-self-start mt-10 lg:mt-0 xl:col-span-2">
+            <h2 className="text-secondary-color text-3xl md:text-4xl xl:text-5xl font-bold mb-7">
               Relive Your Greatest Moments
             </h2>
             <p className="text-primary-color md:text-lg">

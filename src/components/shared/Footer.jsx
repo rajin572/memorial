@@ -8,18 +8,18 @@ export default function Footer() {
   return (
     // <footer className="w-full bg-white text-black py-16">
     <div className="container w-[90%] mx-auto py-16">
-      <div className="flex flex-col lg:flex-row justify-between mx-auto mb-12">
+      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mx-auto mb-12">
         {/* 1st */}
-        <div className="mb-20 lg:mb-0 lg:w-2/3">
+        <div className="mb-10 lg:mb-0 lg:w-2/3 flex flex-col ">
           <Image
             src={AllImages.logo}
             alt="logo"
             width={0}
             height={0}
             sizes="100vw"
-            className="w-[200px] md:w-[250px] lg:w-[300px]"
+            className="w-[150px] md:w-[150px] lg:w-[150px]"
           />
-          <p className="text-[#1A1A1A] mt-4 text-sm sm:text-lg lg:text-xl mb-12 w-4/5">
+          <p className="text-[#1A1A1A] mt-4 sm:text-lg lg:text-xl mb-12 w-4/5">
             Memorial Moments Magazine celebrates life's treasured memories,
             capturing heartfelt stories and inspiring moments. Join us in
             honoring unforgettable experiences.
@@ -61,9 +61,9 @@ export default function Footer() {
         </div>
 
         {/* 2nd */}
-        <div className="lg:w-1/3 flex flex-col gap-6 items-start justify-center lg:justify-start">
+        <div className="lg:w-1/3 flex flex-col gap-6 items-start lg:items-center justify-center lg:justify-start">
           <p className="font-semibold text-xl mb-2 text-[#037EEE]">Links</p>
-          <div className="flex lg:flex-col gap-6">
+          <div className="flex flex-col gap-6">
             <div>
               <Link href="/">Home</Link>
             </div>
@@ -80,8 +80,10 @@ export default function Footer() {
         </div>
 
         {/* 3rd */}
-        <div className="lg:w-1/3 flex flex-col gap-6 items-start justify-start mt-6 lg:mt-0">
-          <p className="font-semibold text-xl mb-2 text-[#037EEE]">Links</p>
+        <div className="lg:w-1/3 flex flex-col gap-6 lg:items-center justify-start mt-6 lg:mt-0">
+          <p className="font-semibold text-xl mb-2 text-[#037EEE]">
+            Follow Us On
+          </p>
           <div className="flex space-x-4 mb-4">
             <div className="p-2 rounded-full bg-[#E6F2FD]">
               <Link href="#">
@@ -124,15 +126,15 @@ export default function Footer() {
       </div>
       <div className="container mx-auto px-4 ">
         <div className="border-t border-[#1A1A1A] mt-10"></div>
-        <div className="flex md:flex-col lg:flex-row justify-between lg:justify-end lg:items-center gap-2 sm:gap-10 mt-4 sm:mt-10 text-sm sm:text-xl">
+        <div className="flex flex-col md:flex-row justify-between lg:justify-end lg:items-center gap-2 sm:gap-10 mt-4 sm:mt-10 text-sm sm:text-xl">
           <Link href="/about-us">
-            <p className="text-[#1A1A1A]">About Us</p>
+            <p className="text-[#1a1a1a7c]">About Us</p>
           </Link>
           <Link href="/privacy-policy">
-            <p className="text-[#1A1A1A]">Privacy Policy</p>
+            <p className="text-[#1a1a1a7c]">Privacy Policy</p>
           </Link>
           <Link href="/terms-of-use">
-            <p className="text-[#1A1A1A]">Terms of Use</p>
+            <p className="text-[#1a1a1a7c]">Terms of Use</p>
           </Link>
         </div>
       </div>

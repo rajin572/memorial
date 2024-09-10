@@ -3,6 +3,7 @@ import { storiesImg } from "../assets/AllImages.jsx";
 export const stories = [
   {
     title: "My Beloved Grandpa",
+    tag: "Memorial_Moments#11",
     images: [
       storiesImg.beloved.beloved1,
       storiesImg.beloved.beloved2,
@@ -17,6 +18,7 @@ export const stories = [
   },
   {
     title: "My Lovable Pet.",
+    tag: "Memorial_Moments#12",
     images: [
       storiesImg.pets.pet1,
       storiesImg.pets.pet2,
@@ -36,6 +38,7 @@ export const stories = [
   },
   {
     title: "Veterans Memorial Moments.",
+    tag: "Memorial_Moments#13",
     images: [storiesImg.veterans.veterans1, storiesImg.veterans.veterans2],
     date: "2024-08-10",
     desc: "Soldiers giving salute and respect to their mate.",
@@ -52,6 +55,7 @@ export const stories = [
   },
   {
     title: "My Beloved Grandpa",
+    tag: "Memorial_Moments#14",
     images: [
       storiesImg.beloved.beloved1,
       storiesImg.beloved.beloved2,
@@ -66,6 +70,7 @@ export const stories = [
   },
   {
     title: "Veterans Memorial Moments.",
+    tag: "Memorial_Moments#15",
     images: [storiesImg.veterans.veterans1, storiesImg.veterans.veterans2],
     date: "2024-08-10",
     desc: "Soldiers giving salute and respect to their mate.",
@@ -82,6 +87,7 @@ export const stories = [
   },
   {
     title: "My Lovable Pet.",
+    tag: "Memorial_Moments#16",
     images: [
       storiesImg.pets.pet1,
       storiesImg.pets.pet2,
