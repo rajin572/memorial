@@ -119,12 +119,7 @@ const Navbar = () => {
       label: (
         <Link href="/signup">
           <Button
-            className="text-[#010515] border-[#010515] mt-3  w-full"
-            style={{
-              color: "white",
-              backgroundColor: hovered2 ? "#97C6EA" : "#97C6EA",
-              border: "1px solid #97C6EA",
-            }}
+            className="py-5 w-full bg-secondary-color text-white border-none text-site-color font-semibold duration-200 delay-75 rounded-lg shadow-md  drop-shadow-md"
             onMouseEnter={handleMouseEnter2}
             onMouseLeave={handleMouseLeave2}
           >
@@ -139,12 +134,7 @@ const Navbar = () => {
       label: (
         <Link href="/login">
           <Button
-            className="text-[#F3F3F3] border-[#F3F3F3] w-full"
-            style={{
-              color: "white",
-              backgroundColor: hovered ? "#010515" : "#010515",
-              border: "1px solid #F3F3F3",
-            }}
+            className="py-5 w-full text-primary-color border-none  bg-base-color hover:bg-base-color hover:text-primary-color font-bold duration-200 delay-75 shadow-md rounded-lg drop-shadow-md"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
@@ -173,7 +163,7 @@ const Navbar = () => {
     label: (
       <Link href={item.link} key={index}>
         <Button
-          className={`capitalize text-start font-medium flex justify-start items-center border-none hover:text-site-color shadow-none text-lg w-full ${
+          className={`capitalize text-start font-medium flex justify-start items-center border-none hover:text-site-color hover:bg-transparent shadow-none text-lg w-full ${
             path === item.link ? "text-[#000106]" : "text-[#000106]"
           }`}
           onClick={() => select(index)}
@@ -189,7 +179,7 @@ const Navbar = () => {
     key: "signOut",
     label: (
       <Button
-        className={`capitalize text-start font-medium flex justify-start items-center border-none hover:text-site-color shadow-none text-lg w-full `}
+        className={`capitalize text-start font-medium flex justify-start items-center hover:bg-transparent border-none hover:text-site-color shadow-none text-lg w-full `}
       >
         <IoLogOut className="text-site-color size-6 text-secondary-color" />
         Log out
@@ -198,7 +188,7 @@ const Navbar = () => {
   });
 
   return (
-    <div className="sticky top-0 left-0 w-full z-50 bg-base-color shadow-lg">
+    <div className="sticky top-0 left-0 w-full z-50 bg-[#ffffff] shadow-lg">
       <Container>
         <div className="flex items-center justify-between py-1 ">
           <div className="flex justify-between w-full items-center">
@@ -241,7 +231,7 @@ const Navbar = () => {
                 <>
                   <Link href="/sign-up">
                     <Button
-                      className="py-5 mx-3 bg-secondary-color text-white border-none text-site-color font-semibold duration-200 delay-75"
+                      className="py-5 mx-3 bg-secondary-color text-white border-none text-site-color font-semibold duration-200 delay-75 rounded-lg shadow-md  drop-shadow-md"
                       onMouseEnter={handleMouseEnter2}
                       onMouseLeave={handleMouseLeave2}
                     >
@@ -250,7 +240,7 @@ const Navbar = () => {
                   </Link>
                   <Link href="/sign-in">
                     <Button
-                      className="py-5 text-black border-secondary-color mx-3 bg-transparent border hover:bg-secondary-color hover:text-white font-bold duration-200 delay-75"
+                      className="py-5 text-primary-color border-none mx-3 bg-base-color hover:bg-base-color hover:text-primary-color font-bold duration-200 delay-75 shadow-md rounded-lg drop-shadow-md"
                       onMouseEnter={handleMouseEnter}
                       onMouseLeave={handleMouseLeave}
                     >

@@ -3,10 +3,24 @@ import React, { useEffect, useState } from "react";
 import { Card, Button, Col, Row } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import SectionHeader from "../ui/SectionHeader";
+import ComingSoonModal from "../ui/ComingSoonModal";
 
 export default function PricingPlan() {
   const [plans, setPlans] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
   useEffect(() => {
     // Fetch the pricing data from the JSON file
@@ -64,7 +78,13 @@ export default function PricingPlan() {
                   </li>
                 ))}
               </ul>
-              <Button block className="h-12 font-bold bg-[#013564] text-white">
+              <Button
+                onClick={() => {
+                  showModal();
+                }}
+                block
+                className="h-12 font-bold bg-[#013564] text-white"
+              >
                 <p> Buy Now</p>
                 <ArrowRightOutlined />
               </Button>
@@ -72,6 +92,7 @@ export default function PricingPlan() {
           </Col>
         ))}
       </Row>
+      <ComingSoonModal isModalOpen={isModalOpen} handleCancel={handleCancel} />
     </div>
   );
 }

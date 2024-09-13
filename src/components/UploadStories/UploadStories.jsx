@@ -31,9 +31,11 @@ import Link from "next/link";
 
 import Image from "next/image";
 import { storiesImg } from "../../../public/assets/AllImages";
+import { CiBookmark } from "react-icons/ci";
 
 const story = {
   title: "My Beloved Grandpa",
+  tag: "Memorial_Moments#15",
   images: [
     storiesImg.beloved.beloved1,
     storiesImg.beloved.beloved2,
@@ -73,7 +75,13 @@ const UploadStory = () => {
   };
 
   return (
-    <div className="my-20">
+    <div className="relative my-20">
+      <div
+        style={{
+          boxShadow: "0px 0px 200px 90px #3598F188",
+        }}
+        className="absolute left-[-50%] sm:left-[-30%] md:left-[-25%] xl:left-[-23%] md:top-[5%] w-[20%] h-[40vh]"
+      ></div>
       <Container>
         <SectionHeader>Published stories</SectionHeader>
         <p className="text-2xl text-center lg:w-[80%] mx-auto mt-10">
@@ -92,26 +100,38 @@ const UploadStory = () => {
             </p>
           </div>
           <Card
-            className="relative overflow-hidden rounded-lg shadow-lg bg-[#F7F6FA]"
+            className="relative overflow-hidden rounded-lg shadow-lg bg-[#F7F6FA] w-full "
             hoverable
-            style={{ width: "100%", height: "500px" }}
+            // style={{ width: "100%", height: "500px" }}
             cover={
-              <div className="relative h-2/3">
-                <Carousel autoplay>
-                  {story.images.map((img, i) => (
-                    <div key={i}>
-                      <Image
-                        src={img}
-                        alt={story.title}
-                        width={0}
-                        height={0}
-                        sizes="100vw"
-                        style={{ objectFit: "cover" }}
-                        className="w-full max-h-[300px]"
-                      />
-                    </div>
-                  ))}
-                </Carousel>
+              <div className="relative">
+                <ConfigProvider
+                  theme={{
+                    components: {
+                      Carousel: {
+                        colorBgContainer: "#FFFFFF",
+                        dotActiveWidth: 12,
+                        dotHeight: 12,
+                        dotWidth: 12,
+                      },
+                    },
+                  }}
+                >
+                  <Carousel autoplay>
+                    {story.images.map((img, i) => (
+                      <div key={i}>
+                        <Image
+                          src={img}
+                          alt={story.title}
+                          width={0}
+                          height={0}
+                          style={{ objectFit: "cover" }}
+                          className="rounded-lg w-full h-60 lg:h-72 xl:h-80"
+                        />
+                      </div>
+                    ))}
+                  </Carousel>
+                </ConfigProvider>
                 {/* Overlay date badge */}
                 <Badge
                   count={
@@ -125,16 +145,21 @@ const UploadStory = () => {
               </div>
             }
           >
-            <div className="bg-[#F7F6FA] h-1/3 flex flex-col justify-between gap-2">
-              <Link href="/stories/1">
-                <h3 className="text-lg font-bold mb-1 text-primary-color">
-                  {story.title}
-                </h3>
-              </Link>
-              <p className="text-sm mb-1 text-[#625F68]">
-                {truncateDescription(story.desc)}
-              </p>
-              <div className="flex flex-col justify-between gap-1 text-sm text-gray-600">
+            <div className="bg-[#F7F6FA]  h-[200px] sm:h-[200px] md:h-[210px] lg:max-h-[230px] xl:h-[200px] flex flex-col justify-between items-start">
+              <div>
+                <p className="text-sm text-[#3598F1] font-semibold">
+                  {story.tag}
+                </p>
+                <Link href="/stories/1">
+                  <h3 className="text-xl lg:text-2xl font-bold mb-1 text-primary-color">
+                    {story.title}
+                  </h3>
+                </Link>
+                <p className=" lg:text-lg mb-1 text-[#484848]">
+                  {truncateDescription(story.desc)}
+                </p>
+              </div>
+              <div className="flex flex-col justify-between w-full gap-1 lg:text-lg text-[#5C5F66]">
                 <div className="flex items-center">
                   <CommentOutlined className="mr-1" />
                   {story.comments.length} Comments
@@ -142,7 +167,7 @@ const UploadStory = () => {
                 <div className="flex justify-between items-center">
                   <span>{story.desc.split(" ").length} Words</span>
                   <p>
-                    <BookFilled size={50} />
+                    <CiBookmark size={20} />
                   </p>
                 </div>
               </div>

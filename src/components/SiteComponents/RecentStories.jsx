@@ -43,7 +43,13 @@ export default function RecentStories({
   };
 
   return (
-    <div className="my-20 flex flex-col items-center gap-16">
+    <div className=" relative my-20 flex flex-col items-center gap-16">
+      <div
+        style={{
+          boxShadow: "0px 0px 200px 90px #3598F188",
+        }}
+        className="absolute left-[-50%] sm:left-[-30%] md:left-[-25%] xl:left-[-23%] md:top-[5%] w-[20%] h-[40vh]"
+      ></div>
       <Container>
         <SectionHeader>{title}</SectionHeader>
 
@@ -77,7 +83,7 @@ export default function RecentStories({
             {displayedStories.map((story, index) => (
               <Col key={index} xs={24} sm={12} md={8} lg={8}>
                 <Card
-                  className="relative overflow-hidden rounded-lg shadow-lg bg-[#F7F6FA] w-full "
+                  className="relative overflow-hidden rounded-lg shadow-lg bg-[#F7F6FA] w-full h-full"
                   hoverable
                   // style={{ width: "100%", height: "500px" }}
                   cover={
@@ -103,7 +109,7 @@ export default function RecentStories({
                                 width={0}
                                 height={0}
                                 style={{ objectFit: "cover" }}
-                                className="rounded-lg w-full h-52 lg:h-60"
+                                className="rounded-lg w-full h-60 lg:h-72 xl:h-80"
                               />
                             </div>
                           ))}
@@ -122,10 +128,7 @@ export default function RecentStories({
                     </div>
                   }
                 >
-                  <div
-                    className="bg-[#F7F6FA]  h-[200px] sm:h-[200px] md:h-[210px] 
-                   lg:max-h-[230px] xl:h-[200px] flex flex-col justify-between items-start"
-                  >
+                  <div className="bg-[#F7F6FA]  h-[200px] sm:h-[200px] md:h-[210px] lg:max-h-[230px] xl:h-[200px] flex flex-col justify-between items-start">
                     <div>
                       <p className="text-sm text-[#3598F1] font-semibold">
                         {story.tag}

@@ -22,7 +22,13 @@ const StoryDeatils = () => {
 
   const [category, setCategory] = useState("veteran");
   return (
-    <div className="my-20">
+    <div className="relative my-20">
+      <div
+        style={{
+          boxShadow: "0px 0px 200px 90px #3598F188",
+        }}
+        className="absolute left-[-50%] sm:left-[-30%] md:left-[-25%] xl:left-[-23%] md:top-[5%] w-[20%] h-[40vh]"
+      ></div>
       <Container>
         <SectionHeader>Published stories details</SectionHeader>
         <div className="mt-20 ">
@@ -30,7 +36,7 @@ const StoryDeatils = () => {
             My Veteran Friend
           </h1>
           <div
-            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center items-center gap-5 `}
+            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center items-center gap-5 `}
           >
             <Image
               src={AllImages.details1}
@@ -38,7 +44,7 @@ const StoryDeatils = () => {
               width={0}
               height={0}
               sizes="100vw"
-              className={`w-[420px] h-[300px] col-span-1 `}
+              className={`w-full sm:h-full col-span-1 `}
             />
             <Image
               src={AllImages.details3}
@@ -46,7 +52,7 @@ const StoryDeatils = () => {
               width={0}
               height={0}
               sizes="100vw"
-              className={`w-[420px] h-[300px] md:h-full col-span-1 md:row-span-2`}
+              className={`w-full sm:h-full  col-span-1 sm:row-span-2`}
             />
             <Image
               src={AllImages.details2}
@@ -54,7 +60,7 @@ const StoryDeatils = () => {
               width={0}
               height={0}
               sizes="100vw"
-              className={`w-[420px] h-[300px] col-span-1`}
+              className={`w-full sm:h-full col-span-1`}
             />
             <Image
               src={AllImages.details4}
@@ -62,7 +68,7 @@ const StoryDeatils = () => {
               width={0}
               height={0}
               sizes="100vw"
-              className={`w-[420px] h-[300px] col-span-1`}
+              className={`w-full sm:h-full col-span-1`}
             />
             <Image
               src={AllImages.details5}
@@ -70,7 +76,7 @@ const StoryDeatils = () => {
               width={0}
               height={0}
               sizes="100vw"
-              className={`w-[420px] h-[300px] col-span-1`}
+              className={`w-full sm:h-full col-span-1`}
             />
           </div>
           <div className="mt-12">
