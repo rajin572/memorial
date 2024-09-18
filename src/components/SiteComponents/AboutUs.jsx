@@ -9,7 +9,7 @@ import { LoadingOutlined } from "@ant-design/icons";
 
 export default function AboutUs() {
   return (
-    <div className="my-12 sm:my-28 lg:mt-40">
+    <div className="relative py-12 sm:py-28 lg:mt-40 overflow-hidden">
       <Container>
         <div className="flex flex-col items-center gap-5 sm:gap-16">
           {/* page name */}
@@ -53,11 +53,10 @@ export default function AboutUs() {
                 Loved Ones
               </h2>
               <p className="w-full sm:w-[80%] lg:w-[80%] xl:w-[80%] text-lg sm:text-xl ">
-                The Anderson family visited Grandpa Joe's grave, placing
-                sunflowers as they remembered him. Mom wept, Dad comforted her,
-                and Tommy and Emily reflected quietly. Dad reassured them,
-                saying Grandpa would always remain in their hearts, never truly
-                gone.
+                Loved ones are the people who fill our lives with care, warmth,
+                and support. They stand by us in times of joy and sorrow,
+                offering unconditional love, making every moment brighter and
+                more meaningful.
               </p>
             </div>
           </div>
@@ -90,10 +89,10 @@ export default function AboutUs() {
                 Veterans Memorial Moments
               </h2>
               <p className="w-full sm:w-[80%] lg:w-[80%] xl:w-[80%] text-lg sm:text-xl ">
-                As the sun set, Lieutenant Johnson honored fallen comrades at
-                the veteran's memorial. He traced the names etched in stone,
-                memories of sacrifice flooding his mind. Placing a wreath, he
-                vowed, "We will never forget," and the crowd silently agreed.
+                Veterans Memorial Moments honors the courage and sacrifice of
+                those who served. Each reflection offers a heartfelt tribute,
+                preserving their legacy and reminding us of the deep gratitude
+                we owe to the heroes who defended our freedom.
               </p>
             </div>
           </div>
@@ -126,15 +125,22 @@ export default function AboutUs() {
                 Pets Memorial Moments
               </h2>
               <p className="w-full sm:w-[80%] lg:w-[80%] xl:w-[80%] text-lg sm:text-xl ">
-                As the sun set, Max lay peacefully on the rug, his soft
-                breathing filling the room. His presence brought comfort, and
-                his playful spirit always brightened your day. More than a pet,
-                Max was your loyal companion and cherished friend.
+                Pets Memorial Moments honors the cherished memories of our
+                beloved companions. Through heartfelt reflections, we celebrate
+                their unconditional love, joy, and loyalty, ensuring their
+                spirit lives on in our hearts, forever reminding us of the bond
+                we shared.
               </p>
             </div>
           </div>
         </div>
       </Container>
+      <div
+        style={{
+          boxShadow: " 0px 0px 200px 90px #3598F188",
+        }}
+        className="hidden lg:block absolute right-[-15%] sm:right-[-10%] md:right-[-15%] xl:right-[-10%] lg:bottom-[5%] w-[8%] h-[20vh]"
+      ></div>
     </div>
   );
 }

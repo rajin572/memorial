@@ -42,11 +42,11 @@ const DownloadAppSection = () => {
                   width={0}
                   height={0}
                   sizes="100vw"
-                  className="h-[20px] w-[20px] md:h-[40px] md:w-[40px]"
+                  className="h-[20px] w-[20px] sm:h-[30px] sm:w-[30px] md:h-[40px] md:w-[40px]"
                 />
                 <div>
                   <p className="text-xs text-base-color mb-1">Get it on</p>
-                  <h1 className="text-base-color text-sm md:text-xl">
+                  <h1 className="text-base-color text-sm sm:text-lg md:text-xl">
                     Download App
                   </h1>
                 </div>
@@ -58,13 +58,13 @@ const DownloadAppSection = () => {
                   width={0}
                   height={0}
                   sizes="100vw"
-                  className="h-[20px] w-[20px]  md:h-[40px] md:w-[40px]"
+                  className="h-[20px] w-[20px] sm:h-[30px] sm:w-[30px] md:h-[40px] md:w-[40px]"
                 />
                 <div>
                   <p className="text-xs text-base-color mb-1">
                     Download on the
                   </p>
-                  <h1 className="text-base-color text-sm md:text-xl">
+                  <h1 className="text-base-color text-sm sm:text-lg md:text-xl">
                     Apple Store
                   </h1>
                 </div>

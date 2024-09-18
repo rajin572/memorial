@@ -17,6 +17,23 @@ export const stories = [
     ],
   },
   {
+    title: "Veterans Memorial Moments.",
+    tag: "Memorial_Moments#13",
+    images: [storiesImg.veterans.veterans1, storiesImg.veterans.veterans2],
+    date: "2024-08-10",
+    desc: "Soldiers giving salute and respect to their mate.",
+    comments: [
+      {
+        user: "SciFiLover",
+        text: "This is what space exploration should be like!",
+      },
+      {
+        user: "Astronaut42",
+        text: "The depiction of space travel was so realistic.",
+      },
+    ],
+  },
+  {
     title: "My Lovable Pet.",
     tag: "Memorial_Moments#12",
     images: [
@@ -33,23 +50,6 @@ export const stories = [
       {
         user: "GhostHunter",
         text: "I couldn’t sleep after reading this.",
-      },
-    ],
-  },
-  {
-    title: "Veterans Memorial Moments.",
-    tag: "Memorial_Moments#13",
-    images: [storiesImg.veterans.veterans1, storiesImg.veterans.veterans2],
-    date: "2024-08-10",
-    desc: "Soldiers giving salute and respect to their mate.",
-    comments: [
-      {
-        user: "SciFiLover",
-        text: "This is what space exploration should be like!",
-      },
-      {
-        user: "Astronaut42",
-        text: "The depiction of space travel was so realistic.",
       },
     ],
   },

@@ -37,5 +37,11 @@ export const mainTheme = {
       colorIcon: "rgb(255, 255, 255)",
       colorTextPlaceholder: "rgba(250, 244, 244, 0.25)",
     },
+    Carousel: {
+      colorBgContainer: "#FFFFFF",
+      dotActiveWidth: 12,
+      dotHeight: 12,
+      dotWidth: 12,
+    },
   },
 };
