@@ -30,9 +30,9 @@ export default function Banner() {
         alt="banner-image"
         fill
         style={{ objectFit: "cover" }}
-        className="absolute mix-blend-overlay  sm:w-full h-full"
+        className="relative   sm:w-full h-full"
       />
-      <div className="relative z-10 text-white flex flex-col justify-end  items-start h-full pt-0 pb-20 sm:pb-20 lg:pb-40 ps-5 sm:ps-20 lg:ps-28 xl:ps-40">
+      <div className="absolute bottom-[13%] left-5 sm:left-[10%] xl:left-[15%]  z-10 text-white flex flex-col justify-end  items-start h-full ">
         <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black">
           Memorial Moments Magazine
         </p>
