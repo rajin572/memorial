@@ -83,7 +83,7 @@ const AboutApp = () => {
                 Join us today and enjoy a seamless experience.
               </p>
             </section>
-            {/* Subscription  */}
+            {/* Subscription   */}
             <section
               id="subscription"
               className="w-full flex flex-col justify-center items-center gap-10"
