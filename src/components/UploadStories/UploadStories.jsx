@@ -413,7 +413,7 @@ const UploadStory = () => {
               <Typography.Title level={5} style={{ color: "#010515" }}>
                 Select Music
               </Typography.Title>
-              <Form.Item required={true} name="category">
+              <Form.Item required={true} name="music">
                 <Select
                   onChange={onChange}
                   placeholder="Select Music"

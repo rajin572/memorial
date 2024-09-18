@@ -1,10 +1,20 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Container from "../ui/Container";
 import Image from "next/image";
 import { Button } from "antd";
 import { allIcons, AllImages } from "../../../public/assets/AllImages";
+import ComingSoonModal from "../ui/ComingSoonModal";
 
 const DownloadAppSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div className="py-40 bg-[#C3E2FF]">
       <Container className="max-w-[1450px]">
@@ -35,7 +45,12 @@ const DownloadAppSection = () => {
               Download App
             </Button>
             <div className="flex justify-center items-center gap-2">
-              <Button className=" text-start gap-1 py-8  md:w-[200px] bg-[#1A1A1A] border-none rounded-xl">
+              <Button
+                onClick={() => {
+                  showModal();
+                }}
+                className=" text-start gap-1 py-8  md:w-[200px] bg-[#1A1A1A] border-none rounded-xl"
+              >
                 <Image
                   src={allIcons.playstore}
                   alt="play_store"
@@ -51,7 +66,12 @@ const DownloadAppSection = () => {
                   </h1>
                 </div>
               </Button>
-              <Button className=" text-start gap-1 py-8  md:w-[200px] bg-[#1A1A1A] border-none rounded-xl">
+              <Button
+                onClick={() => {
+                  showModal();
+                }}
+                className=" text-start gap-1 py-8  md:w-[200px] bg-[#1A1A1A] border-none rounded-xl"
+              >
                 <Image
                   src={allIcons.appleStore}
                   alt="apple_store"
@@ -73,6 +93,11 @@ const DownloadAppSection = () => {
           </div>
         </div>
       </Container>
+      <ComingSoonModal
+        isModalOpen={isModalOpen}
+        handleCancel={handleCancel}
+        message={"Our Apps Will Be Available Soon."}
+      />
     </div>
   );
 };
