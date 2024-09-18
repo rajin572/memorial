@@ -29,7 +29,7 @@ const AboutApp = () => {
 
     const observer = new IntersectionObserver(handleIntersection, {
       root: null, // viewport
-      threshold: 1, // When 100% of the section is visible
+      threshold: 0.9, // When 90% of the section is visible
     });
 
     sections.forEach((section) => {
