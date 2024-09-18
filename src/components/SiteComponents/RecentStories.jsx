@@ -134,7 +134,6 @@ export default function RecentStories({
                         <p className="text-sm text-[#3598F1] font-semibold">
                           {story.tag}
                         </p>
-
                         <h3 className="text-xl lg:text-2xl font-bold mb-1 text-primary-color">
                           {story.title}
                         </h3>

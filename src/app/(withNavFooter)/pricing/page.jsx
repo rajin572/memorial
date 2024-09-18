@@ -4,6 +4,7 @@ import Banner from "@/components/shared/Banner";
 
 export default function Pricing() {
   return (
+
     <div>
       <Banner />
       <div className="relative">
