@@ -285,7 +285,7 @@ const UploadStory = () => {
               </Typography.Title>
               <Form.Item name="images" className="text-white ">
                 <Upload
-                  style={{ width: "100%" }}
+                  // style={{ width: "100%" }}
                   action="/upload.do"
                   listType="picture-card"
                 >
@@ -384,7 +384,7 @@ const UploadStory = () => {
             {/* Date of Death  */}
             <div>
               <Typography.Title level={5} style={{ color: "#010515" }}>
-                Date of Death
+                Date of Passing
               </Typography.Title>
               <Form.Item name="dateOfDeath" className="text-white ">
                 <DatePicker
@@ -407,6 +407,31 @@ const UploadStory = () => {
                   placeholder="Write your story... "
                   className="py-2 px-3 bg-transparent border-[#0000004d] text-primary-color hover:bg-transparent hover:border-primary-color focus:bg-transparent focus:border-primary-color"
                 />
+              </Form.Item>
+            </div>
+            <div>
+              <Typography.Title level={5} style={{ color: "#010515" }}>
+                Select Music
+              </Typography.Title>
+              <Form.Item required={true} name="category">
+                <Select
+                  onChange={onChange}
+                  placeholder="Select Music"
+                  suffixIcon={
+                    <DownOutlined className="text-[#1A1A1A] text-xl mt-1" />
+                  }
+                  className="h-10 border-[#0000004d]  hover:border-primary-color focus:border-primary-color"
+                >
+                  <Select.Option value="amazingGrace">
+                    Amazing Grace
+                  </Select.Option>
+                  <Select.Option value="howGreatThouArt">
+                    How Great Thou Art
+                  </Select.Option>
+                  <Select.Option value="swingLowSweetChariot">
+                    Swing Low Sweet Chariot
+                  </Select.Option>
+                </Select>
               </Form.Item>
             </div>
             <div className="mt-5">

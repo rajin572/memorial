@@ -118,14 +118,16 @@ const Profile = () => {
             className="bg-transparent w-full"
           >
             <div className="flex flex-col sm:flex-row items-center gap-10">
-              <Image
-                src={AllImages.profile}
-                alt="profile_img"
-                width={0}
-                height={0}
-                sizes="100vw"
-                className="h-[150px] w-[150px] md:h-[200px] md:w-[200px] lg:h-[250px] lg:w-[250px] "
-              />
+              <div className="rounded-full border-2 border-btn-secoundary">
+                <Image
+                  src={AllImages.profile}
+                  alt="profile_img"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="h-[150px] w-[150px] md:h-[200px] md:w-[200px] lg:h-[250px] lg:w-[250px] "
+                />
+              </div>
               <div className="flex items-center flex-col">
                 <p className="text-xl text-primary-color mb-7">
                   Maximum size 5mb. Format jpg, jpeg, png.

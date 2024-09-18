@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     // <footer className="w-full bg-white text-black py-16">
     <div className="container w-[90%] mx-auto py-16">
-      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mx-auto mb-12">
+      <div className="flex flex-col lg:flex-row justify-between items-start  mx-auto mb-12">
         {/* 1st */}
         <div className="mb-10 lg:mb-0 lg:w-2/3 flex flex-col ">
           <Image
@@ -62,7 +62,9 @@ export default function Footer() {
 
         {/* 2nd */}
         <div className="lg:w-1/3 flex flex-col gap-6 items-start lg:items-center justify-center lg:justify-start">
-          <p className="font-semibold text-xl mb-2 text-[#037EEE]">Links</p>
+          <p className="font-semibold text-xl mb-2 text-[#037EEE] lg:-ml-4">
+            Links
+          </p>
           <div className="flex flex-col gap-6">
             <div>
               <Link href="/">Home</Link>

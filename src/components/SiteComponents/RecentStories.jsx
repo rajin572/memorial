@@ -82,80 +82,81 @@ export default function RecentStories({
           <Row gutter={[16, 16]} className="flex flex-wrap justify-center ">
             {displayedStories.map((story, index) => (
               <Col key={index} xs={24} sm={12} md={8} lg={8}>
-                <Card
-                  className="relative overflow-hidden rounded-lg shadow-lg bg-[#F7F6FA] w-full h-full"
-                  hoverable
-                  // style={{ width: "100%", height: "500px" }}
-                  cover={
-                    <div className="relative">
-                      <ConfigProvider
-                        theme={{
-                          components: {
-                            Carousel: {
-                              colorBgContainer: "#FFFFFF",
-                              dotActiveWidth: 12,
-                              dotHeight: 12,
-                              dotWidth: 12,
+                <Link href="/stories/1">
+                  <Card
+                    className="relative overflow-hidden rounded-lg shadow-lg bg-[#F7F6FA] w-full h-full"
+                    hoverable
+                    // style={{ width: "100%", height: "500px" }}
+                    cover={
+                      <div className="relative">
+                        <ConfigProvider
+                          theme={{
+                            components: {
+                              Carousel: {
+                                colorBgContainer: "#FFFFFF",
+                                dotActiveWidth: 12,
+                                dotHeight: 12,
+                                dotWidth: 12,
+                              },
                             },
-                          },
-                        }}
-                      >
-                        <Carousel autoplay>
-                          {story.images.map((img, i) => (
-                            <div key={i}>
-                              <Image
-                                src={img}
-                                alt={story.title}
-                                width={0}
-                                height={0}
-                                style={{ objectFit: "cover" }}
-                                className="rounded-lg w-full h-60 lg:h-72 xl:h-80"
-                              />
+                          }}
+                        >
+                          <Carousel autoplay>
+                            {story.images.map((img, i) => (
+                              <div key={i}>
+                                <Image
+                                  src={img}
+                                  alt={story.title}
+                                  width={0}
+                                  height={0}
+                                  style={{ objectFit: "cover" }}
+                                  className="rounded-lg w-full h-60 lg:h-72 xl:h-80"
+                                />
+                              </div>
+                            ))}
+                          </Carousel>
+                        </ConfigProvider>
+                        {/* Overlay date badge */}
+                        <Badge
+                          count={
+                            <div className="bg-[#C3E2FF] bg-opacity-90 p-1 rounded">
+                              <CalendarOutlined className="mr-1" />
+                              {story.date}
                             </div>
-                          ))}
-                        </Carousel>
-                      </ConfigProvider>
-                      {/* Overlay date badge */}
-                      <Badge
-                        count={
-                          <div className="bg-[#C3E2FF] bg-opacity-90 p-1 rounded">
-                            <CalendarOutlined className="mr-1" />
-                            {story.date}
-                          </div>
-                        }
-                        className="absolute top-2 right-2"
-                      />
-                    </div>
-                  }
-                >
-                  <div className="bg-[#F7F6FA]  h-[200px] sm:h-[200px] md:h-[210px] lg:max-h-[230px] xl:h-[200px] flex flex-col justify-between items-start">
-                    <div>
-                      <p className="text-sm text-[#3598F1] font-semibold">
-                        {story.tag}
-                      </p>
-                      <Link href="/stories/1">
+                          }
+                          className="absolute top-2 right-2"
+                        />
+                      </div>
+                    }
+                  >
+                    <div className="bg-[#F7F6FA]  h-[200px] sm:h-[200px] md:h-[210px] lg:max-h-[230px] xl:h-[200px] flex flex-col justify-between items-start">
+                      <div>
+                        <p className="text-sm text-[#3598F1] font-semibold">
+                          {story.tag}
+                        </p>
                         <h3 className="text-xl lg:text-2xl font-bold mb-1 text-primary-color">
                           {story.title}
                         </h3>
-                      </Link>
-                      <p className=" lg:text-lg mb-1 text-[#484848]">
-                        {truncateDescription(story.desc)}
-                      </p>
-                    </div>
-                    <div className="flex flex-col justify-between w-full gap-1 lg:text-lg text-[#5C5F66]">
-                      <div className="flex items-center">
-                        <CommentOutlined className="mr-1" />
-                        {story.comments.length} Comments
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span>{story.desc.split(" ").length} Words</span>
-                        <p>
-                          <CiBookmark size={20} />
+
+                        <p className=" lg:text-lg mb-1 text-[#484848]">
+                          {truncateDescription(story.desc)}
                         </p>
                       </div>
+                      <div className="flex flex-col justify-between w-full gap-1 lg:text-lg text-[#5C5F66]">
+                        <div className="flex items-center">
+                          <CommentOutlined className="mr-1" />
+                          {story.comments.length} Comments
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span>{story.desc.split(" ").length} Words</span>
+                          <p>
+                            <CiBookmark size={20} />
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </Card>
+                  </Card>
+                </Link>
               </Col>
             ))}
           </Row>

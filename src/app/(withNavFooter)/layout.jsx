@@ -6,7 +6,6 @@ const MainLayout = ({ children }) => {
   return (
     <div className="relative">
       <Navbar />
-      <Banner />
       <div>{children}</div>
       <Footer />
     </div>

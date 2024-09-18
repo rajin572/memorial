@@ -6,6 +6,7 @@ import Container from "../ui/Container";
 import Image from "next/image";
 import { userGuide } from "../../../public/assets/AllImages";
 import SectionHeader from "../ui/SectionHeader";
+import { useRouter } from "next/navigation";
 
 const sections = [
   { id: "register", label: "Register" },
@@ -17,18 +18,35 @@ const sections = [
 const AboutApp = () => {
   const [activeSection, setActiveSection] = useState(sections[0].id);
 
-  const handleScroll = () => {
+  useEffect(() => {
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      root: null, // viewport
+      threshold: 1, // When 100% of the section is visible
+    });
+
     sections.forEach((section) => {
       const element = document.getElementById(section.id);
-      if (element && window.scrollY >= element.offsetTop + 400) {
-        setActiveSection(section.id);
+      if (element) {
+        observer.observe(element);
       }
     });
-  };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      sections.forEach((section) => {
+        const element = document.getElementById(section.id);
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
   }, []);
 
   return (
@@ -67,7 +85,7 @@ const AboutApp = () => {
             {/* Register  */}
             <section
               id="register"
-              className="w-full flex flex-col justify-center items-center gap-10"
+              className="w-full flex flex-col justify-center items-center gap-10  py-20"
             >
               <Image
                 src={userGuide.userGuideRegister}
@@ -86,7 +104,7 @@ const AboutApp = () => {
             {/* Subscription  */}
             <section
               id="subscription"
-              className="w-full flex flex-col justify-center items-center gap-10"
+              className="w-full flex flex-col justify-center items-center gap-10  py-20"
             >
               <Image
                 src={userGuide.useGuideSubscription}
@@ -106,7 +124,7 @@ const AboutApp = () => {
             {/* Upload Story  */}
             <section
               id="upload-story"
-              className="w-full flex flex-col justify-center items-center gap-10"
+              className="w-full flex flex-col justify-center items-center gap-10  py-20"
             >
               <Image
                 src={userGuide.useGuideUploadStory}
@@ -126,7 +144,7 @@ const AboutApp = () => {
             {/* Broadcast Story  */}
             <section
               id="broadcast-story"
-              className="w-full flex flex-col justify-center items-center gap-10"
+              className="w-full flex flex-col justify-center items-center gap-10  py-20"
             >
               <Image
                 src={userGuide.useGuideBroadcastStory}
