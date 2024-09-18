@@ -23,6 +23,11 @@ const StoryDeatils = () => {
   const [category, setCategory] = useState("veteran");
   return (
     <div className="relative my-20">
+      <audio
+        autoPlay
+        loop
+        src="/assets/audio/Shimmer_Navy_Hymn_instrumental_4_29 (1).mp3"
+      />
       <div
         style={{
           boxShadow: "0px 0px 200px 90px #3598F188",
@@ -80,6 +85,9 @@ const StoryDeatils = () => {
             />
           </div>
           <div className="mt-12">
+            <p className="text-sm sm:text-base text-[#3598F1] font-semibold mb-4">
+              Memorial_Moments#12
+            </p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl text-primary-color font-semibold mb-5">
               A Story About My Veteran Friend.
             </h2>
