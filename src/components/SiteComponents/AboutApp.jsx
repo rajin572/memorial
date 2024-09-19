@@ -6,7 +6,15 @@ import Container from "../ui/Container";
 import Image from "next/image";
 import { userGuide } from "../../../public/assets/AllImages";
 import SectionHeader from "../ui/SectionHeader";
-import { useRouter } from "next/navigation";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Autoplay } from "swiper/modules";
 
 const sections = [
   { id: "register", label: "Register" },
@@ -14,6 +22,31 @@ const sections = [
   { id: "upload-story", label: "Upload Story" },
   { id: "broadcast-story", label: "Broadcast Story" },
 ];
+
+const registerSliderImages = [
+  { img: userGuide.register1 },
+  { img: userGuide.register1 },
+  { img: userGuide.register1 },
+  { img: userGuide.register1 },
+];
+// const practiceRegisterSliderImages = [
+//   { img: userGuide.userGuideRegister },
+//   { img: userGuide.userGuideRegister },
+//   { img: userGuide.userGuideRegister },
+//   { img: userGuide.userGuideRegister },
+// ];
+const broadcastStorySliderImages = [
+  { img: userGuide.broadcastStory1 },
+  { img: userGuide.broadcastStory1 },
+  { img: userGuide.broadcastStory1 },
+  { img: userGuide.broadcastStory1 },
+];
+// const practiceBroadcastStorySliderImages = [
+//   { img: userGuide.useGuideBroadcastStory },
+//   { img: userGuide.useGuideBroadcastStory },
+//   { img: userGuide.useGuideBroadcastStory },
+//   { img: userGuide.useGuideBroadcastStory },
+// ];
 
 const AboutApp = () => {
   const [activeSection, setActiveSection] = useState(sections[0].id);
@@ -87,14 +120,67 @@ const AboutApp = () => {
               id="register"
               className="w-full flex flex-col justify-center items-center gap-10  py-20"
             >
-              <Image
-                src={userGuide.userGuideRegister}
-                alt="userGuideRegister"
-                width={0}
-                height={0}
-                sizes="100vw"
-                className="h-[500px] w-[250px] md:w-[300px] md:h-[600px] lg:h-[600px] "
-              />
+              <div
+                className="relative h-[520px] w-[250px] sm:w-[300px] sm:h-[620px] lg:h-[620px] p-10  flex justify-center items-center overflow-hidden gap-0 select-none"
+                style={{
+                  backgroundImage: `url(${userGuide.casing.src})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                <Swiper
+                  spaceBetween={0}
+                  draggable={false}
+                  autoplay={{
+                    delay: 2000,
+                    disableOnInteraction: false,
+                  }}
+                  modules={[Autoplay]}
+                  className="mySwiper absolute sm:top-[15px] sm:left-[12px] h-[96%] w-[93%] sm:h-[95%] sm:w-[92%] rounded-[36px] sm:rounded-[40px] bg-[#C3E2FE]"
+                >
+                  {registerSliderImages.map((img, i) => (
+                    <SwiperSlide
+                      // className="w-full flex justify-center items-center gap-0"
+                      key={i}
+                    >
+                      <Image
+                        src={img.img}
+                        alt="userGuideRegister"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        className="h-full w-full"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+              {/* Practice  */}
+              {/* <Swiper
+                spaceBetween={0}
+                draggable={false}
+                autoplay={{
+                  delay: 2000,
+                  disableOnInteraction: false,
+                }}
+                modules={[Autoplay]}
+                className="mySwiper h-[500px] w-[250px] md:w-[300px] md:h-[600px] lg:h-[600px] "
+              >
+                {practiceRegisterSliderImages.map((img, i) => (
+                  <SwiperSlide key={i}>
+                    <Image
+                      src={img.img}
+                      alt="userGuideRegister"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      className="h-full w-full"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper> */}
+              {/* Practice  */}
+
               <p className="md:text-xl w-full md:w-[80%] lg:w-[70%] text-center">
                 Welcome! Sign in to your account or sign up for a new one. Use
                 OTP for secure access. Forgot your password? Update it easily.
@@ -146,14 +232,66 @@ const AboutApp = () => {
               id="broadcast-story"
               className="w-full flex flex-col justify-center items-center gap-10  py-20"
             >
-              <Image
-                src={userGuide.useGuideBroadcastStory}
-                alt="useGuideBroadcastStory"
-                width={0}
-                height={0}
-                sizes="100vw"
-                className="h-[500px] w-[250px] md:w-[300px] md:h-[600px] lg:h-[600px] "
-              />
+              {/* Practice  */}
+              {/* <Swiper
+                spaceBetween={0}
+                draggable={false}
+                autoplay={{
+                  delay: 2000,
+                  disableOnInteraction: false,
+                }}
+                modules={[Autoplay]}
+                className="mySwiper h-[500px] w-[250px] md:w-[300px] md:h-[600px] lg:h-[600px]"
+              >
+                {practiceBroadcastStorySliderImages.map((img, i) => (
+                  <SwiperSlide key={i}>
+                    <Image
+                      src={img.img}
+                      alt="userGuideRegister"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      className="h-full w-full"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper> */}
+              {/* Practice  */}
+              <div>
+                <div
+                  className="relative h-[520px] w-[250px] sm:w-[300px] sm:h-[620px] lg:h-[620px] p-10  flex justify-center items-center overflow-hidden gap-0 select-none"
+                  style={{
+                    backgroundImage: `url(${userGuide.casing.src})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  <Swiper
+                    spaceBetween={0}
+                    draggable={true}
+                    autoplay={{
+                      delay: 2000,
+                      disableOnInteraction: false,
+                    }}
+                    modules={[Autoplay]}
+                    className="mySwiper absolute sm:top-[15px] sm:left-[12px] h-[96%] w-[93%] sm:h-[95%] sm:w-[92%] rounded-[36px] sm:rounded-[40px] bg-[#C3E2FE]"
+                  >
+                    {broadcastStorySliderImages.map((img, i) => (
+                      <SwiperSlide key={i}>
+                        <Image
+                          src={img.img}
+                          alt="userGuideRegister"
+                          width={0}
+                          height={0}
+                          sizes="100vw"
+                          className="h-full w-full"
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
+              </div>
+
               <p className="md:text-xl w-full md:w-[80%] lg:w-[70%] text-center">
                 Welcome! Sign in to your account or sign up for a new one. Use
                 OTP for secure access. Forgot your password? Update it easily.
