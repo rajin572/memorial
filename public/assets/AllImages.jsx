@@ -48,6 +48,9 @@ import aboutPet2 from "./images/about/pet2.png";
 
 import aboutApp from "./images/aboutApp.png";
 
+import casing from "./images/userGuide/casing.png";
+import register1 from "./images/userGuide/register1.png";
+import broadcastStory1 from "./images/userGuide/broadcastStory1.png";
 import userGuideRegister from "./images/userGuide/userGuideRegister.png";
 import useGuideSubscription from "./images/userGuide/useGuideSubscription.png";
 import useGuideUploadStory from "./images/userGuide/useGuideUploadStory.png";
@@ -113,6 +116,9 @@ export const aboutImg = {
 };
 
 export const userGuide = {
+  casing,
+  register1,
+  broadcastStory1,
   userGuideRegister,
   useGuideSubscription,
   useGuideUploadStory,
