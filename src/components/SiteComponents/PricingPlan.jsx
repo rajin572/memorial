@@ -92,7 +92,11 @@ export default function PricingPlan() {
           </Col>
         ))}
       </Row>
-      <ComingSoonModal isModalOpen={isModalOpen} handleCancel={handleCancel} />
+      <ComingSoonModal
+        isModalOpen={isModalOpen}
+        handleCancel={handleCancel}
+        message="Payment System Will Be Available Soon."
+      />
     </div>
   );
 }

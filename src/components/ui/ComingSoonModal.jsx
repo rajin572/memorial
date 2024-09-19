@@ -2,7 +2,7 @@ import { Button, ConfigProvider, Modal } from "antd";
 import Link from "next/link";
 import React from "react";
 
-const ComingSoonModal = ({ isModalOpen, handleCancel }) => {
+const ComingSoonModal = ({ isModalOpen, handleCancel, message }) => {
   return (
     <div>
       <ConfigProvider
@@ -27,7 +27,7 @@ const ComingSoonModal = ({ isModalOpen, handleCancel }) => {
               Coming Soon...
             </h2>
             <p className="mb-4 md:text-lg lg:text-xl text-site-color">
-              Payment System Will Be Available Soon.
+              {message}
             </p>
             {/* <Link href="/register">
               <Button

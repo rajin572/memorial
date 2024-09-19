@@ -81,7 +81,7 @@ export default function RecentStories({
           )}
           <Row gutter={[16, 16]} className="flex flex-wrap justify-center ">
             {displayedStories.map((story, index) => (
-              <Col key={index} xs={24} sm={12} md={8} lg={8}>
+              <Col key={index} xs={24} sm={12} md={12} lg={8}>
                 <Link href="/stories/1">
                   <Card
                     className="relative overflow-hidden rounded-lg shadow-lg bg-[#F7F6FA] w-full h-full"
