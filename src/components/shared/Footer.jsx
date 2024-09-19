@@ -19,7 +19,7 @@ export default function Footer() {
   };
   return (
     // <footer className="w-full bg-white text-black py-16">
-    <footer>
+    <footer className="pt-16 pb-5">
       <Container>
         <div className="flex flex-col lg:flex-row justify-between items-start  mx-auto mb-12">
           {/* 1st */}
