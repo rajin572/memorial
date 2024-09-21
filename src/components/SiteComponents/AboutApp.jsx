@@ -12,9 +12,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 
 // import required modules
-import { Autoplay } from "swiper/modules";
+import { EffectFade, Autoplay } from "swiper/modules";
 
 const sections = [
   { id: "register", label: "Register" },
@@ -133,11 +134,12 @@ const AboutApp = () => {
                 <Swiper
                   spaceBetween={0}
                   draggable={false}
+                  effect={"fade"}
                   autoplay={{
                     delay: 2000,
                     disableOnInteraction: false,
                   }}
-                  modules={[Autoplay]}
+                  modules={[EffectFade, Autoplay]}
                   className="mySwiper absolute sm:top-[15px] sm:left-[12px] h-[96%] w-[93%] sm:h-[95%] sm:w-[92%] rounded-[36px] sm:rounded-[40px] bg-[#C3E2FE]"
                 >
                   {registerSliderImages.map((img, i) => (
@@ -271,11 +273,12 @@ const AboutApp = () => {
                   <Swiper
                     spaceBetween={0}
                     draggable={true}
+                    effect={"fade"}
                     autoplay={{
                       delay: 2000,
                       disableOnInteraction: false,
                     }}
-                    modules={[Autoplay]}
+                    modules={[EffectFade, Autoplay]}
                     className="mySwiper absolute sm:top-[15px] sm:left-[12px] h-[96%] w-[93%] sm:h-[95%] sm:w-[92%] rounded-[36px] sm:rounded-[40px] bg-[#C3E2FE]"
                   >
                     {broadcastStorySliderImages.map((img, i) => (
