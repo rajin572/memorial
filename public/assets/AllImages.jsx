@@ -50,7 +50,15 @@ import aboutApp from "./images/aboutApp.png";
 
 import casing from "./images/userGuide/casing.png";
 import register1 from "./images/userGuide/register1.png";
+import register2 from "./images/userGuide/register2.png";
+import register3 from "./images/userGuide/register3.png";
+import register4 from "./images/userGuide/register4.png";
+import register5 from "./images/userGuide/register5.png";
+import register6 from "./images/userGuide/register6.png";
+import register7 from "./images/userGuide/register7.png";
 import broadcastStory1 from "./images/userGuide/broadcastStory1.png";
+import broadcastStory2 from "./images/userGuide/broadcastStory2.png";
+import broadcastStory3 from "./images/userGuide/broadcastStory3.png";
 import userGuideRegister from "./images/userGuide/userGuideRegister.png";
 import useGuideSubscription from "./images/userGuide/useGuideSubscription.png";
 import useGuideUploadStory from "./images/userGuide/useGuideUploadStory.png";
@@ -118,7 +126,15 @@ export const aboutImg = {
 export const userGuide = {
   casing,
   register1,
+  register2,
+  register3,
+  register4,
+  register5,
+  register6,
+  register7,
   broadcastStory1,
+  broadcastStory2,
+  broadcastStory3,
   userGuideRegister,
   useGuideSubscription,
   useGuideUploadStory,

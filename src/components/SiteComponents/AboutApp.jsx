@@ -25,9 +25,12 @@ const sections = [
 
 const registerSliderImages = [
   { img: userGuide.register1 },
-  { img: userGuide.register1 },
-  { img: userGuide.register1 },
-  { img: userGuide.register1 },
+  { img: userGuide.register2 },
+  { img: userGuide.register3 },
+  { img: userGuide.register4 },
+  { img: userGuide.register5 },
+  { img: userGuide.register6 },
+  { img: userGuide.register7 },
 ];
 // const practiceRegisterSliderImages = [
 //   { img: userGuide.userGuideRegister },
@@ -37,9 +40,8 @@ const registerSliderImages = [
 // ];
 const broadcastStorySliderImages = [
   { img: userGuide.broadcastStory1 },
-  { img: userGuide.broadcastStory1 },
-  { img: userGuide.broadcastStory1 },
-  { img: userGuide.broadcastStory1 },
+  { img: userGuide.broadcastStory2 },
+  { img: userGuide.broadcastStory3 },
 ];
 // const practiceBroadcastStorySliderImages = [
 //   { img: userGuide.useGuideBroadcastStory },
