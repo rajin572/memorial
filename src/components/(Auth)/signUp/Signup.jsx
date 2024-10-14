@@ -4,10 +4,45 @@ import { Button, ConfigProvider, Form, Input, Typography } from "antd";
 import Container from "../../ui/Container";
 import Link from "next/link";
 import { AllImages } from "../../../../public/assets/AllImages";
+import { useSignUpMutation } from "@/redux/api/authApi";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 const SignUp = () => {
-  const onFinish = (values) => {
-    console.log("user:", values);
+  const [form] = Form.useForm();
+  const router = useRouter();
+
+  //* TO Signup A User We Need To Use useSignUpMutation From Redux Api
+  const [signUp] = useSignUpMutation();
+
+  //* This Function is User To Signup User
+  const onFinish = async (values) => {
+    const toastId = toast.loading("Signing Up...");
+    const data = {
+      fullName: values.fullName,
+      email: values.email,
+      password: values.password,
+    };
+
+    try {
+      const res = await signUp(data).unwrap();
+
+      console.log({ res: res?.data?.createUserToken });
+      if (res.success) {
+        localStorage.setItem("createUserToken", res?.data?.createUserToken);
+        form.resetFields();
+        toast.success(res.message, {
+          id: toastId,
+          duration: 2000,
+        });
+        router.push("/verification");
+      }
+    } catch (error) {
+      toast.error(error?.data?.message || "An error occurred during Signup", {
+        id: toastId,
+        duration: 2000,
+      });
+    }
   };
 
   return (
@@ -36,6 +71,7 @@ const SignUp = () => {
             >
               <Form
                 layout="vertical"
+                form={form}
                 className="bg-transparent w-full"
                 onFinish={onFinish}
               >
@@ -81,8 +117,8 @@ const SignUp = () => {
                 <Form.Item
                   rules={[
                     {
-                      required: true,
-                      message: "Password is Required",
+                      required: true || "Password is Required",
+                      min: 6 || "Password must be at least 6 characters",
                     },
                   ]}
                   name="password"
