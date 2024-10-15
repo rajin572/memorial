@@ -31,11 +31,10 @@ export default function PricingPlan() {
           throw new Error("Network response was not ok");
         }
         const data = await response.json(); // Parsing JSON data
-        console.log(data.pricing);
+
         setPlans(data.pricing);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching pricing data:", error);
         setLoading(false);
       }
     };

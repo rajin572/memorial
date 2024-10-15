@@ -5,13 +5,34 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { AllImages } from "../../../../public/assets/AllImages";
+import { toast } from "sonner";
+import { useResetPasswordMutation } from "@/redux/api/authApi";
 
 const UpdatePassword = () => {
-  const navigate = useRouter();
-  const onFinish = (values) => {
-    console.log("passwords:", values);
-    navigate.push("/sign-in");
+  const [resetPassword] = useResetPasswordMutation();
+  const router = useRouter();
+  const onFinish = async (values) => {
+    const toastId = toast.loading("Updateing Password...");
+    try {
+      const res = await resetPassword(values).unwrap();
+      if (res.success) {
+        toast.success(res.message, {
+          id: toastId,
+          duration: 2000,
+        });
+        setTimeout(() => {
+          localStorage.removeItem("mm_otp_match_token");
+        }, 2000);
+        router.push("/sign-in");
+      }
+    } catch (error) {
+      toast.error(error?.data?.message || "An error occurred during Login", {
+        id: toastId,
+        duration: 2000,
+      });
+    }
   };
+
   return (
     <div className="text-primary-color">
       <Container>
@@ -50,16 +71,16 @@ const UpdatePassword = () => {
                 onFinish={onFinish}
               >
                 <Typography.Title level={4} style={{ color: "#1A1A1A" }}>
-                  Password
+                  New Password
                 </Typography.Title>
                 <Form.Item
                   rules={[
                     {
-                      required: true,
-                      message: "New Password is Required",
+                      required: true || "New Password is Required",
+                      min: 6 || "Password must be at least 6 characters",
                     },
                   ]}
-                  name="password"
+                  name="newPassword"
                   className="text-primary-color"
                 >
                   <Input.Password
@@ -79,7 +100,7 @@ const UpdatePassword = () => {
                     },
                     ({ getFieldValue }) => ({
                       validator(_, value) {
-                        if (!value || getFieldValue("password") === value) {
+                        if (!value || getFieldValue("newPassword") === value) {
                           return Promise.resolve();
                         }
                         return Promise.reject(

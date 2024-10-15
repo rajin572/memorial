@@ -10,7 +10,6 @@ import { AllImages } from "../../../public/assets/AllImages";
 
 export default function Banner() {
   // const pathname = usePathname();
-  // console.log(pathname);
 
   // Extract the part of the path after the "/"
   // const pathSegment = pathname.split("/")[1];

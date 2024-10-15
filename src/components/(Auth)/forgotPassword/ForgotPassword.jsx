@@ -4,12 +4,30 @@ import Container from "../../ui/Container";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { AllImages } from "../../../../public/assets/AllImages";
+import { useForgetPasswordMutation } from "@/redux/api/authApi";
+import { toast } from "sonner";
 
 const ForgotPassword = () => {
-  const navigate = useRouter();
-  const onFinish = (values) => {
-    console.log("Success:", values);
-    navigate.push("/otp-verification");
+  const [forgetPassword] = useForgetPasswordMutation();
+  const router = useRouter();
+  const onFinish = async (values) => {
+    const toastId = toast.loading("Requesting...");
+    try {
+      const res = await forgetPassword(values).unwrap();
+      if (res.success) {
+        toast.success(res.message, {
+          id: toastId,
+          duration: 2000,
+        });
+        localStorage.setItem("mm_forgetPasswordVerifyToken", res.data?.token);
+        router.push("/otp-verification");
+      }
+    } catch (error) {
+      toast.error(error?.data?.message || "An error occurred during Login", {
+        id: toastId,
+        duration: 2000,
+      });
+    }
   };
   return (
     <div className="text-primary-color">

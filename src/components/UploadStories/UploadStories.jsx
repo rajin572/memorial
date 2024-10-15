@@ -60,9 +60,7 @@ const UploadStory = () => {
   const handleClose = () => {
     setIsModalVisible(false);
   };
-  const onFinish = (values) => {
-    console.log("story:", values);
-  };
+  const onFinish = (values) => {};
   const onChange = (value) => {
     setCategory(value);
   };

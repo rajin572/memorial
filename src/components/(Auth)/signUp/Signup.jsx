@@ -27,9 +27,10 @@ const SignUp = () => {
     try {
       const res = await signUp(data).unwrap();
 
-      console.log({ res: res?.data?.createUserToken });
       if (res.success) {
-        localStorage.setItem("createUserToken", res?.data?.createUserToken);
+        if (res?.data?.createUserToken) {
+          localStorage.setItem("createUserToken", res?.data?.createUserToken);
+        }
         form.resetFields();
         toast.success(res.message, {
           id: toastId,
