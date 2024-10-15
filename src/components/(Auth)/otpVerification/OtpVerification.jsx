@@ -7,18 +7,71 @@ import { useRouter } from "next/navigation";
 import OTPInput from "react-otp-input";
 import Link from "next/link";
 import { AllImages } from "../../../../public/assets/AllImages";
+import { toast } from "sonner";
+import {
+  useForgetOtpVerifyMutation,
+  useResendForgetOTPMutation,
+} from "@/redux/api/authApi";
 
 const OtpVerification = () => {
-  const navigate = useRouter();
+  const [forgetPasswordOTPResend] = useResendForgetOTPMutation();
+  const [ForgetVerifiedEmail] = useForgetOtpVerifyMutation();
+  const router = useRouter();
   const [otp, setOtp] = useState("");
 
-  const handleOTPSubmit = () => {
-    if (otp.length < 4) {
-      alert("Please fill in all OTP fields");
+  const handleOTPSubmit = async () => {
+    const toastId = toast.loading("Verifying...");
+
+    if (otp.length < 6) {
+      toast.error("The OTP must be 6 digits long", {
+        id: toastId,
+        duration: 2000,
+      });
     } else {
-      // Proceed with form submission logic
-      console.log("OTP submitted:", otp);
-      navigate.push("/update-password");
+      const data = {
+        otp: otp,
+      };
+
+      try {
+        const res = await ForgetVerifiedEmail(data).unwrap();
+
+        if (res.success) {
+          toast.success("Email verified successfully", {
+            id: toastId,
+            duration: 2000,
+          });
+          router.push("/update-password");
+          router.refresh();
+          localStorage.setItem("mm_otp_match_token", res.data?.token);
+          setTimeout(() => {
+            localStorage.removeItem("mm_forgetPasswordVerifyToken");
+          }, 2000);
+        }
+      } catch (error) {
+        toast.error(error?.data?.message || "An error occurred during login", {
+          id: toastId,
+          duration: 3000,
+        });
+      }
+    }
+  };
+  const handleResendOTP = async () => {
+    const toastId = toast.loading("Resending OTP...");
+
+    try {
+      const res = await forgetPasswordOTPResend().unwrap();
+      console.log(res);
+      if (res.success) {
+        toast.success("OTP resent successfully!", {
+          id: toastId,
+          duration: 2000,
+        });
+      }
+    } catch (error) {
+      toast.error(error?.data?.message || "Failed to resend OTP", {
+        id: toastId,
+        duration: 2000,
+      });
     }
   };
 
@@ -61,22 +114,22 @@ const OtpVerification = () => {
                   <Form.Item className="">
                     <div className="flex justify-center items-center">
                       <OTPInput
-                        inputStyle="w-[55px] h-[45px] sm:w-[76px] sm:h-[64px] text-[20px] sm:text-[30px] bg-transparent border border-[#97C6EA] hover:border-secoundary-color focus:bg-transparent focus:border-secoundary-color rounded-lg mr-[10px] sm:mr-[20px]"
+                        inputStyle="w-[35px] h-[50px] sm:w-[60px] sm:h-[70px] text-[20px] sm:text-[30px] bg-transparent border border-[#97C6EA] hover:border-secoundary-color focus:bg-transparent focus:border-secoundary-color rounded-lg mr-[10px] sm:mr-[20px]"
                         value={otp}
                         onChange={setOtp}
-                        numInputs={4}
+                        numInputs={6}
                         renderInput={(props) => <input {...props} required />}
                       />
                     </div>
                   </Form.Item>
                   <div className="flex justify-between py-1">
                     <p>Didn’t receive code?</p>
-                    <Link
-                      href="/otp-verification"
+                    <div
+                      onClick={handleResendOTP}
                       className="text-[#F48E48] underline"
                     >
                       Resend
-                    </Link>
+                    </div>
                   </div>
 
                   <Form.Item>
@@ -94,7 +147,7 @@ const OtpVerification = () => {
                         className="w-full py-6 border border-btn-primary hover:border-btn-primary text-xl text-base-color bg-btn-primary font-semibold rounded-2xl mt-8"
                         onClick={handleOTPSubmit}
                       >
-                        Get OTP
+                        Verify OTP
                       </Button>
                     </ConfigProvider>
                   </Form.Item>

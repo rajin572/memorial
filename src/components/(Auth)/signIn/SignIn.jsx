@@ -14,12 +14,40 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { AllImages } from "../../../../public/assets/AllImages";
+import { useUserLoginMutation } from "@/redux/api/authApi";
+import { toast } from "sonner";
+import { storeUserInfo } from "@/services/auth.service";
+import Cookies from "universal-cookie";
 
 const SignIn = () => {
+  const [userLogin] = useUserLoginMutation();
   const navigate = useRouter();
-  const onFinish = (values) => {
+  const cookies = new Cookies();
+  const onFinish = async (values) => {
+    const toastId = toast.loading(" Logging in...");
     console.log("user:", values);
-    navigate.push("/");
+
+    try {
+      const res = await userLogin(values).unwrap();
+      console.log(res);
+
+      if (res.success) {
+        toast.success(res.message, {
+          id: toastId,
+          duration: 2000,
+        });
+        navigate.refresh();
+        navigate.push("/");
+        cookies.set("mm_accessToken", res?.data?.accessToken, { path: "/" });
+        cookies.set("mm_refreshToken", res?.data?.refreshToken, { path: "/" });
+        storeUserInfo({ mm_accessToken: res?.data?.accessToken });
+      }
+    } catch (error) {
+      toast.error(error?.data?.message || "An error occurred during Login", {
+        id: toastId,
+        duration: 2000,
+      });
+    }
   };
   return (
     <div className="text-primary-color">

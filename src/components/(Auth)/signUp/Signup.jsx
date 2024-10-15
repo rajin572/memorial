@@ -29,7 +29,10 @@ const SignUp = () => {
 
       console.log({ res: res?.data?.createUserToken });
       if (res.success) {
-        localStorage.setItem("createUserToken", res?.data?.createUserToken);
+        console.log(res);
+        if (res?.data?.createUserToken) {
+          localStorage.setItem("createUserToken", res?.data?.createUserToken);
+        }
         form.resetFields();
         toast.success(res.message, {
           id: toastId,

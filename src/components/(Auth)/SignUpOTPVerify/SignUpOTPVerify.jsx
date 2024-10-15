@@ -38,14 +38,14 @@ const SignUpOTPVerify = () => {
 
       try {
         const res = await verifiedEmail(data).unwrap();
-        console.log(res);
+
         if (res.success) {
           toast.success("Email verified successfully", {
             id: toastId,
             duration: 2000,
           });
-          //   router.push("/");
-          //   router.refresh();
+          navigate.push("/sign-in");
+          navigate.refresh();
 
           setTimeout(() => {
             localStorage.removeItem("createUserToken");
@@ -152,7 +152,7 @@ const SignUpOTPVerify = () => {
                         className="w-full py-6 border border-btn-primary hover:border-btn-primary text-xl text-base-color bg-btn-primary font-semibold rounded-2xl mt-8"
                         onClick={handleOTPSubmit}
                       >
-                        Get OTP
+                        Verify OTP
                       </Button>
                     </ConfigProvider>
                   </Form.Item>

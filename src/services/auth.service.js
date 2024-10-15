@@ -5,15 +5,15 @@ import {
   setToLocalStorage,
 } from "@/utils/local-storage";
 
-export const storeUserInfo = ({ accessToken }) => {
-  return setToLocalStorage("accessToken", accessToken);
+export const storeUserInfo = ({ mm_accessToken }) => {
+  return setToLocalStorage("mm_accessToken", mm_accessToken);
 };
 export const removeUserInfo = () => {
-  return removeFromLocalStorage("accessToken");
+  return removeFromLocalStorage("mm_accessToken");
 };
 
 export const getUserInfo = () => {
-  const authToken = getFromLocalStorage("accessToken");
+  const authToken = getFromLocalStorage("mm_accessToken");
   if (authToken) {
     const userInfo = decodedToken(authToken);
     return userInfo;
@@ -23,6 +23,6 @@ export const getUserInfo = () => {
 };
 
 export const isLoggedIn = () => {
-  const authToken = getFromLocalStorage("accessToken");
+  const authToken = getFromLocalStorage("mm_accessToken");
   return !!authToken;
 };
