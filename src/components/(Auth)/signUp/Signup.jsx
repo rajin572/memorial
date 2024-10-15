@@ -27,9 +27,7 @@ const SignUp = () => {
     try {
       const res = await signUp(data).unwrap();
 
-      console.log({ res: res?.data?.createUserToken });
       if (res.success) {
-        console.log(res);
         if (res?.data?.createUserToken) {
           localStorage.setItem("createUserToken", res?.data?.createUserToken);
         }

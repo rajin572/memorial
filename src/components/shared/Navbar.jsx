@@ -8,6 +8,7 @@ import { AllImages } from "../../../public/assets/AllImages";
 import Link from "next/link";
 import Container from "../ui/Container";
 import { FaUserCircle } from "react-icons/fa";
+import { isLoggedIn } from "@/services/auth.service";
 
 const Navbar = () => {
   const path = usePathname();
@@ -17,6 +18,7 @@ const Navbar = () => {
   const [searchVisible, setSearchVisible] = useState(false);
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const loggedIn = isLoggedIn();
 
   useEffect(() => {
     const handleResize = () => {

@@ -13,7 +13,6 @@
 //         return "";
 //     }
 //   };
-//   console.log(images);
 
 //   return (
 //     <div className={getGridClasses()}>

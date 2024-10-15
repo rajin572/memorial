@@ -65,7 +65,7 @@ const SignUpOTPVerify = () => {
 
     try {
       const res = await resendOTP().unwrap();
-      console.log(res);
+
       if (res.success) {
         toast.success("OTP resent successfully!", {
           id: toastId,

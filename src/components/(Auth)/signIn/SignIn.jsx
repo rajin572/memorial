@@ -25,11 +25,9 @@ const SignIn = () => {
   const cookies = new Cookies();
   const onFinish = async (values) => {
     const toastId = toast.loading(" Logging in...");
-    console.log("user:", values);
 
     try {
       const res = await userLogin(values).unwrap();
-      console.log(res);
 
       if (res.success) {
         toast.success(res.message, {

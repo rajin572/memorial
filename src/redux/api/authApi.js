@@ -3,7 +3,6 @@ const cookies = new Cookies();
 import { baseApi } from "./baseApi";
 import { decodedToken } from "@/utils/jwt";
 
-// console.log("Bearer " + accessToken);
 const accessToken = cookies.get("accessToken");
 
 const AUTH_URL = "/users";

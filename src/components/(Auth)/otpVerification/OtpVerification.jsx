@@ -60,7 +60,7 @@ const OtpVerification = () => {
 
     try {
       const res = await forgetPasswordOTPResend().unwrap();
-      console.log(res);
+
       if (res.success) {
         toast.success("OTP resent successfully!", {
           id: toastId,
