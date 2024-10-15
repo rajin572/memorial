@@ -18,11 +18,16 @@ import { useUserLoginMutation } from "@/redux/api/authApi";
 import { toast } from "sonner";
 import { storeUserInfo } from "@/services/auth.service";
 import Cookies from "universal-cookie";
+import { useDispatch } from "react-redux";
+import { setAccessToken } from "@/redux/slices/authSlice";
+import { decodedToken } from "@/utils/jwt";
 
 const SignIn = () => {
   const [userLogin] = useUserLoginMutation();
+  const dispatch = useDispatch();
   const navigate = useRouter();
   const cookies = new Cookies();
+
   const onFinish = async (values) => {
     const toastId = toast.loading(" Logging in...");
 
@@ -34,17 +39,29 @@ const SignIn = () => {
           id: toastId,
           duration: 2000,
         });
-        navigate.refresh();
-        navigate.push("/");
+
+        // Dispatch the accessToken and userInfo to Redux store
+        dispatch(setAccessToken(res?.data?.accessToken));
+
+        // Set cookies if needed
         cookies.set("mm_accessToken", res?.data?.accessToken, { path: "/" });
         cookies.set("mm_refreshToken", res?.data?.refreshToken, { path: "/" });
-        storeUserInfo({ mm_accessToken: res?.data?.accessToken });
+
+        // Navigate after login
+        navigate.refresh();
+        navigate.push("/");
       }
     } catch (error) {
-      toast.error(error?.data?.message || "An error occurred during Login", {
-        id: toastId,
-        duration: 2000,
-      });
+      console.error("Login Error:", error); // Log the error for debugging
+      toast.error(
+        error?.data?.message ||
+          error?.error ||
+          "An error occurred during Login",
+        {
+          id: toastId,
+          duration: 2000,
+        }
+      );
     }
   };
   return (

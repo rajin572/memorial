@@ -8,7 +8,9 @@ import { AllImages } from "../../../public/assets/AllImages";
 import Link from "next/link";
 import Container from "../ui/Container";
 import { FaUserCircle } from "react-icons/fa";
-import { isLoggedIn } from "@/services/auth.service";
+import { useDispatch, useSelector } from "react-redux";
+import { clearAuth } from "@/redux/slices/authSlice";
+import { toast } from "sonner";
 
 const Navbar = () => {
   const path = usePathname();
@@ -18,7 +20,17 @@ const Navbar = () => {
   const [searchVisible, setSearchVisible] = useState(false);
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const loggedIn = isLoggedIn();
+  const [isLogin, setIsLogin] = useState(false);
+  const dispatch = useDispatch();
+
+  const token = useSelector((state) => state.auth.accessToken);
+
+  useEffect(() => {
+    if (token) {
+      setIsLogin(true);
+    }
+  }, [token]);
+  console.log(isLogin);
 
   useEffect(() => {
     const handleResize = () => {
@@ -115,7 +127,7 @@ const Navbar = () => {
     ),
   }));
 
-  if (path === "/") {
+  if (!isLogin) {
     dropdownItems.push({
       key: "signup",
       label: (
@@ -181,10 +193,21 @@ const Navbar = () => {
     key: "signOut",
     label: (
       <Button
-        className={`capitalize text-start font-medium flex justify-start items-center hover:bg-transparent border-none hover:text-site-color shadow-none text-lg w-full `}
+        onClick={() => {
+          // Dispatch clearAuth to remove token and reset auth state
+          dispatch(clearAuth());
+          toast.success("Sign out successfully!");
+
+          // Set login state to false after sign-out
+          setIsLogin(false);
+
+          // Optionally, redirect the user to the homepage or login page
+          // navigate("/signin"); // Use if needed
+        }}
+        className={`capitalize text-start font-medium flex justify-start items-center hover:bg-transparent border-none hover:text-site-color shadow-none text-lg w-full`}
       >
         <IoLogOut className="text-site-color size-6 text-secondary-color" />
-        Log out
+        Sign out
       </Button>
     ),
   });
@@ -229,7 +252,7 @@ const Navbar = () => {
               ))}
             </div>
             <div className="lg:flex items-center hidden">
-              {path === "/" ? (
+              {!isLogin ? (
                 <>
                   <Link href="/sign-up">
                     <Button
@@ -287,7 +310,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex gap-2 items-center lg:hidden">
-            {path !== "/" ? (
+            {isLogin ? (
               <ConfigProvider
                 theme={{
                   components: {

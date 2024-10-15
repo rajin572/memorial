@@ -126,7 +126,7 @@ const OtpVerification = () => {
                     <p>Didn’t receive code?</p>
                     <div
                       onClick={handleResendOTP}
-                      className="text-[#F48E48] underline"
+                      className="text-[#F48E48] underline cursor-pointer"
                     >
                       Resend
                     </div>
