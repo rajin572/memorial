@@ -129,7 +129,7 @@ const Profile = () => {
                   className="h-[150px] w-[150px] md:h-[200px] md:w-[200px] lg:h-[250px] lg:w-[250px] object-cover"
                 />
               </div>
-              <div className="flex items-center flex-col">
+              <div className="flex flex-col">
                 <p className="text-xl text-primary-color mb-7">
                   Maximum size 5mb. Format jpg, jpeg, png.
                 </p>
