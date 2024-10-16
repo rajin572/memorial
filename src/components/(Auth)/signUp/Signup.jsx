@@ -24,8 +24,11 @@ const SignUp = () => {
       password: values.password,
     };
 
+    console.log(data);
     try {
       const res = await signUp(data).unwrap();
+
+      console.log(res);
 
       if (res.success) {
         if (res?.data?.createUserToken) {

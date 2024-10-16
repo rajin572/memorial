@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Button, Dropdown, ConfigProvider } from "antd";
 import Image from "next/image";
 import { IoLogOut, IoMenu } from "react-icons/io5";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { AllImages } from "../../../public/assets/AllImages";
 import Link from "next/link";
 import Container from "../ui/Container";
@@ -11,6 +11,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { clearAuth } from "@/redux/slices/authSlice";
 import { toast } from "sonner";
+import Cookies from "universal-cookie";
 
 const Navbar = () => {
   const path = usePathname();
@@ -22,6 +23,8 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
   const dispatch = useDispatch();
+  const cookies = new Cookies();
+  const router = useRouter();
 
   const token = useSelector((state) => state.auth.accessToken);
 
@@ -195,7 +198,11 @@ const Navbar = () => {
       <Button
         onClick={() => {
           // Dispatch clearAuth to remove token and reset auth state
+          // Clear cookies
+          cookies.remove("mm_accessToken", { path: "/" });
+          cookies.remove("mm_refreshToken", { path: "/" });
           dispatch(clearAuth());
+          router.refresh();
           toast.success("Sign out successfully!");
 
           // Set login state to false after sign-out
