@@ -1,30 +1,31 @@
+// For fetchbase query
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 import { baseApi } from "./baseApi";
 import { decodedToken } from "@/utils/jwt";
+import { tagTypes } from "../tagTypes";
 
-const accessToken = cookies.get("accessToken");
+const accessToken = cookies.get("mm_accessToken");
 
 const AUTH_URL = "/users";
+
 export const authApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     userLogin: build.mutation({
       query: (loginData) => ({
         url: `/auth/login`,
         method: "POST",
-        data: loginData,
+        body: loginData,
       }),
-      invalidatesTags: ["user"],
+      invalidatesTags: [tagTypes.user],
     }),
     signUp: build.mutation({
-      query: (signupData) => {
-        return {
-          url: `${AUTH_URL}/create`,
-          method: "POST",
-          data: signupData,
-        };
-      },
-      invalidatesTags: ["user"],
+      query: (signupData) => ({
+        url: `${AUTH_URL}/create`,
+        method: "POST",
+        body: signupData,
+      }),
+      invalidatesTags: [tagTypes.user],
     }),
     verifiedEmail: build.mutation({
       query: (otpData) => {
@@ -32,14 +33,10 @@ export const authApi = baseApi.injectEndpoints({
         return {
           url: `${AUTH_URL}/create-user-verify-otp`,
           method: "POST",
-          data: otpData,
-          headers: {
-            "content-type": "application/json",
-            token: token,
-          },
+          body: otpData,
         };
       },
-      invalidatesTags: ["user"],
+      invalidatesTags: [tagTypes.user],
     }),
     resendOTP: build.mutation({
       query: () => {
@@ -49,14 +46,10 @@ export const authApi = baseApi.injectEndpoints({
         return {
           url: `/otp/resend-otp`,
           method: "PATCH",
-          data: { email: email },
-          headers: {
-            "content-type": "application/json",
-            token: token,
-          },
+          body: { email: email },
         };
       },
-      invalidatesTags: ["user"],
+      invalidatesTags: [tagTypes.user],
     }),
 
     // updateProfile: build.mutation({
@@ -67,7 +60,7 @@ export const authApi = baseApi.injectEndpoints({
     //       data: updateData?.updateData,
     //     };
     //   },
-    //   invalidatesTags: ["user"],
+    //   invalidatesTags: [tagTypes.user],
     // }),
 
     forgetPassword: build.mutation({
@@ -75,10 +68,10 @@ export const authApi = baseApi.injectEndpoints({
         return {
           url: `/auth/forgot-password-otp`,
           method: "PATCH",
-          data: userEmail,
+          body: userEmail,
         };
       },
-      invalidatesTags: ["user"],
+      invalidatesTags: [tagTypes.user],
     }),
     resendForgetOTP: build.mutation({
       query: () => {
@@ -88,14 +81,10 @@ export const authApi = baseApi.injectEndpoints({
         return {
           url: `/otp/resend-otp`,
           method: "PATCH",
-          data: { email: email },
-          headers: {
-            "content-type": "application/json",
-            token: token,
-          },
+          body: { email: email },
         };
       },
-      invalidatesTags: ["user"],
+      invalidatesTags: [tagTypes.user],
     }),
     forgetOtpVerify: build.mutation({
       query: (otpData) => {
@@ -103,14 +92,10 @@ export const authApi = baseApi.injectEndpoints({
         return {
           url: `/auth/forgot-password-otp-match`,
           method: "PATCH",
-          data: otpData,
-          headers: {
-            "content-type": "application/json",
-            token: token,
-          },
+          body: otpData,
         };
       },
-      invalidatesTags: ["user"],
+      invalidatesTags: [tagTypes.user],
     }),
     resetPassword: build.mutation({
       query: (resetData) => {
@@ -118,14 +103,19 @@ export const authApi = baseApi.injectEndpoints({
         return {
           url: `/auth/forgot-password-reset`,
           method: "PATCH",
-          data: resetData,
-          headers: {
-            "content-type": "application/json",
-            token: token,
-          },
+          body: resetData,
         };
       },
-      invalidatesTags: ["user"],
+      invalidatesTags: [tagTypes.user],
+    }),
+    myProfile: build.query({
+      query: () => {
+        return {
+          url: `${AUTH_URL}/my-profile`,
+          method: "GET",
+        };
+      },
+      providesTags: [tagTypes.user], // Ensures that the profile data can be invalidated if needed
     }),
   }),
 });
@@ -139,6 +129,7 @@ export const {
   useResendForgetOTPMutation,
   useForgetOtpVerifyMutation,
   useResetPasswordMutation,
+  useMyProfileQuery,
   //   useUpdateProfileMutation,
   //   useGetAllUserQuery,
   //   useGetSingleUserQuery,

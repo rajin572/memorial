@@ -34,7 +34,7 @@ const storage =
 
 // Configuration for persisting only the accessToken from authSlice
 const persistConfig = {
-  key: "auth",
+  key: "memomrial-auth",
   storage,
   whitelist: ["accessToken"], // Persist only the accessToken
 };

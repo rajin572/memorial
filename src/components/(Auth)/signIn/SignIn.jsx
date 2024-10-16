@@ -33,7 +33,7 @@ const SignIn = () => {
 
     try {
       const res = await userLogin(values).unwrap();
-
+      console.log(res);
       if (res.success) {
         toast.success(res.message, {
           id: toastId,
