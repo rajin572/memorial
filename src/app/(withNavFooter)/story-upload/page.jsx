@@ -2,11 +2,12 @@
 import UploadStory from "@/components/UploadStories/UploadStories";
 import React from "react";
 
-const page = () => {
+const page = ({ searchParams: { extraImage } }) => {
+  console.log({ extraImage });
   return (
     <div>
       {/* <Banner /> */}
-      <UploadStory />
+      <UploadStory extraImage={extraImage} />
     </div>
   );
 };

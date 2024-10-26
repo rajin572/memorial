@@ -202,7 +202,7 @@ const Navbar = () => {
           cookies.remove("mm_accessToken", { path: "/" });
           cookies.remove("mm_refreshToken", { path: "/" });
           dispatch(clearAuth());
-          router.refresh();
+      window.location.href = "/sign-in"
           toast.success("Sign out successfully!");
 
           // Set login state to false after sign-out

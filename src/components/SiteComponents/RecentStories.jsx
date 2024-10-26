@@ -2,54 +2,49 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { stories as storiesData } from "../../../public/demoData/storiesData";
 import { Badge, Card, Col, Row, Carousel, Button, ConfigProvider } from "antd";
-import {
-  CalendarOutlined,
-  CommentOutlined,
-  BookFilled,
-} from "@ant-design/icons";
+import { CalendarOutlined, CommentOutlined } from "@ant-design/icons";
 import Container from "../ui/Container";
 import Link from "next/link";
 import { CiBookmark, CiSquarePlus } from "react-icons/ci";
 import SectionHeader from "../ui/SectionHeader";
+import { useGetAllAcceptStoryQuery, useGetAllStoryQuery } from "@/redux/api/storyApi/storyApi";
+import { useGetStoryCommentCountQuery } from "@/redux/api/commentApi/commentApi";
+import { imageGenerate } from "@/utils/imageGenerate";
+import { useMyProfileQuery } from "@/redux/api/authApi";
+import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
-export default function RecentStories({
-  showAll,
-  title,
-  description,
-  description2,
-}) {
-  const [stories, setStories] = useState([]);
-  const [displayedStories, setDisplayedStories] = useState([]);
+export default function RecentStories({ showAll, title, description, description2 }) {
+  const { data: storyAcceptData, isLoading } = useGetAllAcceptStoryQuery();
+  const { data: userData } = useMyProfileQuery(null);
+  // console.log('user Data', userData?.data);
 
-  useEffect(() => {
-    setStories(storiesData);
-
-    // Determine the number of stories to display
-    if (showAll) {
-      setDisplayedStories(storiesData);
+  const navigate = useRouter();
+  console.log("isPurchesPackage", userData?.data._id);
+  const handleUploadStory = () => {
+    if (userData?.data?._id) {
+      console.log("userData?.data?.isPurchesPackage", userData?.data?.isPurchesPackage);
+      navigate.push("/story-upload");
     } else {
-      setDisplayedStories(storiesData.slice(0, 3)); // Show only the first 3 stories
+      navigate.push("/pricing");
     }
-  }, [showAll]);
+  };
 
   // Function to truncate the description
   const truncateDescription = (desc) => {
     if (desc.length > 60) {
-      return desc.substring(0, 50) + "...";
+      return desc.substring(0, 90) + "...";
     }
     return desc;
   };
 
+  if (isLoading) {
+    return <div>Loading......</div>;
+  }
+
   return (
-    <div className=" relative my-20 flex flex-col items-center gap-16">
-      <div
-        style={{
-          boxShadow: "0px 0px 200px 90px #3598F188",
-        }}
-        className="absolute left-[-50%] sm:left-[-30%] md:left-[-25%] xl:left-[-23%] md:top-[5%] w-[20%] h-[40vh]"
-      ></div>
+    <div className="relative my-20 flex flex-col items-center gap-16">
       <Container>
         <SectionHeader>{title}</SectionHeader>
 
@@ -61,7 +56,6 @@ export default function RecentStories({
         </h1>
 
         <div className="mx-auto relative">
-          {/* stories data */}
           {!showAll ? (
             <Link href="/stories">
               <p className="text-xs sm:text-base text-end absolute right-4 -top-7 text-blue-600 cursor-pointer underline">
@@ -73,20 +67,21 @@ export default function RecentStories({
               <Button
                 type="primary"
                 className="ml-auto mb-5 flex items-center gap-1 px-6 py-5 text-primary-color text-lg md:text-xl font-semibold bg-btn-secoundary border border-btn-secoundary text-site-color rounded-xl"
+                onClick={handleUploadStory}
               >
                 <CiSquarePlus className="text-primary-color" />
                 Upload Story
               </Button>
             </Link>
           )}
-          <Row gutter={[16, 16]} className="flex flex-wrap justify-center ">
-            {displayedStories.map((story, index) => (
+
+          <Row gutter={[16, 16]} className="flex flex-wrap justify-center">
+            {storyAcceptData?.data?.slice(0, showAll ? 9 : 3)?.map((story, index) => (
               <Col key={index} xs={24} sm={12} md={12} lg={8}>
-                <Link href="/stories/1">
+                <Link href={`/stories/${story._id}`}>
                   <Card
                     className="relative overflow-hidden rounded-lg shadow-lg bg-[#F7F6FA] w-full h-full"
                     hoverable
-                    // style={{ width: "100%", height: "500px" }}
                     cover={
                       <div className="relative">
                         <ConfigProvider
@@ -102,26 +97,32 @@ export default function RecentStories({
                           }}
                         >
                           <Carousel autoplay>
-                            {story.images.map((img, i) => (
-                              <div key={i}>
-                                <Image
-                                  src={img}
-                                  alt={story.title}
-                                  width={0}
-                                  height={0}
-                                  style={{ objectFit: "cover" }}
-                                  className="rounded-lg w-full h-60 lg:h-72 xl:h-80"
-                                />
-                              </div>
-                            ))}
+                            {story?.storyImages?.map((img, i) => {
+                              // const normalizedImage = `/${img.replace(/\\/g, '/')}`;
+                              const normalizedImage = img.replace(/\\/g, "/");
+                              const image = imageGenerate(normalizedImage);
+                              console.log(image);
+                              return (
+                                <div key={i}>
+                                  <Image
+                                    src={imageGenerate(normalizedImage)}
+                                    alt={story.title}
+                                    width={500}
+                                    height={320}
+                                    className="rounded-lg w-full h-60 lg:h-72 xl:h-80"
+                                  />
+                                </div>
+                              );
+                            })}
                           </Carousel>
                         </ConfigProvider>
+
                         {/* Overlay date badge */}
                         <Badge
                           count={
                             <div className="bg-[#C3E2FF] bg-opacity-90 p-1 rounded">
                               <CalendarOutlined className="mr-1" />
-                              {story.date}
+                              {new Date(story.dateOfBirth).toLocaleDateString()}
                             </div>
                           }
                           className="absolute top-2 right-2"
@@ -129,29 +130,23 @@ export default function RecentStories({
                       </div>
                     }
                   >
-                    <div className="bg-[#F7F6FA]  h-[200px] sm:h-[200px] md:h-[210px] lg:max-h-[230px] xl:h-[200px] flex flex-col justify-between items-start">
+                    <div className="bg-[#F7F6FA] h-[200px] sm:h-[200px] md:h-[210px] lg:max-h-[230px] xl:h-[200px] flex flex-col justify-between items-start">
                       <div>
-                        <p className="text-sm text-[#3598F1] font-semibold">
-                          {story.tag}
-                        </p>
+                        <p className="text-sm text-[#3598F1] font-semibold">#{story.category}</p>
                         <h3 className="text-xl lg:text-2xl font-bold mb-1 text-primary-color">
                           {story.title}
                         </h3>
-
-                        <p className=" lg:text-lg mb-1 text-[#484848]">
-                          {truncateDescription(story.desc)}
+                        <p className="lg:text-lg mb-1 text-[#484848]">
+                          {truncateDescription(story.storyText)}
                         </p>
                       </div>
                       <div className="flex flex-col justify-between w-full gap-1 lg:text-lg text-[#5C5F66]">
                         <div className="flex items-center">
-                          <CommentOutlined className="mr-1" />
-                          {story.comments.length} Comments
+                          <CommentOutlined className="mr-2" />
+                          {story.commentCount} Comments
                         </div>
                         <div className="flex justify-between items-center">
-                          <span>{story.desc.split(" ").length} Words</span>
-                          <p>
-                            <CiBookmark size={20} />
-                          </p>
+                          <span>{story.storyText.split(" ").length} Words</span>
                         </div>
                       </div>
                     </div>

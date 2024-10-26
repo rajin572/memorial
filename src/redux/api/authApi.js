@@ -117,6 +117,19 @@ export const authApi = baseApi.injectEndpoints({
       },
       providesTags: [tagTypes.user], // Ensures that the profile data can be invalidated if needed
     }),
+    updateMyProfile: build.mutation({
+      query: (data) => {
+        return {
+          url: `${AUTH_URL}/update-my-profile`,
+          method: "PATCH",
+          body:data,
+          headers: {
+          Authorization: `Bearer ${accessToken}`,  // Adding the access token to headers
+        },
+        };
+      },
+      invalidatesTags: [tagTypes.user], // Ensures that the profile data can be invalidated if needed
+    }),
   }),
 });
 
@@ -130,7 +143,5 @@ export const {
   useForgetOtpVerifyMutation,
   useResetPasswordMutation,
   useMyProfileQuery,
-  //   useUpdateProfileMutation,
-  //   useGetAllUserQuery,
-  //   useGetSingleUserQuery,
+ useUpdateMyProfileMutation
 } = authApi;

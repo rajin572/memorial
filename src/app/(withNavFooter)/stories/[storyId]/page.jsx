@@ -2,11 +2,12 @@
 import StoryDeatils from "@/components/SingleStoryDetails/StoryDetails";
 import React from "react";
 
-const page = () => {
+const page = ({params}) => {
+  // console.log('params id ', params.storyId)
   return (
     <div>
       {/* <Banner /> */}
-      <StoryDeatils />
+      <StoryDeatils id={params.storyId}/>
     </div>
   );
 };
