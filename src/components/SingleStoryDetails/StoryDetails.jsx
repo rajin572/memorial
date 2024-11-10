@@ -12,43 +12,38 @@ import SectionHeader from "../ui/SectionHeader";
 import { useGetSingleStoryQuery } from "@/redux/api/storyApi/storyApi";
 import { audioUrlGenerate, imageGenerate } from "@/utils/imageGenerate";
 import { format } from "date-fns";
+import { FaMars, FaVenus, FaGenderless, FaUser } from "react-icons/fa";
 
 const StoryDeatils = ({ id }) => {
   const { data: singleStory, isLoading, isError } = useGetSingleStoryQuery(id);
 
-    const audioUrl = audioUrlGenerate(singleStory?.data?.selectedMusic?.musicPath);
+  const audioUrl = audioUrlGenerate(singleStory?.data?.selectedMusic?.musicPath);
+  // console.log("audioUrl",audioUrl)
 
-    
-    // Format date range
-    const formatDateRange = (startDate, endDate) => {
-        if (!startDate || !endDate) return "";
+  // Format date range
+  const formatDateRange = (startDate, endDate) => {
+    if (!startDate || !endDate) return "";
 
-        const formattedStartDate = format(new Date(startDate), "dd-MM-yyyy");
-        const formattedEndDate = format(new Date(endDate), "dd-MM-yyyy");
+    const formattedStartDate = format(new Date(startDate), "dd-MM-yyyy");
+    const formattedEndDate = format(new Date(endDate), "dd-MM-yyyy");
 
-        return `${formattedStartDate} To ${formattedEndDate}`;
-    };
+    return `${formattedStartDate} To ${formattedEndDate}`;
+  };
 
-    // Loading and error handling
-    if (isLoading) {
-        return <div>Loading ...</div>;
-    }
+  // Loading and error handling
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
 
-    if (isError) {
-        return <div>Error loading story details</div>;
-    }
+  if (isError) {
+    return <div>Error loading story details</div>;
+  }
 
   return (
     <div className="relative my-20">
       {/* Play background audio */}
       {/* <audio autoPlay loop controls src={audioUrlGenerate(singleStory?.data?.selectedMusic?.musicPath)} /> */}
-      <audio
-       autoPlay
-       controls
-       className="hidden"
-       src={audioUrl}
-    />
-
+      <audio autoPlay controls className="hidden" src={audioUrl} />
 
       {/* Dynamic shadow box */}
       <div
@@ -92,10 +87,14 @@ const StoryDeatils = ({ id }) => {
 
             {/* Dynamic Info based on category */}
             <div>
-              <p className="flex items-center gap-3 text-xl mb-3">
+              
+              {
+                singleStory?.data?.name && <p className="flex items-center gap-3 text-xl mb-3">
                 <HiOutlineUser /> <span>{singleStory?.data?.name}</span>
               </p>
-              <p className="flex items-center gap-3 text-xl mb-3">
+              }
+              {
+                singleStory?.data?.rank && <p className="flex items-center gap-3 text-xl mb-3">
                 {singleStory?.data?.rank && (
                   <>
                     <GiRank3 />
@@ -103,26 +102,49 @@ const StoryDeatils = ({ id }) => {
                   </>
                 )}
               </p>
-
-              <p className="flex items-center gap-3 text-xl mb-3">
-                {singleStory?.data?.rank && (
+              }
+              
+                {
+                  singleStory?.data?.serviceSector && <p className="flex items-center gap-3 text-xl mb-3">
+                  {singleStory?.data?.serviceSector && (
+                    <>
+                      <TbTopologyStarRing3 />
+                      <span>{singleStory.data.serviceSector}</span>
+                    </>
+                  )}
+                </p>
+                }
+              
+              {
+                singleStory?.data?.sex && <p className="flex items-center gap-3 text-xl mb-3">
+                {singleStory?.data?.sex && (
                   <>
-                    <TbTopologyStarRing3 />
-                    <span>{singleStory.data.serviceSector}</span>
+                    {singleStory.data.sex === "male" && <FaMars />}
+                    {singleStory.data.sex === "female" && <FaVenus />}
+                    {singleStory.data.sex === "other" && <FaGenderless />}
+                    <span>{singleStory.data.sex}</span>
                   </>
                 )}
               </p>
+              }
+              
 
               {/* Displaying date range */}
-              <p className="flex items-center gap-3 text-xl mb-3">
-                <MdOutlineDateRange />{" "}
-                <span>
-                  {formatDateRange(
-                    singleStory?.data?.dateOfBirth,
-                    singleStory?.data?.dateOfPassing
-                  )}
-                </span>
+              {
+                singleStory?.data?.dateOfBirth && singleStory?.data?.dateOfPassing &&  <p className="flex items-center gap-3 text-xl mb-3">
+                {
+                  singleStory?.data?.dateOfBirth && singleStory?.data?.dateOfPassing && <><MdOutlineDateRange />{" "}
+                  <span>
+                    {formatDateRange(
+                      singleStory?.data?.dateOfBirth,
+                      singleStory?.data?.dateOfPassing
+                    )}
+                  </span></>
+                }
+                
               </p>
+              }
+             
             </div>
 
             {/* Story Text */}

@@ -63,6 +63,16 @@ export const storyApi = baseApi.injectEndpoints({
       }),
       providesTags: [tagTypes.story],
     }),
+    getAllUserByStoryStatusStory: build.query({
+      query: () => ({
+        url: `${STORY_URL}/upload-story-status`,
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${accessToken}`,  
+        },
+      }),
+      providesTags: [tagTypes.story],
+    }),
   }),
 });
 
@@ -71,5 +81,6 @@ export const {
     useGetSingleStoryQuery,
     usePostStoryMutation,
     useGetAllUserByStoryQuery,
-    useGetAllAcceptStoryQuery
+    useGetAllAcceptStoryQuery,
+    useGetAllUserByStoryStatusStoryQuery
 } = storyApi;

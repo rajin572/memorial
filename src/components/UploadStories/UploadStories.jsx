@@ -52,14 +52,40 @@ const UploadStory = ({ extraImage }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [addStory] = usePostStoryMutation();
+  const [form] = Form.useForm();
 
+  const baseWordCount = userData?.data?.purchesPackageId?.package_id?.facilities?.wordCount || 0;
+  const [storyText, setStoryText] = useState('');
+  // console.log("baseWordCount",baseWordCount)
+
+  const handleTextChange = (e) => {
+    const value = e.target.value;
+    const words = value.trim().split(/\s+/).filter(Boolean);
+
+    // Update the text only if the word count is 80 or fewer
+    if (words.length <= baseWordCount) {
+      setStoryText(value);
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    const words = storyText.trim().split(/\s+/).filter(Boolean);
+
+    // Prevent typing when the word count reaches or exceeds 80, except for backspace and delete
+    if (words.length >= baseWordCount && e.key !== 'Backspace' && e.key !== 'Delete' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') {
+      e.preventDefault();
+    }
+  };
+  // console.log("storyText storyText", storyText);
   // const imageCount = userData?.data?.purchesPackageId?.package_id?.facilities?.pictureDistribution;
+
   const baseImageCount =
     userData?.data?.purchesPackageId?.package_id?.facilities?.pictureDistribution || 0;
   const extraImageCount = userData?.data?.purchesPackageId?.extraImage || 0;
   const imageCount = baseImageCount + extraImageCount;
-  console.log("imageCount", imageCount);
-  console.log("userData", userData?.data);
+  // console.log("imageCount", imageCount);
+  // console.log("userData", userData?.data);
+  // console.log("baseWordCount", baseWordCount);
 
   const handleChange = ({ fileList: newFileList }) => {
     // console.log(fileList);
@@ -87,26 +113,23 @@ const UploadStory = ({ extraImage }) => {
     console.log("onFinish values:", values);
 
     const toastId = toast.loading("Submitting...");
-
-    // Create FormData to include all fields and files
     const formData = new FormData();
 
-    // Append other form fields to FormData
     Object.keys(values)?.forEach((key) => {
       if (key === "storyImages") {
-        const images = values?.storyImages?.fileList; // Access the fileList directly
+        const images = values?.storyImages?.fileList;
         images?.forEach((file) => {
-          formData.append("storyImages", file?.originFileObj); // Append each file object
+          formData.append("storyImages", file?.originFileObj);
         });
         formData.append(key, values[key]);
       } else {
-        formData.append(key, values[key]); // Append other fields
+        formData.append(key, values[key]);
       }
     });
     console.log("formData ", formData);
 
     try {
-      const res = await addStory(formData).unwrap(); // Send FormData instead of values
+      const res = await addStory(formData).unwrap();
       console.log("Response from addStory:", res);
       if (res.success) {
         toast.success(res.message, {
@@ -115,6 +138,8 @@ const UploadStory = ({ extraImage }) => {
         });
       }
       setIsModalVisible(false);
+      form.resetFields();
+      setFileList([]);
     } catch (error) {
       console.error("Error adding story:", error); // Log the error for debugging
       toast.error(
@@ -236,7 +261,7 @@ const UploadStory = ({ extraImage }) => {
               <div className="bg-[#F7F6FA]  h-[200px] sm:h-[200px] md:h-[210px] lg:max-h-[230px] xl:h-[200px] flex flex-col justify-between items-start">
                 <div>
                   <p className="text-sm text-[#3598F1] font-semibold">{story.tag}</p>
-                  <Link href="/stories/1">
+                  <Link  href={`/stories/${story._id}`}>
                     <h3 className="text-xl lg:text-2xl font-bold mb-1 text-primary-color">
                       {story.title}
                     </h3>
@@ -252,7 +277,7 @@ const UploadStory = ({ extraImage }) => {
                   </div>
                   <div className="flex justify-between items-center">
                     <span>{story.storyText.split(" ").length} Words</span>
-                    <span>{story.storyStatus === 'pending' && "Pending"}</span>
+                    <span>{story.storyStatus === "pending" && "Pending"}</span>
                   </div>
                 </div>
               </div>
@@ -298,11 +323,16 @@ const UploadStory = ({ extraImage }) => {
           centered
           className="!sm:p-10 !rounded-lg"
         >
-          <Form onFinish={onFinish} layout="vertical" className="bg-transparent p-4 w-full mt-10">
+          <Form
+            form={form}
+            onFinish={onFinish}
+            layout="vertical"
+            className="bg-transparent p-4 w-full mt-10"
+          >
             {/* Category  */}
             <div>
               <Typography.Title level={5} style={{ color: "#010515" }}>
-                Magazine Section
+               Select Magazine Section
               </Typography.Title>
               <Form.Item required={true} name="category">
                 <Select
@@ -358,7 +388,7 @@ const UploadStory = ({ extraImage }) => {
             {/* Iamges  */}
             <div>
               <Typography.Title level={5} style={{ color: "#010515" }}>
-                Images (maximum {imageCount > 0 ? imageCount : 0} images)
+                Images ( maximum {imageCount > 0 ? imageCount : 0} images )
               </Typography.Title>
 
               <div className="">
@@ -528,16 +558,33 @@ const UploadStory = ({ extraImage }) => {
             {/* Story  */}
             <div>
               <Typography.Title level={5} style={{ color: "#010515" }}>
-                Story
+                Story  ( Maximum {baseWordCount} word )
               </Typography.Title>
-              <Form.Item name="storyText" className="text-white ">
+              <Form.Item
+                name="storyText"
+                className="text-white"
+                rules={[
+                  {
+                    validator: (_, value) => {
+                      if (value && value.trim().split(/\s+/).length >= baseWordCount) {
+                        return Promise.reject(new Error(`The story must not exceed ${baseWordCount} words.`));
+                      }
+                      return Promise.resolve();
+                    },
+                  },
+                ]}
+              >
                 <TextArea
                   rows={4}
+                  value={storyText}
+                  onChange={handleTextChange}
+                  onKeyDown={handleKeyDown}
                   placeholder="Write your story... "
                   className="py-2 px-3 bg-transparent border-[#0000004d] text-primary-color hover:bg-transparent hover:border-primary-color focus:bg-transparent focus:border-primary-color"
                 />
               </Form.Item>
             </div>
+
             <div>
               <Typography.Title level={5} style={{ color: "#010515" }}>
                 Select Music

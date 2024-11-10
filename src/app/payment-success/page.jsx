@@ -16,6 +16,8 @@ const PaymentSuccessPage = ({
   //   console.log(payment_intent);
   // }, []);
 
+  console.log("numOfImages",numOfImages)
+
   const [isError, setIsError] = useState(false);
   const params = useSearchParams();
   const [paymentInfoData, setPaymentInfoData] = useState({});
@@ -41,7 +43,7 @@ const PaymentSuccessPage = ({
       let paymentInfo = {
         package_id: projectId,
         status: "pending",
-        amount: Number(amount),
+        amount: amount,
         paymentIntentId: trxId,
       };
 
@@ -130,7 +132,7 @@ const PaymentSuccessPage = ({
             <>
               <Link href="/story-upload">
                 <button className="btn bg-red-800 text-white rounded px-5 py-2 my-2">
-                  Back to home
+                  Back 
                 </button>
               </Link>
             </>
@@ -138,7 +140,7 @@ const PaymentSuccessPage = ({
             <>
               <Link href="/pricing">
                 <button className="btn bg-red-800 text-white rounded px-5 py-2 my-2">
-                  Back to home
+                  Back 
                 </button>
               </Link>
             </>
@@ -159,7 +161,7 @@ const PaymentSuccessPage = ({
           <>
             <Link href="/story-upload?extraImage=true">
               <button className="btn bg-green-800 text-white rounded px-5 py-2 my-2">
-                Back to home
+                Back 
               </button>
             </Link>
           </>
@@ -167,7 +169,7 @@ const PaymentSuccessPage = ({
           <>
             <Link href="/story-upload">
               <button className="btn bg-green-800 text-white rounded px-5 py-2 my-2">
-                Back to home
+                Back 
               </button>
             </Link>
           </>

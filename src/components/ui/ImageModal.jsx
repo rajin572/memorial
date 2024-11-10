@@ -10,6 +10,7 @@ const ImageModal = ({ isModalOpen, setIsModalOpen, handleCancel }) => {
   const [imagePurchestData, setImagePurchestData] = useState()
   const { data: allImagePurchest } = useGetAllImagePurchestQuery();
   console.log("allImagePurchest", allImagePurchest?.data);
+  
 
   // Function to calculate total price for selected imageCount
   const calculateTotalPrice = () => {
