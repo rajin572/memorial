@@ -30,8 +30,10 @@ import { toast } from "sonner";
 import { useGetAllStoryQuery } from "@/redux/api/storyApi/storyApi";
 import Link from "next/link";
 import { imageGenerate } from "@/utils/imageGenerate";
+import { useTranslations } from "next-intl";
 
 const Profile = () => {
+  const t = useTranslations("AbouteApp")
   const [isOnlyView, setIsOnlyView] = useState(true);
   const { data: profileData, error, isLoading } = useMyProfileQuery();
   const [uploadedImage, setUploadedImage] = useState(null);

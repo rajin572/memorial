@@ -6,14 +6,16 @@ import SectionHeader from "../ui/SectionHeader";
 import Container from "../ui/Container";
 import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
+import { useTranslations } from "next-intl";
 
 export default function AboutUs() {
+   const t = useTranslations("About_US");
   return (
     <div className="relative py-12 sm:py-28 lg:mt-40 overflow-hidden">
       <Container>
         <div className="flex flex-col items-center gap-5 sm:gap-16">
           {/* page name */}
-          <SectionHeader>About Us</SectionHeader>
+          <SectionHeader> {t("header")}</SectionHeader>
 
           {/* 1st page section  */}
           <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center items-center gap-10">
@@ -27,7 +29,7 @@ export default function AboutUs() {
               >
                 <video autoPlay muted loop className="col-span-2 rounded-xl">
                   <source src="/assets/video/video1.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
+                  {t("subHeader_1")}
                 </video>
               </Suspense>
 
@@ -50,13 +52,10 @@ export default function AboutUs() {
             </div>
             <div className="w-full flex flex-col justify-center items-center text-center">
               <h2 className=" text-2xl sm:text-3xl text-[#037EEE] font-medium mb-8 lg:text-4xl">
-                Loved Ones
+              {t("about_h2_1")}
               </h2>
               <p className="w-full sm:w-[80%] lg:w-[80%] xl:w-[80%] text-lg sm:text-xl ">
-                Loved ones are the people who fill our lives with care, warmth,
-                and support. They stand by us in times of joy and sorrow,
-                offering unconditional love, making every moment brighter and
-                more meaningful.
+              {t("about_p_1")}
               </p>
             </div>
           </div>
@@ -65,7 +64,7 @@ export default function AboutUs() {
             <div className="grid grid-cols-2 gap-1 sm:gap-2 w-full">
               <video autoPlay muted loop className="col-span-2 rounded-xl">
                 <source src="/assets/video/video2.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
+                {t("subHeader_2")}
               </video>
               <Image
                 alt="about_us"
@@ -86,13 +85,10 @@ export default function AboutUs() {
             </div>
             <div className="w-full flex flex-col justify-center items-center text-center order-last lg:order-first">
               <h2 className=" text-2xl sm:text-3xl text-[#037EEE] font-medium mb-8 lg:text-4xl">
-                Veterans Memorial Moments
+              {t("about_h2_2")}
               </h2>
               <p className="w-full sm:w-[80%] lg:w-[80%] xl:w-[80%] text-lg sm:text-xl ">
-                Veterans Memorial Moments honors the courage and sacrifice of
-                those who served. Each reflection offers a heartfelt tribute,
-                preserving their legacy and reminding us of the deep gratitude
-                we owe to the heroes who defended our freedom.
+              {t("about_p_2")}
               </p>
             </div>
           </div>
@@ -101,7 +97,7 @@ export default function AboutUs() {
             <div className="grid grid-cols-2 gap-1 sm:gap-2 w-full">
               <video autoPlay muted loop className="col-span-2 rounded-xl">
                 <source src="/assets/video/video3.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
+                {t("subHeader_3")}
               </video>
               <Image
                 alt="about_us"
@@ -122,14 +118,10 @@ export default function AboutUs() {
             </div>
             <div className="w-full flex flex-col justify-center items-center text-center">
               <h2 className=" text-2xl sm:text-3xl text-[#037EEE] font-medium mb-8 lg:text-4xl">
-                Pets Memorial Moments
+              {t("about_h2_3")}
               </h2>
               <p className="w-full sm:w-[80%] lg:w-[80%] xl:w-[80%] text-lg sm:text-xl ">
-                Pets Memorial Moments honors the cherished memories of our
-                beloved companions. Through heartfelt reflections, we celebrate
-                their unconditional love, joy, and loyalty, ensuring their
-                spirit lives on in our hearts, forever reminding us of the bond
-                we shared.
+              {t("about_p_3")}
               </p>
             </div>
           </div>

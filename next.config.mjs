@@ -1,3 +1,7 @@
+import createNextIntlPlugin from 'next-intl/plugin';  
+
+const withNextIntl = createNextIntlPlugin();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -7,7 +11,11 @@ const nextConfig = {
   server: {
     host: '0.0.0.0',  // This allows access from the local network
     port: 3000,       // Optional: You can specify the port if needed
-  }
+  },
+  
 };
 
-export default nextConfig;
+
+
+// export default nextConfig;
+export default withNextIntl(nextConfig);

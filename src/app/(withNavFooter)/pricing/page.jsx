@@ -2,7 +2,9 @@ import React from "react";
 import PricingPlan from "../../../components/SiteComponents/PricingPlan";
 // import Banner from "@/components/shared/Banner";
 
+
 export default function Pricing() {
+
   return (
     <div>
       {/* <Banner /> */}

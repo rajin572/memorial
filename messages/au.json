@@ -1,0 +1,97 @@
+{
+  "Navbar": {
+    "nav1": "Home",
+    "nav2": "About the App",
+    "nav3": "Stories",
+    "nav4": "Pricing",
+    "nav5": "Personal Information",
+    "nav6": "Log In",
+    "nav7": "Sign Up",
+    "nav8": "Log Out",
+    "nav9": "Download the App"
+  },
+  "HomePage": {
+    "title": "Memorial Moments Magazine",
+    "subtitle": "Every Life Matters"
+  },
+  "RecentStory": {
+    "title": "Recent Stories",
+    "description": "Cherishing the Moments and Celebrating Lives Well Lived."
+  },
+  "About_US": {
+    "header": "About Us",
+    "subHeader_1": "Your browser does not support the video tag.",
+    "about_h2_1": "Loved Ones",
+    "about_p_1": "Loved ones are the people who fill our lives with care, warmth, and support. They stand by us in times of joy and sorrow, offering unconditional love, making every moment brighter and more meaningful.",
+    "subHeader_2": "Your browser does not support the video tag.",
+    "about_h2_2": "Veterans Memorial Moments",
+    "about_p_2": "Veterans Memorial Moments honours the courage and sacrifice of those who served. Each reflection offers a heartfelt tribute, preserving their legacy and reminding us of the deep gratitude we owe to the heroes who defended our freedom.",
+    "subHeader_3": "Your browser does not support the video tag.",
+    "about_h2_3": "Pets Memorial Moments",
+    "about_p_3": "Pets Memorial Moments honours the cherished memories of our beloved companions. Through heartfelt reflections, we celebrate their unconditional love, joy, and loyalty, ensuring their spirit lives on in our hearts, forever reminding us of the bond we shared."
+  },
+  "DownloadAppSec": {
+    "title": "Relive Your Greatest Moments",
+    "details": "Experience the joy of revisiting your most cherished memories. Our platform allows you to relive and celebrate your greatest moments, preserving them for you to enjoy forever.",
+    "downloadApp": "Download App",
+    "imageText": "Download on the",
+    "imageText2": "Apple Store"
+  },
+
+  "AbouteApp": {
+    "register": "Register",
+    "subscription": "Subscription",
+    "upload-story": "Upload Story",
+    "broadcast-story": "Broadcast Story",
+    "heading": "User Flow",
+    "details1": "Welcome! Sign in to your account or sign up for a new one. Use OTP for secure access. Forgot your password? Update it easily. Join us today and enjoy a seamless experience.",
+    "details2": "Subscribe to Memorable Moments Magazine and never miss an issue. Enjoy exclusive stories, timeless tributes, and heartwarming content delivered straight to your inbox. Join our community and keep your memories alive every month.",
+    "details3": "Share your cherished memories with the world by uploading your story. Whether it's a heartfelt tribute or a special moment, let your words and photos preserve the memories that matter most to you.",
+    "details4": "Welcome! Sign in to your account or sign up for a new one. Use OTP for secure access. Forgot your password? Update it easily. Join us today and enjoy a seamless experience."
+  },
+  "Stories": {
+    "heading": "Published Stories",
+    "details": "Discover a world of unforgettable experiences with Memorable Moments Magazine. Our stories capture the essence of life's most extraordinary moments, inspiring, touching, and delighting readers everywhere."
+  },
+  "Pricing": {
+    "heading": "Pricing Plans"
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "Footer": {
+    "details": "Memorial Moments Magazine celebrates life's treasured memories, capturing heartfelt stories and inspiring moments. Join us in honouring unforgettable experiences.",
+    "getiton": "Get it on",
+    "downloadApp": "Download App",
+    "imageText": "Download on the",
+    "imageText2": "Apple Store",
+     "navLink": "Links",
+    "nav1": "Home",
+    "nav2": "About the App",
+    "nav3": "Stories",
+    "nav4": "Pricing",
+    "followUsOn": "Follow Us On",
+    "aboutUs": "About Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsofUse": "Terms of Use"
+  }
+}

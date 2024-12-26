@@ -1,0 +1,98 @@
+{
+  "Navbar": {
+    "nav1": "Startseite",
+    "nav2": "Über die App",
+    "nav3": "Geschichten",
+    "nav4": "Preise",
+    "nav5": "Persönliche Informationen",
+    "nav6": "Anmelden",
+    "nav7": "Registrieren",
+    "nav8": "Abmelden",
+    "nav9": "App Herunterladen"
+  },
+  "HomePage": {
+    "title": "Magazin Erinnerungsmomente",
+    "subtitle": "Jedes Leben zählt"
+  },
+  "RecentStory": {
+    "title": "Neueste Geschichten",
+    "description": "Momente wertschätzen und gut gelebte Leben feiern."
+  },
+  "About_US": {
+    "header": "Über Uns",
+    "subHeader_1": "Ihr Browser unterstützt das Video-Tag nicht.",
+    "about_h2_1": "Geliebte Menschen",
+    "about_p_1": "Geliebte Menschen sind diejenigen, die unser Leben mit Fürsorge, Wärme und Unterstützung erfüllen. Sie stehen uns in Zeiten der Freude und des Leids zur Seite, bieten bedingungslose Liebe und machen jeden Moment heller und bedeutungsvoller.",
+    "subHeader_2": "Ihr Browser unterstützt das Video-Tag nicht.",
+    "about_h2_2": "Veteranen Erinnerungsmomente",
+    "about_p_2": "Veteranen Erinnerungsmomente würdigt den Mut und das Opfer derjenigen, die gedient haben. Jede Reflexion bietet eine aufrichtige Hommage, bewahrt ihr Vermächtnis und erinnert uns an die tiefe Dankbarkeit, die wir den Helden schulden, die unsere Freiheit verteidigt haben.",
+    "subHeader_3": "Ihr Browser unterstützt das Video-Tag nicht.",
+    "about_h2_3": "Tierische Erinnerungsmomente",
+    "about_p_3": "Tierische Erinnerungsmomente ehren die kostbaren Erinnerungen an unsere geliebten Begleiter. Durch aufrichtige Reflexionen feiern wir ihre bedingungslose Liebe, Freude und Loyalität und stellen sicher, dass ihr Geist in unseren Herzen weiterlebt und uns für immer an die Verbindung erinnert, die wir teilten."
+  },
+  "DownloadAppSec": {
+    "title": "Erlebe Deine Schönsten Momente Noch Einmal",
+    "details": "Erlebe die Freude, deine wertvollsten Erinnerungen erneut zu durchleben. Unsere Plattform ermöglicht es dir, deine schönsten Momente zu feiern und für immer zu bewahren.",
+    "downloadApp": "App Herunterladen",
+    "imageText": "Jetzt erhältlich im",
+    "imageText2": "Apple Store"
+  },
+  "AbouteApp": {
+    "register": "Registrieren",
+    "subscription": "Abonnement",
+    "upload-story": "Geschichte Hochladen",
+    "broadcast-story": "Geschichte Übertragen",
+    "heading": "Benutzerfluss",
+    "details1": "Willkommen! Melden Sie sich bei Ihrem Konto an oder registrieren Sie sich für ein neues. Verwenden Sie OTP für sicheren Zugang. Passwort vergessen? Aktualisieren Sie es einfach. Werden Sie heute Mitglied und genießen Sie ein nahtloses Erlebnis.",
+    "details2": "Abonnieren Sie das Memorable Moments Magazin und verpassen Sie keine Ausgabe. Genießen Sie exklusive Geschichten, zeitlose Hommagen und herzerwärmende Inhalte direkt in Ihrem Posteingang. Treten Sie unserer Community bei und bewahren Sie Ihre Erinnerungen jeden Monat.",
+    "details3": "Teilen Sie Ihre wertvollen Erinnerungen mit der Welt, indem Sie Ihre Geschichte hochladen. Ob ein bewegendes Tribut oder ein besonderer Moment, lassen Sie Ihre Worte und Fotos die Erinnerungen bewahren, die Ihnen am meisten bedeuten.",
+    "details4": "Willkommen! Melden Sie sich bei Ihrem Konto an oder registrieren Sie sich für ein neues. Verwenden Sie OTP für sicheren Zugang. Passwort vergessen? Aktualisieren Sie es einfach. Werden Sie heute Mitglied und genießen Sie ein nahtloses Erlebnis."
+  },
+  "Stories": {
+    "heading": "Veröffentlichte Geschichten",
+    "details": "Entdecken Sie eine Welt unvergesslicher Erlebnisse mit dem Magazin Memorable Moments. Unsere Geschichten fangen die Essenz der außergewöhnlichsten Momente des Lebens ein und inspirieren, berühren und erfreuen Leser überall."
+  },
+  "Pricing": {
+    "heading": "Preispläne"
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "Footer": {
+    "details": "Das Magazin Memorial Moments feiert die wertvollsten Erinnerungen des Lebens, fängt berührende Geschichten und inspirierende Momente ein. Schließen Sie sich uns an, um unvergessliche Erlebnisse zu würdigen.",
+    "getiton": "Erhältlich bei",
+    "downloadApp": "App Herunterladen",
+    "imageText": "Jetzt herunterladen im",
+    "imageText2": "Apple Store",
+     "navLink": "Links",
+    "nav1": "Startseite",
+    "nav2": "Über die App",
+    "nav3": "Geschichten",
+    "nav4": "Preise",
+    "followUsOn": "Folgen Sie uns auf",
+    "aboutUs": "Über Uns",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "termsofUse": "Nutzungsbedingungen"
+  }
+}

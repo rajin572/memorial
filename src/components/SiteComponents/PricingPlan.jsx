@@ -6,8 +6,10 @@ import SectionHeader from "../ui/SectionHeader";
 import ComingSoonModal from "../ui/ComingSoonModal";
 import { useGetAllSubscriptionQuery } from "@/redux/api/subscriptionApi/subscriptionApi";
 import { useMyProfileQuery } from "@/redux/api/authApi";
+import { useTranslations } from "next-intl";
 
 export default function PricingPlan() {
+  const t = useTranslations("Pricing");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { data: allSubscription, isLoading, isError } = useGetAllSubscriptionQuery(null);
   const [selectedPlans, setSelectedPlans] = useState({}); // Object to hold selected plans for each subscription
@@ -69,7 +71,7 @@ export default function PricingPlan() {
 
   return (
     <div className="my-28 flex flex-col items-center gap-20">
-      <SectionHeader>Pricing Plans</SectionHeader>
+      <SectionHeader>{t("heading")}</SectionHeader>
 
       <Row gutter={[16, 16]} className="w-full flex justify-center">
         {allSubscription?.data?.map((plan) => (

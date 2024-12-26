@@ -1,0 +1,96 @@
+{
+  "Navbar": {
+    "nav1": "Accueil",
+    "nav2": "À propos de l'App",
+    "nav3": "Histoires",
+    "nav4": "Tarifs",
+    "nav5": "Informations Personnelles",
+    "nav6": "Se Connecter",
+    "nav7": "S'inscrire",
+    "nav8": "Se Déconnecter",
+    "nav9": "Télécharger l'App"
+  },
+  "HomePage": {
+    "title": "Magazine Moments Mémorables",
+    "subtitle": "Chaque vie compte"
+  },
+  "RecentStory": {
+    "title": "Histoires Récentes",
+    "description": "Chérir les moments et célébrer des vies bien vécues."
+  },
+  "About_US": {
+    "header": "À Propos de Nous",
+    "subHeader_1": "Votre navigateur ne prend pas en charge la balise vidéo.",
+    "about_h2_1": "Êtres Chers",
+    "about_p_1": "Les êtres chers sont ceux qui remplissent nos vies de soin, de chaleur et de soutien. Ils sont à nos côtés dans les moments de joie et de tristesse, offrant un amour inconditionnel et rendant chaque moment plus lumineux et significatif.",
+    "subHeader_2": "Votre navigateur ne prend pas en charge la balise vidéo.",
+    "about_h2_2": "Moments Commémoratifs des Anciens Combattants",
+    "about_p_2": "Les Moments Commémoratifs des Anciens Combattants honorent le courage et le sacrifice de ceux qui ont servi. Chaque réflexion offre un hommage sincère, préservant leur héritage et nous rappelant la profonde gratitude que nous devons aux héros qui ont défendu notre liberté.",
+    "subHeader_3": "Votre navigateur ne prend pas en charge la balise vidéo.",
+    "about_h2_3": "Moments Commémoratifs des Animaux de Compagnie",
+    "about_p_3": "Les Moments Commémoratifs des Animaux de Compagnie honorent les souvenirs précieux de nos compagnons bien-aimés. À travers des réflexions sincères, nous célébrons leur amour inconditionnel, leur joie et leur loyauté, assurant que leur esprit vive dans nos cœurs, nous rappelant pour toujours le lien que nous avons partagé."
+  },
+  "DownloadAppSec": {
+    "title": "Revivez Vos Plus Beaux Moments",
+    "details": "Découvrez la joie de revivre vos souvenirs les plus précieux. Notre plateforme vous permet de revivre et de célébrer vos meilleurs moments, en les préservant pour que vous puissiez en profiter éternellement.",
+    "downloadApp": "Télécharger l'App",
+    "imageText": "Télécharger sur",
+    "imageText2": "Apple Store"
+  },
+
+  "AbouteApp": {
+    "register": "S'inscrire",
+    "subscription": "Abonnement",
+    "upload-story": "Télécharger une Histoire",
+    "broadcast-story": "Diffuser une Histoire",
+    "heading": "Parcours Utilisateur",
+    "details1": "Bienvenue ! Connectez-vous à votre compte ou inscrivez-vous pour en créer un nouveau. Utilisez un OTP pour un accès sécurisé. Mot de passe oublié ? Mettez-le à jour facilement. Rejoignez-nous dès aujourd'hui et profitez d'une expérience fluide.",
+    "details2": "Abonnez-vous au magazine Memorable Moments et ne manquez aucun numéro. Profitez d'histoires exclusives, d'hommages intemporels et de contenus émouvants directement dans votre boîte mail. Rejoignez notre communauté et gardez vos souvenirs vivants chaque mois.",
+    "details3": "Partagez vos souvenirs précieux avec le monde en téléchargeant votre histoire. Qu'il s'agisse d'un hommage sincère ou d'un moment spécial, laissez vos mots et vos photos préserver les souvenirs qui comptent le plus pour vous.",
+    "details4": "Bienvenue ! Connectez-vous à votre compte ou inscrivez-vous pour en créer un nouveau. Utilisez un OTP pour un accès sécurisé. Mot de passe oublié ? Mettez-le à jour facilement. Rejoignez-nous dès aujourd'hui et profitez d'une expérience fluide."
+  },
+  "Stories": {
+    "heading": "Histoires Publiées",
+    "details": "Découvrez un monde d'expériences inoubliables avec le magazine Memorable Moments. Nos histoires capturent l'essence des moments les plus extraordinaires de la vie, inspirant, touchant et ravissant les lecteurs partout dans le monde."
+  },
+  "Pricing": {
+    "heading": "Forfaits Tarifs"
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "Footer": {
+    "details": "Le magazine Memorial Moments célèbre les souvenirs précieux de la vie, capturant des histoires touchantes et des moments inspirants. Rejoignez-nous pour honorer des expériences inoubliables.",
+    "getiton": "Disponible sur",
+    "downloadApp": "Télécharger l'App",
+    "imageText": "Télécharger sur",
+    "imageText2": "Apple Store",
+    "navLink": "Liens",
+    "nav1": "Accueil",
+    "nav2": "À propos de l'App",
+    "nav3": "Histoires",
+    "nav4": "Tarifs",
+    "followUsOn": "Suivez-nous sur",
+    "aboutUs": "À Propos de Nous",
+    "privacyPolicy": "Politique de Confidentialité",
+    "termsofUse": "Conditions d'Utilisation"
+  }
+}

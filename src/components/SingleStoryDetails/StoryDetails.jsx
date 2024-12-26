@@ -13,8 +13,10 @@ import { useGetSingleStoryQuery } from "@/redux/api/storyApi/storyApi";
 import { audioUrlGenerate, imageGenerate } from "@/utils/imageGenerate";
 import { format } from "date-fns";
 import { FaMars, FaVenus, FaGenderless, FaUser } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 const StoryDeatils = ({ id }) => {
+  const t = useTranslations("AbouteApp")
   const { data: singleStory, isLoading, isError } = useGetSingleStoryQuery(id);
 
   const audioUrl = audioUrlGenerate(singleStory?.data?.selectedMusic?.musicPath);
