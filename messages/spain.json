@@ -59,6 +59,66 @@
     "heading": "Planes de Precios"
   },
 
+  "Profile": {
+    "addProfile": "Agregar Foto de Perfil",
+    "editProfile": "Editar Mi Perfil",
+    "undoChange": "Deshacer Cambios",
+    "fullName": "Nombre Completo",
+    "email": "Correo Electrónico",
+    "save": "Guardar Cambios",
+    "pendingStory": "Historia Pendiente",
+    "uploadStory": "Subir Historia",
+    "imageUploadValidation": "Tamaño máximo 5 MB. Formato jpg, jpeg, png.",
+    "changePhoto": "Cambiar Foto",
+    "pendingAvailable": "La historia pendiente no está disponible.",
+  "uploadAvailable": "Subir historia no está disponible."
+  },
+  "Button": {
+  "viewAll": "Ver Todo",
+  "upload": "Subir Historia",
+  "buyNow": "Comprar Ahora"
+},
+"UploadStory": {
+  "heading": "Mis historias publicadas",
+  "details": "Descubre un mundo de experiencias inolvidables con la revista Memorable Moments. Nuestras historias capturan la esencia de los momentos más extraordinarios de la vida, inspirando, conmoviendo y deleitando a los lectores en todas partes."
+},
+"Payment": {
+  "paymentProcessing": "Procesando pago",
+  "paymentSuccess": "Pago realizado con éxito",
+  "paymentFailed": "El pago ha fallado. Por favor, inténtelo de nuevo.",
+  "back": "Atrás",
+  "projectId": "ID del proyecto",
+  "payment1": "Su pago de",
+  "payment2": "ha sido procesado con éxito."
+},
+"StoryFormText": {
+  "selecMagazineSection": "Seleccionar sección de la revista",
+  "select1": "Seres queridos",
+  "select2": "Momentos conmemorativos de veteranos",
+  "select3": "Momentos conmemorativos de mascotas",
+  "title": "Título",
+  "Heading": "Encabezado",
+  "Name": "Nombre",
+  "Iimage1": "Imágenes (máximo",
+  "Iimage2": "imágenes)",
+  "UploadImage": "Subir imágenes",
+  "addExtra1": "Añadir extra",
+  "addExtra2": "Imagen",
+  "description": "Descripción",
+  "force": "Especie",
+  "breed": "Raza",
+  "gender": "Género",
+  "male": "Masculino",
+  "female": "Femenino",
+  "others": "Otros",
+  "dateOfBirth": "Fecha de nacimiento",
+  "dateOfPassing": "Fecha de fallecimiento",
+  "story1": "Historia (Máximo",
+  "story2": "palabras)",
+  "selectMusic": "Seleccionar música",
+  "uploadStory": "Subir historia"
+},
+
 
 
 

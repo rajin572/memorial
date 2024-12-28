@@ -5,8 +5,10 @@ export const imageGenerate = (url) => {
   // formattedUrl = formattedUrl.replace("public", "");
   // console.log(formattedUrl)
 
+  // Add the "http://192.168.10.205:8000/" prefix to the URL
+
   // Return the URL with the desired format including the double slashes
-  return `http://192.168.10.205:8000/${formattedUrl}`;
+  return `https://memorial.resid-plus.com/${formattedUrl}`;
 };
 
 export const audioUrlGenerate = (url) => {
@@ -24,5 +26,5 @@ export const audioUrlGenerate = (url) => {
     formattedUrl = formattedUrl.replace("public", "");
 
     // Return the URL with the desired format
-    return `http://192.168.10.205:8000/${formattedUrl}`;
+    return `https://memorial.resid-plus.com/${formattedUrl}`;
 };

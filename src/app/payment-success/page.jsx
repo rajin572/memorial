@@ -1,6 +1,7 @@
 "use client";
 import { usePaymentImagePurchestMutation } from "@/redux/api/imagePurchestApi/imagePurchestApi";
 import { usePaymentPurchestMutation } from "@/redux/api/purchestSubscriptionApi/purchestSubscriptionApi";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 // import { Separator } from "@radix-ui/react-separator";
 import { useSearchParams } from "next/navigation";
@@ -9,6 +10,7 @@ import { useEffect, useState, useRef } from "react";
 const PaymentSuccessPage = ({
   searchParams: { amount, projectId, payment_intent, offerPackageId, storyQuantity, numOfImages },
 }) => {
+  const t = useTranslations("Payment");
   // useEffect(() => {
   //   console.log(projectId);
   //   console.log(type);
@@ -117,7 +119,7 @@ const PaymentSuccessPage = ({
       <div className="flex min-h-screen items-center justify-center bg-green-100">
         <div className="w-[900px] text-center">
           <div orientation="horizontal" className="mb-10 mt-4 border-2 bg-green-800" />
-          <h1 className="text-3xl font-bold text-green-800">Payment Processing...</h1>
+          <h1 className="text-3xl font-bold text-green-800">{t("paymentProcessing")}...</h1>
         </div>
       </div>
     );
@@ -127,12 +129,12 @@ const PaymentSuccessPage = ({
     return (
       <div className="flex min-h-screen items-center justify-center bg-green-100">
         <div className="w-[900px] text-center">
-          <h1 className="text-3xl font-bold text-red-800">Payment failed. Please try again.</h1>
+          <h1 className="text-3xl font-bold text-red-800">{t("paymentFailed")}</h1>
           {numOfImages ? (
             <>
               <Link href="/story-upload">
                 <button className="btn bg-red-800 text-white rounded px-5 py-2 my-2">
-                  Back 
+                  {t("back")} 
                 </button>
               </Link>
             </>
@@ -140,7 +142,7 @@ const PaymentSuccessPage = ({
             <>
               <Link href="/pricing">
                 <button className="btn bg-red-800 text-white rounded px-5 py-2 my-2">
-                  Back 
+                {t("back")}
                 </button>
               </Link>
             </>
@@ -154,14 +156,14 @@ const PaymentSuccessPage = ({
     <div className="flex min-h-screen items-center justify-center bg-green-100">
       <div className="w-[900px] text-center">
         <div orientation="horizontal" className="mb-10 mt-4 border-2 bg-green-800" />
-        <h1 className="text-3xl font-bold text-green-800">Payment Successful!</h1>
-        <p className="mt-4 text-lg">Your payment of $${amount} has been processed successfully.</p>
-        <p className="mt-4">Project ID: {projectId}</p>
+        <h1 className="text-3xl font-bold text-green-800"> {t("paymentSuccess")}</h1>
+        <p className="mt-4 text-lg"> {t("payment1")} ${amount} {t("payment2")}</p>
+        <p className="mt-4"> {t("projectId")}: {projectId}</p>
         {numOfImages ? (
           <>
             <Link href="/story-upload?extraImage=true">
               <button className="btn bg-green-800 text-white rounded px-5 py-2 my-2">
-                Back 
+              {t("back")}
               </button>
             </Link>
           </>
@@ -169,7 +171,7 @@ const PaymentSuccessPage = ({
           <>
             <Link href="/story-upload">
               <button className="btn bg-green-800 text-white rounded px-5 py-2 my-2">
-                Back 
+              {t("back")}
               </button>
             </Link>
           </>

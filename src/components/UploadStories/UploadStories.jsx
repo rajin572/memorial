@@ -40,8 +40,12 @@ import { imageGenerate } from "@/utils/imageGenerate";
 import { useMyProfileQuery } from "@/redux/api/authApi";
 import ImagePurchestModal from "../ui/ImagePurchestModal";
 import ImageModal from "../ui/ImageModal";
+import { useTranslations } from "next-intl";
 
 const UploadStory = ({ extraImage }) => {
+  const t = useTranslations("UploadStory");
+  const tb = useTranslations("Button");
+  const tst = useTranslations("StoryFormText");
   const [isModalVisible, setIsModalVisible] = useState(extraImage ? true : false);
   const [category, setCategory] = useState("");
   const { data: allMusic } = useGetAllMusicQuery(null);
@@ -185,11 +189,9 @@ const UploadStory = ({ extraImage }) => {
         className="absolute left-[-50%] sm:left-[-30%] md:left-[-25%] xl:left-[-23%] md:top-[5%] w-[20%] h-[40vh]"
       ></div>
       <Container>
-        <SectionHeader>My Published stories</SectionHeader>
+        <SectionHeader>{t("heading")}</SectionHeader>
         <p className="text-2xl text-center lg:w-[80%] mx-auto mt-10">
-          Discover a world of unforgettable experiences with Memorable Moments Magazine. Our stories
-          capture the essence of life's most extraordinary moments, inspiring, touching, and
-          delighting readers everywhere.
+          {t("details")}
         </p>
         <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch justify-center gap-5">
           <div
@@ -203,7 +205,7 @@ const UploadStory = ({ extraImage }) => {
             className="flex flex-col items-center text-center justify-center h-full border-2 border-dashed border-[#00000080] rounded-lg cursor-pointer hover:border-primary-color w-full"
           >
             <PiUploadSimpleBold className="size-10 text-primary-color" />
-            <p className="mt-4 text-primary-color font-semibold text-2xl">Upload</p>
+            <p className="mt-4 text-primary-color font-semibold text-2xl">{tb("upload")}</p>
           </div>
           {userByStory?.data?.slice(0, 2)?.map((story) => (
             <Card
@@ -332,7 +334,8 @@ const UploadStory = ({ extraImage }) => {
             {/* Category  */}
             <div>
               <Typography.Title level={5} style={{ color: "#010515" }}>
-               Select Magazine Section
+               {/* Select Magazine Section */}
+               {tst('selecMagazineSection')}
               </Typography.Title>
               <Form.Item required={true} name="category">
                 <Select
@@ -341,18 +344,18 @@ const UploadStory = ({ extraImage }) => {
                   suffixIcon={<DownOutlined className="text-[#1A1A1A] text-xl mt-1" />}
                   className="h-10 border-[#0000004d]  hover:border-primary-color focus:border-primary-color"
                 >
-                  <Select.Option value="Loved Ones">Loved Ones</Select.Option>
+                  <Select.Option value="Loved Ones">{tst('select1')}</Select.Option>
                   <Select.Option value="Veterans Memorial Moments">
-                    Veterans Memorial Moments
+                  {tst('select2')}
                   </Select.Option>
-                  <Select.Option value="Pets Memorial Moments">Pets Memorial Moments</Select.Option>
+                  <Select.Option value="Pets Memorial Moments">{tst('select3')}</Select.Option>
                 </Select>
               </Form.Item>
             </div>
             {/* Title  */}
             <div>
               <Typography.Title level={5} style={{ color: "#010515" }}>
-                Title
+              {tst('title')}
               </Typography.Title>
               <Form.Item name="title">
                 <Input
@@ -364,7 +367,7 @@ const UploadStory = ({ extraImage }) => {
             {/* Heading  */}
             <div>
               <Typography.Title level={5} style={{ color: "#010515" }}>
-                Heading
+              {tst('Heading')}
               </Typography.Title>
               <Form.Item name="heading">
                 <Input
@@ -376,7 +379,7 @@ const UploadStory = ({ extraImage }) => {
             {/* Name  */}
             <div>
               <Typography.Title level={5} style={{ color: "#010515" }}>
-                Name
+              {tst('Name')}
               </Typography.Title>
               <Form.Item name="name">
                 <Input
@@ -388,7 +391,7 @@ const UploadStory = ({ extraImage }) => {
             {/* Iamges  */}
             <div>
               <Typography.Title level={5} style={{ color: "#010515" }}>
-                Images ( maximum {imageCount > 0 ? imageCount : 0} images )
+              {tst('Iimage1')} {imageCount > 0 ? imageCount : 0} {tst('Iimage2')}
               </Typography.Title>
 
               <div className="">
@@ -418,7 +421,7 @@ const UploadStory = ({ extraImage }) => {
                           type="button"
                         >
                           <PlusOutlined className="text-primary-color text-3xl" />
-                          <p className="text-primary-color">Upload Images</p>
+                          <p className="text-primary-color">{tst('UploadImage')}</p>
                         </button>
                       )}
                     </Upload>
@@ -428,7 +431,7 @@ const UploadStory = ({ extraImage }) => {
                     onClick={showImageModal}
                     className="bg-red-400 ml-2 py-5 px-4 rounded mb-6"
                   >
-                    Add Extra <br /> Image
+                    {tst('addExtra1')} <br /> {tst('addExtra2')}
                   </button>
                 </div>
                 {/* <Form.Item name="storyImages" className="text-white">
@@ -472,7 +475,7 @@ const UploadStory = ({ extraImage }) => {
               <>
                 <div>
                   <Typography.Title level={5} style={{ color: "#010515" }}>
-                    Designation
+                  {tst('description')}
                   </Typography.Title>
                   <Form.Item name="designation">
                     <Input
@@ -483,7 +486,7 @@ const UploadStory = ({ extraImage }) => {
                 </div>
                 <div>
                   <Typography.Title level={5} style={{ color: "#010515" }}>
-                    Force
+                  {tst('force')}
                   </Typography.Title>
                   <Form.Item name="force">
                     <Input
@@ -500,7 +503,7 @@ const UploadStory = ({ extraImage }) => {
               <>
                 <div>
                   <Typography.Title level={5} style={{ color: "#010515" }}>
-                    Breed
+                  {tst('breed')}
                   </Typography.Title>
                   <Form.Item name="breed">
                     <Input
@@ -511,7 +514,7 @@ const UploadStory = ({ extraImage }) => {
                 </div>
                 <div>
                   <Typography.Title level={5} style={{ color: "#010515" }}>
-                    Gender
+                  {tst('gender')}
                   </Typography.Title>
                   <Form.Item name="gender">
                     <Select
@@ -519,9 +522,9 @@ const UploadStory = ({ extraImage }) => {
                       suffixIcon={<DownOutlined className="text-[#1A1A1A] text-xl mt-1" />}
                       className="h-10 border-[#0000004d]  hover:border-primary-color focus:border-primary-color"
                     >
-                      <Select.Option value="male">Male</Select.Option>
-                      <Select.Option value="female">Female</Select.Option>
-                      <Select.Option value="others">Others</Select.Option>
+                      <Select.Option value="male">{tst('male')}</Select.Option>
+                      <Select.Option value="female">{tst('female')}</Select.Option>
+                      <Select.Option value="others">{tst('others')}</Select.Option>
                     </Select>
                   </Form.Item>
                 </div>
@@ -532,7 +535,7 @@ const UploadStory = ({ extraImage }) => {
             {/* Date of Birth  */}
             <div>
               <Typography.Title level={5} style={{ color: "#010515" }}>
-                Date of Birth
+              {tst('dateOfBirth')}
               </Typography.Title>
               <Form.Item name="dateOfBirth" className="text-white ">
                 <DatePicker
@@ -545,7 +548,7 @@ const UploadStory = ({ extraImage }) => {
             {/* Date of Death  */}
             <div>
               <Typography.Title level={5} style={{ color: "#010515" }}>
-                Date of Passing
+              {tst('dateOfPassing')}
               </Typography.Title>
               <Form.Item name="dateOfPassing" className="text-white ">
                 <DatePicker
@@ -558,7 +561,7 @@ const UploadStory = ({ extraImage }) => {
             {/* Story  */}
             <div>
               <Typography.Title level={5} style={{ color: "#010515" }}>
-                Story  ( Maximum {baseWordCount} word )
+              {tst('story1')} {baseWordCount} {tst('story2')}
               </Typography.Title>
               <Form.Item
                 name="storyText"
@@ -587,7 +590,7 @@ const UploadStory = ({ extraImage }) => {
 
             <div>
               <Typography.Title level={5} style={{ color: "#010515" }}>
-                Select Music
+              {tst('selectMusic')}
               </Typography.Title>
               <Form.Item required={true} name="selectedMusic">
                 <Select
@@ -620,7 +623,7 @@ const UploadStory = ({ extraImage }) => {
                     className="w-full py-5 border border-btn-secoundary hover:border-btn-secoundary md:text-lg text-[#1A1A1A] bg-btn-secoundary font-semibold rounded"
                     htmlType="submit"
                   >
-                    Upload Story
+                    {tst('uploadStory')}
                   </Button>
                 </ConfigProvider>
               </Form.Item>

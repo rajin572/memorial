@@ -10,6 +10,7 @@ import { useTranslations } from "next-intl";
 
 export default function PricingPlan() {
   const t = useTranslations("Pricing");
+  const tb = useTranslations("Button");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { data: allSubscription, isLoading, isError } = useGetAllSubscriptionQuery(null);
   const [selectedPlans, setSelectedPlans] = useState({}); // Object to hold selected plans for each subscription
@@ -141,7 +142,7 @@ export default function PricingPlan() {
                 block
                 className="h-12 font-bold bg-[#013564] text-white"
               >
-                <p> Buy Now</p>
+                <p> {tb("buyNow")}</p>
                 {/* <PaymentModal orderData={orderData} /> */}
                 <ArrowRightOutlined />
               </Button>

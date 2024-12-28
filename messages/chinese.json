@@ -1,0 +1,139 @@
+{
+    "Navbar": {
+      "nav1": "主页",
+      "nav2": "关于应用",
+      "nav3": "故事",
+      "nav4": "价格",
+      "nav5": "个人信息",
+      "nav6": "登录",
+      "nav7": "注册",
+      "nav8": "登出",
+      "nav9": "下载应用"
+    },
+    "HomePage": {
+      "title": "回忆瞬间杂志",
+      "subtitle": "每个人的生命都重要"
+    },
+    "RecentStory": {
+      "title": "最新故事",
+      "description": "珍惜时光，庆祝精彩人生。"
+    },
+    "About_US": {
+      "header": "关于我们",
+      "subHeader_1": "您的浏览器不支持视频标签。",
+      "about_h2_1": "亲人",
+      "about_p_1": "亲人是填满我们生活的人，用关爱、温暖和支持陪伴我们。他们在欢乐和悲伤的时刻站在我们身边，提供无条件的爱，使每一天都更有意义。",
+      "subHeader_2": "您的浏览器不支持视频标签。",
+      "about_h2_2": "退伍军人纪念时刻",
+      "about_p_2": "退伍军人纪念时刻赞扬那些曾经英勇服务的人。每一个反思都表达了真挚的敬意，保存他们的遗产，让我们永远感激那些捍卫自由的英雄。",
+      "subHeader_3": "您的浏览器不支持视频标签。",
+      "about_h2_3": "宠物纪念时刻",
+      "about_p_3": "宠物纪念时刻是为了纪念我们心爱的伙伴。通过深情的回忆，我们庆祝他们的无私的爱、喜悦和忠诚，让他们的精神永存于我们心中，永远提醒我们所共享的纽带。"
+    },
+    "DownloadAppSec": {
+      "title": "重温您最珍贵的瞬间",
+      "details": "体验重温您最珍贵回忆的喜悦。我们的平台让您能够再次感受和庆祝您的精彩时刻，并将它们永远保存。",
+      "downloadApp": "下载应用",
+      "imageText": "下载到",
+      "imageText2": "苹果商店"
+    },
+    "AbouteApp": {
+      "register": "注册",
+      "subscription": "订阅",
+      "upload-story": "上传故事",
+      "broadcast-story": "分享故事",
+      "heading": "用户流程",
+      "details1": "欢迎！登录您的账户或注册一个新账户。使用OTP安全访问。如果忘记密码，可以轻松更新。今天就加入我们，享受无缝的体验。",
+      "details2": "订阅回忆瞬间杂志，不错过任何一期。享受独家故事、永恒的致敬以及温馨的内容，直接发送到您的邮箱。加入我们的社区，让您的回忆每月重温。",
+      "details3": "通过上传您的故事，与世界分享您珍贵的回忆。无论是感人的致敬还是特别的时刻，让您的文字和照片记录那些最重要的回忆。",
+      "details4": "欢迎！登录您的账户或注册一个新账户。使用OTP安全访问。如果忘记密码，可以轻松更新。今天就加入我们，享受无缝的体验。"
+    },
+    "Stories": {
+      "heading": "已发布的故事",
+      "details": "在回忆瞬间杂志中发现难忘的经历。我们的故事捕捉生活中最非凡的时刻，为每位读者带来启发和感动。"
+    },
+    "Pricing": {
+      "heading": "价格计划"
+    },
+    "Profile": {
+      "addProfile": "添加头像",
+      "editProfile": "编辑我的资料",
+      "undoChange": "撤销更改",
+      "fullName": "全名",
+      "email": "邮箱",
+      "save": "保存更改",
+      "pendingStory": "待处理的故事",
+      "uploadStory": "上传故事",
+      "imageUploadValidation": "最大大小为5MB，格式为jpg、jpeg、png。",
+      "changePhoto": "更换照片",
+      "pendingAvailable": "暂无待处理的故事。",
+      "uploadAvailable": "暂无可上传的故事。"
+    },
+    "Button": {
+      "viewAll": "查看全部",
+      "upload": "上传故事",
+      "buyNow": "立即购买"
+    },
+    "UploadStory": {
+  "heading": "我发布的故事",
+  "details": "通过《难忘时刻杂志》，发现一个充满难忘体验的世界。我们的故事捕捉了生活中最非凡时刻的精髓，为读者带来启发、感动和快乐。"
+},
+
+"Payment": {
+  "paymentProcessing": "支付处理中",
+  "paymentSuccess": "支付成功",
+  "paymentFailed": "支付失败。请重试。",
+  "back": "返回",
+  "projectId": "项目ID",
+  "payment1": "您的支付金额",
+  "payment2": "已成功处理。"
+},
+"StoryFormText": {
+  "selecMagazineSection": "选择杂志部分",
+  "select1": "亲人",
+  "select2": "退伍军人纪念时刻",
+  "select3": "宠物纪念时刻",
+  "title": "标题",
+  "Heading": "标题",
+  "Name": "名字",
+  "Iimage1": "图片（最多",
+  "Iimage2": "图片）",
+  "UploadImage": "上传图片",
+  "addExtra1": "添加额外",
+  "addExtra2": "图片",
+  "description": "描述",
+  "force": "种类",
+  "breed": "品种",
+  "gender": "性别",
+  "male": "男性",
+  "female": "女性",
+  "others": "其他",
+  "dateOfBirth": "出生日期",
+  "dateOfPassing": "去世日期",
+  "story1": "故事（最多",
+  "story2": "字）",
+  "selectMusic": "选择音乐",
+  "uploadStory": "上传故事"
+},
+
+
+
+
+    "Footer": {
+      "details": "回忆瞬间杂志庆祝人生中珍贵的回忆，捕捉感人的故事和鼓舞人心的时刻。加入我们，共同纪念那些难忘的经历。",
+      "getiton": "获取",
+      "downloadApp": "下载应用",
+      "imageText": "下载到",
+      "imageText2": "苹果商店",
+      "navLink": "链接",
+      "nav1": "主页",
+      "nav2": "关于应用",
+      "nav3": "故事",
+      "nav4": "价格",
+      "followUsOn": "关注我们",
+      "aboutUs": "关于我们",
+      "privacyPolicy": "隐私政策",
+      "termsofUse": "使用条款"
+    }
+  }
+  

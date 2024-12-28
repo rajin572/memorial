@@ -6,6 +6,8 @@ import Cookies from "universal-cookie";
 
 // Load the Stripe.js library with your publishable key
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
+console.log({stripePromise});
+
 
 const CheckoutPage = ({ amount, projectId, clientSecret, offerPackageId="", storyQuantity="" ,numOfImages=""}) => {
   const stripe = useStripe();

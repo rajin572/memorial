@@ -5,7 +5,7 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["localhost", "192.168.10.205"],
+    domains: ["localhost", "192.168.10.205", "https://memorial.resid-plus.com/api/v1", "memorial.resid-plus.com"],
    
   },
   server: {

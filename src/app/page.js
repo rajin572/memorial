@@ -6,15 +6,19 @@ import AboutApp from "../components/SiteComponents/AboutApp";
 import PricingPlan from "../components/SiteComponents/PricingPlan";
 import Footer from "../components/shared/Footer";
 import DownloadAppSection from "../components/SiteComponents/DownloadAppSection";
+import { useTranslations } from "next-intl";
 
 const HomePage = () => {
+  const t = useTranslations("RecentStory")
   return (
     <div>
       <Navbar />
       <Banner />
       <RecentStories
-        title="Recent Stories"
-        description="Cherishing the Moments and Celebrating Lives Well Lived."
+        // title="Recent Stories"
+        // description="Cherishing the Moments and Celebrating Lives Well Lived."
+        title={t("title")}
+        description={t("description")}
         showAll={false}
       />
       <AboutUs />

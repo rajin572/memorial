@@ -13,9 +13,13 @@ import { useGetStoryCommentCountQuery } from "@/redux/api/commentApi/commentApi"
 import { imageGenerate } from "@/utils/imageGenerate";
 import { useMyProfileQuery } from "@/redux/api/authApi";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 // import { useRouter } from "next/navigation";
 
 export default function RecentStories({ showAll, title, description, description2 }) {
+  const t = useTranslations("Stories");
+  const tb = useTranslations("Button");
+
   const { data: storyAcceptData, isLoading } = useGetAllAcceptStoryQuery();
   const { data: userData } = useMyProfileQuery(null);
   const { data: storyStatus } = useGetAllUserByStoryStatusStoryQuery(null);
@@ -62,7 +66,8 @@ export default function RecentStories({ showAll, title, description, description
           {!showAll ? (
             <Link href="/stories">
               <p className="text-xs sm:text-base text-end absolute right-4 -top-7 text-blue-600 cursor-pointer underline">
-                View All
+                {/* View All */}
+                {tb("viewAll")}
               </p>
             </Link>
           ) : (
@@ -74,7 +79,8 @@ export default function RecentStories({ showAll, title, description, description
                 
               >
                 <CiSquarePlus className="text-primary-color" />
-                Upload Story
+                {/* Upload Story */}
+                {tb("upload")}
               </Button></>:<><Link href="/story-upload">
               <Button
                 type="primary"
@@ -82,7 +88,8 @@ export default function RecentStories({ showAll, title, description, description
                 onClick={handleUploadStory}
               >
                 <CiSquarePlus className="text-primary-color" />
-                Upload Story
+                {/* Upload Story */}
+                {tb("upload")}
               </Button>
             </Link></>
               }
@@ -149,7 +156,9 @@ export default function RecentStories({ showAll, title, description, description
                     <div className="bg-[#F7F6FA] h-[200px] sm:h-[200px] md:h-[210px] lg:max-h-[230px] xl:h-[200px] flex flex-col justify-between items-start">
                       <div>
                         <div className="flex justify-start"> <p className="text-sm text-[#3598F1] font-semibold mr-2">Memorial_Moments#{story.storyCount}</p>
-                        <p className="text-sm text-[#3598F1] font-semibold">#{story.category}</p></div>
+                        {/* <p className="text-sm text-[#3598F1] font-semibold">#{story.category}</p> */}
+                        <p className="text-sm text-[#3598F1] font-semibold">#{t(story.category)}</p>
+                        </div>
                        
                         <h3 className="text-xl lg:text-2xl font-bold mb-1 text-primary-color">
                           {story.title}

@@ -59,9 +59,68 @@
       "heading":"Pricing Plans"
     },
     "Profile":{
-
+      "addProfile":"Add Profile Picture",
+      "editProfile":"Edit My Profile",
+      "undoChange":" Undo Changes",
+      "fullName":"Full Name",
+      "email":" E-Mail",
+      "save":"Save Changes",
+      "pendingStory":"Pending story",
+      "uploadStory":"Upload story",
+      "imageUploadValidation":"Maximum size 5mb. Format jpg, jpeg, png.",
+      "changePhoto":"Change Picture",
+      "pendingAvailable":"Pending Story is not available..",
+      "uploadAvailable":"Upload Story is not available.."
     },
 
+    "Button":{
+      "viewAll":"View All",
+      "upload":"Upload Story",
+      "buyNow":"Buy Now"
+    },
+    "UploadStory":{
+      "heading":"My Published stories",
+      "details":"Discover a world of unforgettable experiences with Memorable Moments Magazine. Our stories capture the essence of life's most extraordinary moments, inspiring, touching, and delighting readers everywhere."
+    },
+    "Payment":{
+      "paymentProcessing":"Payment Processing",
+      "paymentSuccess":"Payment Successful",
+      "paymentFailed":"Payment failed. Please try again.",
+      "back":"Back",
+      "projectId":"Project ID",
+      "payment1":"Your payment of",
+      "payment2":"has been processed successfully."
+    },
+
+    "StoryFormText":{
+      "selecMagazineSection":"Select Magazine Section",
+      "select1":"Loved Ones",
+      "select2":"Veterans Memorial Moments",
+      "select3":"Pets Memorial Moments",
+      "title":"Title",
+      "Heading":"Heading",
+      "Name":"Name",
+      "Iimage1":"Images ( maximum",
+      "Iimage2":"images )",
+      "UploadImage":"Upload Images",
+      "addExtra1":"Add Extra",
+      "addExtra2":"Image",
+      "description":"Description",
+      "force":"Force",
+      "breed":"Breed",
+      "gender":"Gender",
+      "male":"Male",
+      "female":"Female",
+      "others":"Others",
+      "dateOfBirth":"Date of Birth",
+      "dateOfPassing":"Date of Passing",
+      "story1":"Story  ( Maximum",
+      "story2":"Words )",
+      "selectMusic":"Select Music",
+      "uploadStory":"Upload story"
+      
+
+    },
 
 
 

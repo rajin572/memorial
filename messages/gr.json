@@ -55,6 +55,67 @@
   "Pricing": {
     "heading": "Preispläne"
   },
+  "Profile": {
+    "addProfile": "Profilbild Hinzufügen",
+    "editProfile": "Mein Profil Bearbeiten",
+    "undoChange": "Änderungen Rückgängig Machen",
+    "fullName": "Vollständiger Name",
+    "email": "E-Mail",
+    "save": "Änderungen Speichern",
+    "pendingStory": "Ausstehende Geschichte",
+    "uploadStory": "Geschichte Hochladen",
+    "imageUploadValidation": "Maximale Größe 5 MB. Format: jpg, jpeg, png.",
+    "changePhoto": "Bild Ändern",
+     "pendingAvailable": "Ausstehende Geschichte ist nicht verfügbar.",
+  "uploadAvailable": "Hochladen der Geschichte ist nicht verfügbar."
+  },
+  "Button": {
+  "viewAll": "Alle Anzeigen",
+  "upload": "Geschichte Hochladen",
+  "buyNow": "Jetzt Kaufen"
+},
+"UploadStory": {
+  "heading": "Meine veröffentlichten Geschichten",
+  "details": "Entdecken Sie eine Welt unvergesslicher Erlebnisse mit der Memorable Moments Zeitschrift. Unsere Geschichten fangen die Essenz der außergewöhnlichsten Momente des Lebens ein und inspirieren, berühren und erfreuen Leser überall."
+},
+"Payment": {
+  "paymentProcessing": "Zahlung wird verarbeitet",
+  "paymentSuccess": "Zahlung erfolgreich",
+  "paymentFailed": "Zahlung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+  "back": "Zurück",
+  "projectId": "Projekt-ID",
+  "payment1": "Ihre Zahlung von",
+  "payment2": "wurde erfolgreich bearbeitet."
+},
+"StoryFormText": {
+  "selecMagazineSection": "Magazinabschnitt auswählen",
+  "select1": "Geliebte Menschen",
+  "select2": "Veteranen-Gedenkmomente",
+  "select3": "Haustier-Gedenkmomente",
+  "title": "Titel",
+  "Heading": "Überschrift",
+  "Name": "Name",
+  "Iimage1": "Bilder (maximal",
+  "Iimage2": "Bilder)",
+  "UploadImage": "Bilder hochladen",
+  "addExtra1": "Extra hinzufügen",
+  "addExtra2": "Bild",
+  "description": "Beschreibung",
+  "force": "Art",
+  "breed": "Rasse",
+  "gender": "Geschlecht",
+  "male": "Männlich",
+  "female": "Weiblich",
+  "others": "Andere",
+  "dateOfBirth": "Geburtsdatum",
+  "dateOfPassing": "Sterbedatum",
+  "story1": "Geschichte (Maximal",
+  "story2": "Wörter)",
+  "selectMusic": "Musik auswählen",
+  "uploadStory": "Geschichte hochladen"
+},
+
+
 
 
 

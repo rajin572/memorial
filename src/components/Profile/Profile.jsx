@@ -33,7 +33,7 @@ import { imageGenerate } from "@/utils/imageGenerate";
 import { useTranslations } from "next-intl";
 
 const Profile = () => {
-  const t = useTranslations("AbouteApp")
+  const t = useTranslations("Profile")
   const [isOnlyView, setIsOnlyView] = useState(true);
   const { data: profileData, error, isLoading } = useMyProfileQuery();
   const [uploadedImage, setUploadedImage] = useState(null);
@@ -110,7 +110,8 @@ const Profile = () => {
       <div className="min-h-screen my-14 md:mt-20">
         <div className="flex flex-col sm:flex-row justify-between items-center ">
           <h1 className="text-secondary-color text-3xl md:text-3xl lg:text-4xl font-semibold mb-6 order-last sm:order-first">
-            Add Profile Picture
+            
+            {t("addProfile")}
           </h1>
 
           <div className="mb-10 sm:mb-0">
@@ -120,7 +121,7 @@ const Profile = () => {
                 type="primary"
                 className="px-12  py-6 text-lg md:text-xl font-semibold bg-button-color border border-button-color text-site-color rounded-3xl shadow-inner shadow-[#00000040]"
               >
-                Edit My Profile
+                 {t("editProfile")}
               </Button>
             ) : (
               <Button
@@ -128,7 +129,7 @@ const Profile = () => {
                 type="primary"
                 className="px-12 py-6 text-lg md:text-xl font-semibold bg-base-color border border-primary-color text-primary-color rounded-3xl"
               >
-                Undo Changes
+                 {t("undoChange")}
               </Button>
             )}
           </div>
@@ -188,12 +189,12 @@ const Profile = () => {
                 ) : (
                   <>
                     <p className="text-xl text-primary-color mb-7">
-                      Maximum size 5mb. Format jpg, jpeg, png.
+                    {t("imageUploadValidation")}
                     </p>
                     <Form.Item name="image" className="text-white ">
                       <Upload onChange={handleImageUpload}>
                         <Button className="px-16 py-7 text-lg md:text-xl font-semibold bg-btn-secoundary text-primary-color hover:text-primary-color  border-primary-color hover:border-primary-color rounded-3xl">
-                          Change Picture
+                        {t("changePhoto")}
                         </Button>
                       </Upload>
                     </Form.Item>
@@ -206,7 +207,7 @@ const Profile = () => {
                 {/*  First Name  */}
                 <div>
                   <Typography.Title level={4} style={{ color: " #3598F1" }}>
-                    Full Name
+                  {t("fullName")}
                   </Typography.Title>
                   <Form.Item
                     initialValue={profileData?.data?.fullName}
@@ -227,7 +228,7 @@ const Profile = () => {
                 {/*  Email  */}
                 <div>
                   <Typography.Title level={4} style={{ color: " #3598F1" }}>
-                    E-Mail
+                  {t("email")}
                   </Typography.Title>
                   <Form.Item
                     initialValue={profileData?.data?.email}
@@ -259,7 +260,7 @@ const Profile = () => {
                       className="px-14 py-7 border border-btn-secoundary hover:border-btn-secoundary md:text-2xl text-[#1A1A1A] bg-btn-secoundary font-semibold rounded mt-5"
                       htmlType="submit"
                     >
-                      Save Changes
+                       {t("save")}
                     </Button>
                   </ConfigProvider>
                 </Form.Item>
@@ -269,12 +270,12 @@ const Profile = () => {
         </ConfigProvider>
         <div className="my-20">
           <Typography.Title className="mb-5" level={2} style={{ color: " #3598F1" }}>
-            Pending story
+          {t("pendingStory")}
           </Typography.Title>
           <Row gutter={[16, 16]} className="flex flex-wrap justify-start">
             {storyPendingData?.data?.length === 0 ? (
               <>
-                <h1 className="text-lg text-start font-bold">Pending Story is not available..</h1>
+                <h1 className="text-lg text-start font-bold"> {t("pendingAvailable")}</h1>
               </>
             ) : (
               <>
@@ -365,12 +366,12 @@ const Profile = () => {
 
         <div className="my-20">
           <Typography.Title className="mb-5" level={2} style={{ color: " #3598F1" }}>
-            Upload story
+          {t("uploadStory")}
           </Typography.Title>
           <Row gutter={[16, 16]} className="flex flex-wrap justify-start">
             {storyAcceptData?.data?.length === 0 ? (
               <>
-                <h1 className="text-lg text-start font-bold">Upload Story is not available..</h1>
+                <h1 className="text-lg text-start font-bold"> {t("uploadAvailable")}</h1>
               </>
             ) : (
               <>

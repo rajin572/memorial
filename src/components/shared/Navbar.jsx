@@ -143,7 +143,11 @@ const Navbar = () => {
     { key: "au", label: "Australian", onClick: () => handleLanguageChange("au") },
     { key: "fnc", label: "French", onClick: () => handleLanguageChange("fnc") },
     { key: "gr", label: "German", onClick: () => handleLanguageChange("gr") },
-    { key: "spain", label: "Spanish", onClick: () => handleLanguageChange("spain") }
+    { key: "spain", label: "Spanish", onClick: () => handleLanguageChange("spain") },
+    { key: "korean", label: "Korean", onClick: () => handleLanguageChange("korean") },
+    { key: "japanese", label: "Japanese", onClick: () => handleLanguageChange("japanese") },
+    { key: "chinese", label: "Chinese", onClick: () => handleLanguageChange("chinese") },
+    { key: "hindi", label: "Hindi", onClick: () => handleLanguageChange("hindi") },
   ];
 
   const languageDisplay = {
@@ -152,6 +156,10 @@ const Navbar = () => {
     fnc: "French",
     gr: "German",
     spain: "Spanish",
+    korean: "Korean",
+    japanese: "Japanese",
+    chinese: "Chinese",
+    hindi: "Hindi",
   };
   // dropdown 
 
