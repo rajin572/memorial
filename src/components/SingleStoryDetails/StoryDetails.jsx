@@ -1,6 +1,5 @@
 "use client";
-
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { HiOutlineUser } from "react-icons/hi2";
 import { GiRank3 } from "react-icons/gi";
 import { TbTopologyStarRing3 } from "react-icons/tb";
@@ -10,167 +9,148 @@ import Image from "next/image";
 import { AllImages } from "../../../public/assets/AllImages";
 import Container from "../ui/Container";
 import SectionHeader from "../ui/SectionHeader";
+import { useGetSingleStoryQuery } from "@/redux/api/storyApi/storyApi";
+import { audioUrlGenerate, imageGenerate } from "@/utils/imageGenerate";
+import { format } from "date-fns";
+import { FaMars, FaVenus, FaGenderless, FaUser } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
-const StoryDeatils = () => {
-  const images = [
-    AllImages.details1,
-    AllImages.details3,
-    AllImages.details2,
-    AllImages.details4,
-    AllImages.details5,
-  ];
+const StoryDeatils = ({ id }) => {
+  const t = useTranslations("AbouteApp")
+  const { data: singleStory, isLoading, isError } = useGetSingleStoryQuery(id);
 
-  const [category, setCategory] = useState("veteran");
+  const audioUrl = audioUrlGenerate(singleStory?.data?.selectedMusic?.musicPath);
+  // console.log("audioUrl",audioUrl)
+
+  // Format date range
+  const formatDateRange = (startDate, endDate) => {
+    if (!startDate || !endDate) return "";
+
+    const formattedStartDate = format(new Date(startDate), "dd-MM-yyyy");
+    const formattedEndDate = format(new Date(endDate), "dd-MM-yyyy");
+
+    return `${formattedStartDate} To ${formattedEndDate}`;
+  };
+
+  // Loading and error handling
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
+
+  if (isError) {
+    return <div>Error loading story details</div>;
+  }
+
   return (
     <div className="relative my-20">
-      <audio
-        autoPlay
-        loop
-        src="/assets/audio/Shimmer_Navy_Hymn_instrumental_4_29 (1).mp3"
-      />
+      {/* Play background audio */}
+      {/* <audio autoPlay loop controls src={audioUrlGenerate(singleStory?.data?.selectedMusic?.musicPath)} /> */}
+      <audio autoPlay controls className="hidden" src={audioUrl} />
+
+      {/* Dynamic shadow box */}
       <div
-        style={{
-          boxShadow: "0px 0px 200px 90px #3598F188",
-        }}
+        style={{ boxShadow: "0px 0px 200px 90px #3598F188" }}
         className="absolute left-[-50%] sm:left-[-30%] md:left-[-25%] xl:left-[-23%] md:top-[5%] w-[20%] h-[40vh]"
       ></div>
+
       <Container>
         <SectionHeader>Published stories details</SectionHeader>
-        <div className="mt-20 ">
+
+        <div className="mt-20">
           <h1 className="text-center text-3xl md:text-4xl lg:text-5xl text-secondary-color font-semibold mb-16">
-            My Veteran Friend
+            {singleStory?.data.title}
           </h1>
+
+          {/* Dynamic Image Gallery */}
           <div
-            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center items-center gap-5 `}
+            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center items-center gap-5`}
           >
-            <Image
-              src={AllImages.details1}
-              alt="huddai"
-              width={0}
-              height={0}
-              sizes="100vw"
-              className={`w-full sm:h-full col-span-1 `}
-            />
-            <Image
-              src={AllImages.details3}
-              alt="huddai"
-              width={0}
-              height={0}
-              sizes="100vw"
-              className={`w-full sm:h-full  col-span-1 sm:row-span-2`}
-            />
-            <Image
-              src={AllImages.details2}
-              alt="huddai"
-              width={0}
-              height={0}
-              sizes="100vw"
-              className={`w-full sm:h-full col-span-1`}
-            />
-            <Image
-              src={AllImages.details4}
-              alt="huddai"
-              width={0}
-              height={0}
-              sizes="100vw"
-              className={`w-full sm:h-full col-span-1`}
-            />
-            <Image
-              src={AllImages.details5}
-              alt="huddai"
-              width={0}
-              height={0}
-              sizes="100vw"
-              className={`w-full sm:h-full col-span-1`}
-            />
+            {singleStory?.data?.storyImages.map((img, i) => (
+              <Image
+                key={i}
+                src={imageGenerate(img)}
+                alt={`story_image_${i}`}
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="w-full sm:h-full"
+              />
+            ))}
           </div>
+
           <div className="mt-12">
             <p className="text-sm sm:text-base text-[#3598F1] font-semibold mb-4">
-              Memorial_Moments#12
+              #{singleStory.data.category}
             </p>
+
             <h2 className="text-2xl md:text-3xl lg:text-4xl text-primary-color font-semibold mb-5">
-              A Story About My Veteran Friend.
+              {singleStory?.data?.heading}
             </h2>
+
+            {/* Dynamic Info based on category */}
             <div>
-              {category === "veteran" ? (
-                <>
-                  <p className="flex items-center gap-3 text-xl mb-3">
-                    <HiOutlineUser /> <span> George A. Torress</span>
-                  </p>
-                  <p className="flex items-center gap-3 text-xl mb-3">
-                    <GiRank3 /> <span> Captain</span>
-                  </p>
-                  <p className="flex items-center gap-3 text-xl mb-3">
-                    <TbTopologyStarRing3 /> <span> Military</span>
-                  </p>
-                </>
-              ) : category === "pet" ? (
-                <>
-                  <p className="flex items-center gap-3 text-xl mb-3">
-                    <MdOutlinePets /> <span>Leo</span>
-                  </p>
-                  <p className="flex items-center gap-3 text-xl mb-3">
-                    <Image
-                      src={allIcons.breed}
-                      alt="profile_img"
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      className="h-[20px] w-[20px]"
-                    />{" "}
-                    <span> Beagle</span>
-                  </p>
-                  <p className="flex items-center gap-3 text-xl mb-3">
-                    <FaTransgender /> <span> Male</span>
-                  </p>
-                </>
-              ) : (
-                <p className="flex items-center gap-3 text-xl mb-3">
-                  <HiOutlineUser /> <span> George A. Torress</span>
-                </p>
-              )}
-              <p className="flex items-center gap-3 text-xl mb-3">
-                <MdOutlineDateRange /> <span> 09-11-1976 To 15-09-1992</span>
+              
+              {
+                singleStory?.data?.name && <p className="flex items-center gap-3 text-xl mb-3">
+                <HiOutlineUser /> <span>{singleStory?.data?.name}</span>
               </p>
+              }
+              {
+                singleStory?.data?.rank && <p className="flex items-center gap-3 text-xl mb-3">
+                {singleStory?.data?.rank && (
+                  <>
+                    <GiRank3 />
+                    <span>{singleStory.data.rank}</span>
+                  </>
+                )}
+              </p>
+              }
+              
+                {
+                  singleStory?.data?.serviceSector && <p className="flex items-center gap-3 text-xl mb-3">
+                  {singleStory?.data?.serviceSector && (
+                    <>
+                      <TbTopologyStarRing3 />
+                      <span>{singleStory.data.serviceSector}</span>
+                    </>
+                  )}
+                </p>
+                }
+              
+              {
+                singleStory?.data?.sex && <p className="flex items-center gap-3 text-xl mb-3">
+                {singleStory?.data?.sex && (
+                  <>
+                    {singleStory.data.sex === "male" && <FaMars />}
+                    {singleStory.data.sex === "female" && <FaVenus />}
+                    {singleStory.data.sex === "other" && <FaGenderless />}
+                    <span>{singleStory.data.sex}</span>
+                  </>
+                )}
+              </p>
+              }
+              
+
+              {/* Displaying date range */}
+              {
+                singleStory?.data?.dateOfBirth && singleStory?.data?.dateOfPassing &&  <p className="flex items-center gap-3 text-xl mb-3">
+                {
+                  singleStory?.data?.dateOfBirth && singleStory?.data?.dateOfPassing && <><MdOutlineDateRange />{" "}
+                  <span>
+                    {formatDateRange(
+                      singleStory?.data?.dateOfBirth,
+                      singleStory?.data?.dateOfPassing
+                    )}
+                  </span></>
+                }
+                
+              </p>
+              }
+             
             </div>
-            <p className="text-lg mt-10 text-justify">
-              The sun was just beginning to set, casting a warm golden hue
-              across the living room. In the middle of the floor, sprawled out
-              on his favorite fluffy rug, lay your lovable pet, Max. His chest
-              rose and fell in a steady rhythm as he enjoyed one of his many
-              afternoon naps. Max had a special way of making himself at home
-              wherever he went, and today, the living room rug was his chosen
-              spot. Max had been a part of your life for years, and he had a
-              knack for making even the dullest days brighter. Whether it was
-              the way he’d wag his tail with pure joy every time you walked
-              through the door or how he’d nuzzle his head into your hand when
-              he sensed you needed comfort, Max was more than just a pet—he was
-              family. Today, though, Max seemed more relaxed than usual. He had
-              spent the morning playing fetch in the yard, chasing after his
-              favorite squeaky toy, and basking in the sun. After lunch, he had
-              followed you around the house, content to be wherever you were. By
-              the time afternoon rolled around, it was clear he needed a good
-              rest. As you sat on the couch, you couldn’t help but smile at the
-              sight of him. Max was lying on his back, his legs stretched out in
-              different directions, his soft belly exposed to the world. His
-              ears flopped over his eyes, and his mouth was slightly open,
-              revealing a glimpse of his tiny, white teeth. He looked completely
-              at peace. You reached down to gently scratch his belly, careful
-              not to wake him, but Max, being the affectionate dog he was,
-              stirred just enough to let out a soft, contented sigh. His tail
-              gave a little wag before he settled back into his nap, his dreams
-              surely filled with happy thoughts of running in open fields and
-              endless belly rubs. As the evening light dimmed, you noticed how
-              still the house felt, the quiet only interrupted by the occasional
-              sound of Max’s soft breathing. It was in these moments that you
-              realized just how much he meant to you. His presence brought a
-              sense of calm and love that was irreplaceable. Max may have been
-              passed out on the rug, lost in his dreams, but his heart was
-              always with you. And as you watched him sleep, you felt a deep
-              gratitude for the simple joy he brought into your life every day.
-              Max was more than a pet; he was your loyal companion, your
-              confidant, and above all, your beloved friend.
-            </p>
+
+            {/* Story Text */}
+            <p className="text-lg mt-10 text-justify">{singleStory?.data?.storyText}</p>
           </div>
         </div>
       </Container>

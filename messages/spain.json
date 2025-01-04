@@ -1,0 +1,152 @@
+{
+  "Navbar": {
+    "nav1": "Inicio",
+    "nav2": "Acerca de la App",
+    "nav3": "Historias",
+    "nav4": "Precios",
+    "nav5": "Información Personal",
+    "nav6": "Iniciar Sesión",
+    "nav7": "Registrarse",
+    "nav8": "Cerrar Sesión",
+    "nav9": "Descargar la App"
+  },
+  "HomePage": {
+    "title": "Revista Momentos Memorables",
+    "subtitle": "Cada vida importa"
+  },
+  "RecentStory": {
+    "title": "Historias Recientes",
+    "description": "Atesorando los momentos y celebrando vidas bien vividas."
+  },
+  
+    "About_US": {
+      "header": "Sobre Nosotros",
+      "subHeader_1": "Tu navegador no admite la etiqueta de video.",
+      "about_h2_1": "Seres Queridos",
+      "about_p_1": "Los seres queridos son las personas que llenan nuestras vidas de cuidado, calidez y apoyo. Están a nuestro lado en momentos de alegría y tristeza, ofreciendo amor incondicional, haciendo cada momento más brillante y significativo.",
+      "subHeader_2": "Tu navegador no admite la etiqueta de video.",
+      "about_h2_2": "Momentos Conmemorativos para Veteranos",
+      "about_p_2": "Momentos Conmemorativos para Veteranos honra el coraje y el sacrificio de quienes sirvieron. Cada reflexión ofrece un homenaje sincero, preservando su legado y recordándonos la profunda gratitud que debemos a los héroes que defendieron nuestra libertad.",
+      "subHeader_3": "Tu navegador no admite la etiqueta de video.",
+      "about_h2_3": "Momentos Conmemorativos de Mascotas",
+      "about_p_3": "Momentos Conmemorativos de Mascotas honra los recuerdos preciados de nuestros amados compañeros. A través de reflexiones sinceras, celebramos su amor incondicional, alegría y lealtad, asegurando que su espíritu viva en nuestros corazones, recordándonos para siempre el vínculo que compartimos."
+    },
+    "DownloadAppSec": {
+      "title": "Revive Tus Mejores Momentos",
+      "details": "Experimenta la alegría de revivir tus recuerdos más preciados. Nuestra plataforma te permite revivir y celebrar tus mejores momentos, preservándolos para que los disfrutes para siempre.",
+      "downloadApp": "Descargar App",
+      "imageText": "Descargar en",
+      "imageText2": "Apple Store"
+    },
+    
+  "AbouteApp": {
+    "register": "Registrar",
+    "subscription": "Suscripción",
+    "upload-story": "Subir Historia",
+    "broadcast-story": "Transmitir Historia",
+    "heading": "Flujo de Usuario",
+    "details1": "¡Bienvenido! Inicia sesión en tu cuenta o regístrate para una nueva. Usa el OTP para un acceso seguro. ¿Olvidaste tu contraseña? Actualízala fácilmente. Únete hoy y disfruta de una experiencia sin complicaciones.",
+    "details2": "Suscríbete a la revista Memorable Moments y no te pierdas ninguna edición. Disfruta de historias exclusivas, homenajes atemporales y contenido conmovedor entregado directamente en tu bandeja de entrada. Únete a nuestra comunidad y mantén vivos tus recuerdos cada mes.",
+    "details3": "Comparte tus recuerdos preciados con el mundo subiendo tu historia. Ya sea un homenaje conmovedor o un momento especial, deja que tus palabras y fotos preserven los recuerdos que más te importan.",
+    "details4": "¡Bienvenido! Inicia sesión en tu cuenta o regístrate para una nueva. Usa OTP para un acceso seguro. ¿Olvidaste tu contraseña? Actualízala fácilmente. Únete hoy y disfruta de una experiencia sin complicaciones."
+  },
+
+"Stories": {
+    "heading": "Historias Publicadas",
+    "details": "Descubre un mundo de experiencias inolvidables con la revista Memorable Moments. Nuestras historias capturan la esencia de los momentos más extraordinarios de la vida, inspirando, conmoviendo y deleitando a los lectores en todas partes."
+  },
+  "Pricing": {
+    "heading": "Planes de Precios"
+  },
+
+  "Profile": {
+    "addProfile": "Agregar Foto de Perfil",
+    "editProfile": "Editar Mi Perfil",
+    "undoChange": "Deshacer Cambios",
+    "fullName": "Nombre Completo",
+    "email": "Correo Electrónico",
+    "save": "Guardar Cambios",
+    "pendingStory": "Historia Pendiente",
+    "uploadStory": "Subir Historia",
+    "imageUploadValidation": "Tamaño máximo 5 MB. Formato jpg, jpeg, png.",
+    "changePhoto": "Cambiar Foto",
+    "pendingAvailable": "La historia pendiente no está disponible.",
+  "uploadAvailable": "Subir historia no está disponible."
+  },
+  "Button": {
+  "viewAll": "Ver Todo",
+  "upload": "Subir Historia",
+  "buyNow": "Comprar Ahora"
+},
+"UploadStory": {
+  "heading": "Mis historias publicadas",
+  "details": "Descubre un mundo de experiencias inolvidables con la revista Memorable Moments. Nuestras historias capturan la esencia de los momentos más extraordinarios de la vida, inspirando, conmoviendo y deleitando a los lectores en todas partes."
+},
+"Payment": {
+  "paymentProcessing": "Procesando pago",
+  "paymentSuccess": "Pago realizado con éxito",
+  "paymentFailed": "El pago ha fallado. Por favor, inténtelo de nuevo.",
+  "back": "Atrás",
+  "projectId": "ID del proyecto",
+  "payment1": "Su pago de",
+  "payment2": "ha sido procesado con éxito."
+},
+"StoryFormText": {
+  "selecMagazineSection": "Seleccionar sección de la revista",
+  "select1": "Seres queridos",
+  "select2": "Momentos conmemorativos de veteranos",
+  "select3": "Momentos conmemorativos de mascotas",
+  "title": "Título",
+  "Heading": "Encabezado",
+  "Name": "Nombre",
+  "Iimage1": "Imágenes (máximo",
+  "Iimage2": "imágenes)",
+  "UploadImage": "Subir imágenes",
+  "addExtra1": "Añadir extra",
+  "addExtra2": "Imagen",
+  "description": "Descripción",
+  "force": "Especie",
+  "breed": "Raza",
+  "gender": "Género",
+  "male": "Masculino",
+  "female": "Femenino",
+  "others": "Otros",
+  "dateOfBirth": "Fecha de nacimiento",
+  "dateOfPassing": "Fecha de fallecimiento",
+  "story1": "Historia (Máximo",
+  "story2": "palabras)",
+  "selectMusic": "Seleccionar música",
+  "uploadStory": "Subir historia"
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "Footer": {
+    "details": "La revista Memorial Moments celebra los recuerdos más preciados de la vida, capturando historias conmovedoras y momentos inspiradores. Únete a nosotros para honrar experiencias inolvidables.",
+    "getiton": "Consíguelo en",
+    "downloadApp": "Descargar App",
+    "imageText": "Descargar en",
+    "imageText2": "Apple Store",
+    "navLink": "Enlaces",
+    "nav1": "Inicio",
+    "nav2": "Acerca de la App",
+    "nav3": "Historias",
+    "nav4": "Precios",
+    "followUsOn": "Síguenos en",
+    "aboutUs": "Sobre Nosotros",
+    "privacyPolicy": "Política de Privacidad",
+    "termsofUse": "Términos de Uso"
+  }
+  
+}

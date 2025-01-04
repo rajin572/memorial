@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
+import {useTranslations} from 'next-intl';
 
 import { AllImages } from "../../../public/assets/AllImages";
 // import { usePathname } from "next/navigation";
@@ -9,6 +10,7 @@ import { AllImages } from "../../../public/assets/AllImages";
 // import { Button } from "antd";
 
 export default function Banner() {
+  const t = useTranslations('HomePage');
   // const pathname = usePathname();
 
   // Extract the part of the path after the "/"
@@ -33,10 +35,12 @@ export default function Banner() {
       />
       <div className="absolute bottom-[13%] left-5 sm:left-[10%] xl:left-[15%]  z-10 text-white flex flex-col justify-end  items-start h-full ">
         <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black">
-          Memorial Moments Magazine
+          {/* Memorial Moments Magazine */}
+          {t('title')}
         </p>
         <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mt-3 text-black">
-          Every Life Matters
+          {/* Every Life Matters */}
+          {t('subtitle')}
         </p>
         {/* <p className="sm:text-2xl lg:text-5xl font-bold">
           {formattedPathSegment}

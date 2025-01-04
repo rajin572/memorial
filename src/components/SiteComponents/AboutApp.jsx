@@ -7,22 +7,16 @@ import Image from "next/image";
 import { userGuide } from "../../../public/assets/AllImages";
 import SectionHeader from "../ui/SectionHeader";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-
 // import required modules
 import { EffectFade, Autoplay } from "swiper/modules";
+import { useTranslations } from "next-intl";
 
-const sections = [
-  { id: "register", label: "Register" },
-  { id: "subscription", label: "Subscription" },
-  { id: "upload-story", label: "Upload Story" },
-  { id: "broadcast-story", label: "Broadcast Story" },
-];
+
 
 const registerSliderImages = [
   { img: userGuide.register1 },
@@ -52,8 +46,15 @@ const broadcastStorySliderImages = [
 // ];
 
 const AboutApp = () => {
+   const t = useTranslations("AbouteApp")
+  const sections = [
+    { id: "register", label: t("register") },
+    { id: "subscription", label: t("subscription")},
+    { id: "upload-story", label: t("upload-story") },
+    { id: "broadcast-story", label: t("broadcast-story") },
+  ];
+  
   const [activeSection, setActiveSection] = useState(sections[0].id);
-
   useEffect(() => {
     const handleIntersection = (entries) => {
       entries.forEach((entry) => {
@@ -89,7 +90,7 @@ const AboutApp = () => {
     <div className="text-[#F4F6FC]">
       <Container>
         <div className="mt-16">
-          <SectionHeader>User flow</SectionHeader>
+          <SectionHeader>{t("heading")}</SectionHeader>
         </div>
         <div className="flex flex-col lg:flex-row relative my-28 ">
           <div className="flex-shrink-0 lg:w-1/5 py-5 ">
@@ -186,9 +187,7 @@ const AboutApp = () => {
               {/* Practice  */}
 
               <p className="md:text-xl w-full md:w-[80%] lg:w-[70%] text-center">
-                Welcome! Sign in to your account or sign up for a new one. Use
-                OTP for secure access. Forgot your password? Update it easily.
-                Join us today and enjoy a seamless experience.
+              {t("details1")}
               </p>
             </section>
             {/* Subscription   */}
@@ -205,10 +204,7 @@ const AboutApp = () => {
                 className="h-[300px] w-[500px] md:w-[750px] md:h-[500px] lg:h-[500px] "
               />
               <p className="md:text-xl w-full md:w-[80%] lg:w-[70%] text-center">
-                Subscribe to Memorable Moments Magazine and never miss an issue.
-                Enjoy exclusive stories, timeless tributes, and heartwarming
-                content delivered straight to your inbox. Join our community and
-                keep your memories alive every month.
+              {t("details2")}
               </p>
             </section>
             {/* Upload Story  */}
@@ -225,10 +221,7 @@ const AboutApp = () => {
                 className="h-[300px] w-[500px] md:w-[750px] md:h-[500px] lg:h-[500px] "
               />
               <p className="md:text-xl w-full md:w-[80%] lg:w-[70%] text-center">
-                Share your cherished memories with the world by uploading your
-                story. Whether it's a heartfelt tribute or a special moment, let
-                your words and photos preserve the memories that matter most to
-                you.
+              {t("details3")}
               </p>
             </section>
             {/* Broadcast Story  */}
@@ -298,9 +291,7 @@ const AboutApp = () => {
               </div>
 
               <p className="md:text-xl w-full md:w-[80%] lg:w-[70%] text-center">
-                Welcome! Sign in to your account or sign up for a new one. Use
-                OTP for secure access. Forgot your password? Update it easily.
-                Join us today and enjoy a seamless experience.
+              {t("details4")}
               </p>
             </section>
           </div>

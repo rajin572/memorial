@@ -1,10 +1,8 @@
 import { Button, ConfigProvider, Modal } from "antd";
-import Link from "next/link";
 import React from "react";
 import CheckoutWrapper from "../Pyament/PyamentCheckout/PyamentCheckout";
 
-const ComingSoonModal = ({ isModalOpen, handleCancel, message, modalPaymentData }) => {
-  console.log("paymentData", modalPaymentData);
+const ImagePurchestModal = ({ isImageModalOpen, handleCancel, imagePurchestData,  }) => {
 
   return (
     <div>
@@ -19,24 +17,19 @@ const ComingSoonModal = ({ isModalOpen, handleCancel, message, modalPaymentData 
           },
         }}
       >
-        <Modal centered open={isModalOpen} onCancel={handleCancel} footer={null}>
+        <Modal centered open={isImageModalOpen} onCancel={handleCancel} footer={null}>
           <div>
             <div className="text-center">
               <h2 className="text-3xl font-extrabold text-gray-900">Complete Your Payment</h2>
               <p className="mt-2 text-sm text-gray-600">
-                You are about to pay{" "}
-                <span className="font-medium">${modalPaymentData?.amount}</span> for your project.
+                You are about to pay <span className="font-medium">${imagePurchestData.amount}</span> for your
+                project.
               </p>
             </div>
           </div>
 
           <div>
-            <CheckoutWrapper
-              amount={modalPaymentData?.amount}
-              projectId={modalPaymentData?.package_id}
-              storyQuantity={modalPaymentData?.storyQuantity}
-              offerPackageId={modalPaymentData?.offerPackageId}
-            />
+            <CheckoutWrapper amount={imagePurchestData?.amount} projectId={imagePurchestData?.package_id} numOfImages={imagePurchestData?.numOfImages} />
           </div>
         </Modal>
       </ConfigProvider>
@@ -44,4 +37,4 @@ const ComingSoonModal = ({ isModalOpen, handleCancel, message, modalPaymentData 
   );
 };
 
-export default ComingSoonModal;
+export default ImagePurchestModal;

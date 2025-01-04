@@ -29,7 +29,9 @@ const SignIn = () => {
   const cookies = new Cookies();
 
   const onFinish = async (values) => {
+    console.log('values login', values)
     const toastId = toast.loading(" Logging in...");
+
 
     try {
       const res = await userLogin(values).unwrap();
@@ -49,7 +51,9 @@ const SignIn = () => {
 
         // Navigate after login
         navigate.refresh();
-        navigate.push("/");
+        // navigate.push("/");
+        // window.location.reload();
+        window.location.href = "/"
       }
     } catch (error) {
       console.error("Login Error:", error); // Log the error for debugging

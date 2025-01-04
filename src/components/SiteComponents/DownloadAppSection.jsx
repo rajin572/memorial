@@ -5,8 +5,10 @@ import Image from "next/image";
 import { Button } from "antd";
 import { allIcons, AllImages } from "../../../public/assets/AllImages";
 import ComingSoonModal from "../ui/ComingSoonModal";
+import { useTranslations } from "next-intl";
 
 const DownloadAppSection = () => {
+   const t = useTranslations("DownloadAppSec");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
@@ -31,18 +33,18 @@ const DownloadAppSection = () => {
           </div>
           <div className="text-center lg:justify-self-start mt-10 lg:mt-0 xl:col-span-2">
             <h2 className="text-secondary-color text-3xl md:text-4xl xl:text-5xl font-bold mb-7">
-              Relive Your Greatest Moments
+              
+              {t("title")}
             </h2>
             <p className="text-primary-color md:text-lg">
-              Experience the joy of revisiting your most cherished memories. Our
-              platform allows you to relive and celebrate your greatest moments,
-              preserving them for you to enjoy forever.
+            {t("details")}
+              
             </p>
             <Button
               type="primary"
               className="mt-10 mb-8 px-10 py-7 text-lg md:text-2xl bg-btn-primary border-none text-base-color font-bold rounded-3xl shadow-inner shadow-[#ffffff40]"
             >
-              Download App
+              {t("downloadApp")}
             </Button>
             <div className="flex justify-center items-center gap-2">
               <Button
@@ -62,7 +64,7 @@ const DownloadAppSection = () => {
                 <div>
                   <p className="text-xs text-base-color mb-1">Get it on</p>
                   <h1 className="text-base-color text-sm sm:text-lg md:text-xl">
-                    Download App
+                  {t("downloadApp")}
                   </h1>
                 </div>
               </Button>
@@ -82,10 +84,10 @@ const DownloadAppSection = () => {
                 />
                 <div>
                   <p className="text-xs text-base-color mb-1">
-                    Download on the
+                  {t("imageText")}
                   </p>
                   <h1 className="text-base-color text-sm sm:text-lg md:text-xl">
-                    Apple Store
+                  {t("imageText2")}
                   </h1>
                 </div>
               </Button>

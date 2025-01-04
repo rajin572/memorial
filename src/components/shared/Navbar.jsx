@@ -12,8 +12,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearAuth } from "@/redux/slices/authSlice";
 import { toast } from "sonner";
 import Cookies from "universal-cookie";
+import { DownOutlined } from "@ant-design/icons";
+import { useTranslations } from "next-intl";
 
 const Navbar = () => {
+  const t = useTranslations("Navbar")
   const path = usePathname();
   const [selected, setSelected] = useState(null);
   const [hovered, setHovered] = useState(false);
@@ -25,6 +28,8 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const cookies = new Cookies();
   const router = useRouter();
+  
+  const [language, setLanguage] = useState("en");
 
   const token = useSelector((state) => state.auth.accessToken);
 
@@ -34,6 +39,12 @@ const Navbar = () => {
     }
   }, [token]);
   console.log(isLogin);
+
+  useEffect(() => {
+    const locale = cookies.get("NEXT_LOCALE");
+    console.log({ locale });
+    setLanguage(locale);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -47,6 +58,21 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  // const handleLanguageChange = (lang) => {
+  //   console.log("handleLanguageChange called with:", lang);
+  //   console.log("Current language:", language);
+
+  //   if (lang !== language) {
+  //     setLanguage(lang);
+  //     cookies.set("NEXT_LOCALE", lang, { path: "/", sameSite: "strict" });
+  //     router.refresh();
+  //     window.location.reload();
+  //     // router.refresh();
+  //     // router.reload();
+  //   }
+  // };
+
 
   const handleSearchClick = () => {
     setSearchVisible(!searchVisible);
@@ -79,29 +105,63 @@ const Navbar = () => {
 
   const menu = [
     {
-      name: "Home",
+      name: t("nav1"), 
       link: "/home",
     },
     {
-      name: "About App",
+      name: t("nav2"),
       link: "/about-the-app",
     },
     {
-      name: "Stories",
+      name: t("nav3"),
       link: "/stories",
     },
     {
-      name: "Pricing",
+      name: t("nav4"),
       link: "/pricing",
     },
   ];
 
   const profile = [
     {
-      name: "Personal information",
+      name: t("nav5"),
       link: "/profile",
     },
   ];
+
+  // dropdown 
+  const handleLanguageChange = (lang) => {
+    console.log({lang});
+    setLanguage(lang);
+    cookies.set("NEXT_LOCALE", lang, { path: "/", sameSite: "strict" });
+      router.refresh();
+      window.location.reload();
+  };
+
+  const items = [
+    { key: "en", label: "English", onClick: () => handleLanguageChange("en") },
+    { key: "au", label: "Australian", onClick: () => handleLanguageChange("au") },
+    { key: "fnc", label: "French", onClick: () => handleLanguageChange("fnc") },
+    { key: "gr", label: "German", onClick: () => handleLanguageChange("gr") },
+    { key: "spain", label: "Spanish", onClick: () => handleLanguageChange("spain") },
+    { key: "korean", label: "Korean", onClick: () => handleLanguageChange("korean") },
+    { key: "japanese", label: "Japanese", onClick: () => handleLanguageChange("japanese") },
+    { key: "chinese", label: "Chinese", onClick: () => handleLanguageChange("chinese") },
+    { key: "hindi", label: "Hindi", onClick: () => handleLanguageChange("hindi") },
+  ];
+
+  const languageDisplay = {
+    en: "English",
+    au: "Australian",
+    fnc: "French",
+    gr: "German",
+    spain: "Spanish",
+    korean: "Korean",
+    japanese: "Japanese",
+    chinese: "Chinese",
+    hindi: "Hindi",
+  };
+  // dropdown 
 
   const dropdownItems = menu.map((item, index) => ({
     key: String(index),
@@ -140,7 +200,7 @@ const Navbar = () => {
             onMouseEnter={handleMouseEnter2}
             onMouseLeave={handleMouseLeave2}
           >
-            Sign up
+           {t("nav7")}
           </Button>
         </Link>
       ),
@@ -155,7 +215,7 @@ const Navbar = () => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            Sign in
+           {t("nav6")}
           </Button>
         </Link>
       ),
@@ -169,7 +229,7 @@ const Navbar = () => {
           onMouseEnter={handleMouseEnter2}
           onMouseLeave={handleMouseLeave2}
         >
-          Download App
+          {t("nav9")}
         </Button>
       ),
     });
@@ -202,7 +262,7 @@ const Navbar = () => {
           cookies.remove("mm_accessToken", { path: "/" });
           cookies.remove("mm_refreshToken", { path: "/" });
           dispatch(clearAuth());
-          router.refresh();
+      window.location.href = "/sign-in"
           toast.success("Sign out successfully!");
 
           // Set login state to false after sign-out
@@ -214,7 +274,7 @@ const Navbar = () => {
         className={`capitalize text-start font-medium flex justify-start items-center hover:bg-transparent border-none hover:text-site-color shadow-none text-lg w-full`}
       >
         <IoLogOut className="text-site-color size-6 text-secondary-color" />
-        Sign out
+        {t("nav8")}
       </Button>
     ),
   });
@@ -258,6 +318,16 @@ const Navbar = () => {
                 </Link>
               ))}
             </div>
+            <div>
+      <Dropdown
+        menu={{ items }}
+        trigger={["click"]}
+      >
+        <Button className="flex items-center justify-between text-base font-semibold text-black">
+          {languageDisplay[language] || "English"} <DownOutlined />
+        </Button>
+      </Dropdown>
+    </div>
             <div className="lg:flex items-center hidden">
               {!isLogin ? (
                 <>
@@ -267,7 +337,7 @@ const Navbar = () => {
                       onMouseEnter={handleMouseEnter2}
                       onMouseLeave={handleMouseLeave2}
                     >
-                      Sign Up
+                      {t("nav7")}
                     </Button>
                   </Link>
                   <Link href="/sign-in">
@@ -276,7 +346,7 @@ const Navbar = () => {
                       onMouseEnter={handleMouseEnter}
                       onMouseLeave={handleMouseLeave}
                     >
-                      Sign In
+                     {t("nav6")}
                     </Button>
                   </Link>
                 </>
@@ -309,11 +379,39 @@ const Navbar = () => {
                     onMouseEnter={handleMouseEnter2}
                     onMouseLeave={handleMouseLeave2}
                   >
-                    Download App
+                    {t("nav9")}
                   </Button>
                 </>
               )}
             </div>
+            {/* <div>
+        <DropdownMenu>
+          <DropdownMenuTrigger className="flex w-full items-center justify-between px-1 py-2 font-kumbh-sans text-base font-semibold text-white">
+          {language === "en" ? "English" : 
+ language === "au" ? "Australia" : 
+ language === "fnc" ? "France" : 
+ language === "gr" ? "German" : 
+ language === "spain" ? "Spain" : 
+ "English"}
+
+            <ChevronsUpDown size={16} />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="font-kumbh-sans">
+            <div>
+              <button onClick={() => handleLanguageChange("pol")}>
+                polski
+              </button>
+            </div>
+            <div>
+              <button onClick={() => handleLanguageChange("en")}>
+                English
+              </button>
+            </div>
+            
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div> */}
+      
           </div>
 
           <div className="flex gap-2 items-center lg:hidden">

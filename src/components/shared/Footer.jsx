@@ -7,8 +7,10 @@ import Link from "next/link";
 import ComingSoonModal from "../ui/ComingSoonModal";
 import { useState } from "react";
 import Container from "../ui/Container";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
@@ -33,9 +35,8 @@ export default function Footer() {
               className="w-[150px] md:w-[150px] lg:w-[150px]"
             />
             <p className="text-[#1A1A1A] mt-4 sm:text-lg lg:text-xl mb-12 w-4/5">
-              Memorial Moments Magazine celebrates life's treasured memories,
-              capturing heartfelt stories and inspiring moments. Join us in
-              honoring unforgettable experiences.
+            
+              {t("details")}
             </p>
             <div className="flex justify-start items-center gap-2">
               <Button
@@ -53,9 +54,9 @@ export default function Footer() {
                   className="h-[20px] w-[20px] md:h-[40px] md:w-[40px]"
                 />
                 <div>
-                  <p className="text-xs text-base-color mb-1">Get it on</p>
+                  <p className="text-xs text-base-color mb-1"> {t("getiton")}</p>
                   <h1 className="text-base-color text-sm md:text-xl">
-                    Download App
+                  {t("downloadApp")}
                   </h1>
                 </div>
               </Button>
@@ -75,10 +76,10 @@ export default function Footer() {
                 />
                 <div>
                   <p className="text-xs text-base-color mb-1">
-                    Download on the
+                  {t("imageText")}
                   </p>
                   <h1 className="text-base-color text-sm md:text-xl">
-                    Apple Store
+                  {t("imageText2")}
                   </h1>
                 </div>
               </Button>
@@ -88,20 +89,20 @@ export default function Footer() {
           {/* 2nd */}
           <div className="lg:w-1/3 flex flex-col gap-6 items-start lg:items-center justify-center lg:justify-start">
             <p className="font-semibold text-xl mb-2 text-[#037EEE] lg:-ml-4">
-              Links
+            {t("navLink")}
             </p>
             <div className="flex flex-col gap-6">
               <div>
-                <Link href="/">Home</Link>
+                <Link href="/"> {t("nav1")}</Link>
               </div>
               <div>
-                <Link href="about-us">About Us</Link>
+                <Link href="about-us"> {t("nav2")}</Link>
               </div>
               <div>
-                <Link href="stories">Stories</Link>
+                <Link href="stories"> {t("nav3")}</Link>
               </div>
               <div>
-                <Link href="pricing">Pricing</Link>
+                <Link href="pricing"> {t("nav4")}</Link>
               </div>
             </div>
           </div>
@@ -109,7 +110,7 @@ export default function Footer() {
           {/* 3rd */}
           <div className="lg:w-1/3 flex flex-col gap-6 lg:items-center justify-start mt-6 lg:mt-0">
             <p className="font-semibold text-xl mb-2 text-[#037EEE]">
-              Follow Us On
+            {t("followUsOn")}
             </p>
             <div className="flex space-x-4 mb-4">
               <div className="p-2 rounded-full bg-[#E6F2FD]">
@@ -155,13 +156,13 @@ export default function Footer() {
           <div className="border-t border-[#1A1A1A] mt-10"></div>
           <div className="flex flex-col md:flex-row justify-between lg:justify-end lg:items-center gap-2 sm:gap-10 mt-4 sm:mt-10 text-sm sm:text-xl">
             <Link href="/about-us">
-              <p className="text-[#1a1a1a7c]">About Us</p>
+              <p className="text-[#1a1a1a7c]"> {t("aboutUs")}</p>
             </Link>
             <Link href="/privacy-policy">
-              <p className="text-[#1a1a1a7c]">Privacy Policy</p>
+              <p className="text-[#1a1a1a7c]"> {t("privacyPolicy")}</p>
             </Link>
             <Link href="/terms-of-use">
-              <p className="text-[#1a1a1a7c]">Terms of Use</p>
+              <p className="text-[#1a1a1a7c]"> {t("termsofUse")}</p>
             </Link>
           </div>
         </div>
