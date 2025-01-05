@@ -85,7 +85,10 @@
   "back": "Zurück",
   "projectId": "Projekt-ID",
   "payment1": "Ihre Zahlung von",
-  "payment2": "wurde erfolgreich bearbeitet."
+  "payment2": "wurde erfolgreich bearbeitet.",
+  "modalTitle": "Schließen Sie Ihre Zahlung ab",
+  "description1": "Sie sind dabei zu zahlen",
+  "description2": "für Ihr Projekt"
 },
 "StoryFormText": {
   "selecMagazineSection": "Magazinabschnitt auswählen",
@@ -114,30 +117,22 @@
   "selectMusic": "Musik auswählen",
   "uploadStory": "Geschichte hochladen"
 },
+"Story": {
+  "memorialMoment": "Gedenk_Momente",
+  "comment": "Kommentare",
+  "words": "Worte"
+},
+"Details": {
+  "title": "Details zu veröffentlichten Geschichten"
+},
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+"Subscriptions": {
+    "activefor": "Aktiv für",
+     "pictures": "Bilder",
+    "days": "Tage",
+    "wordsperstory": "Wörter pro Geschichte",
+    "buynow": "Jetzt kaufen"
+  },
 
 
   "Footer": {

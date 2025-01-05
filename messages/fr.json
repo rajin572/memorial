@@ -88,7 +88,10 @@
   "back": "Retour",
   "projectId": "ID du projet",
   "payment1": "Votre paiement de",
-  "payment2": "a été traité avec succès."
+  "payment2": "a été traité avec succès.",
+  "modalTitle": "Terminez votre paiement",
+  "description1": "Vous êtes sur le point de payer",
+  "description2": "pour votre projet"
 },
 "StoryFormText": {
   "selecMagazineSection": "Sélectionnez la section du magazine",
@@ -117,23 +120,21 @@
   "selectMusic": "Sélectionner une musique",
   "uploadStory": "Télécharger l'histoire"
 },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+"Story": {
+    "memorialMoment": "Moments_Mémorables",
+    "comment": "Commentaires",
+    "words": "Mots"
+  },
+  "Details": {
+    "title": "Détails des histoires publiées"
+  },
+  "Subscriptions": {
+    "activefor": "Actif pendant",
+    "pictures":"pictures",
+    "days": "jours",
+    "wordsperstory": "Mots par histoire",
+    "buynow": "Acheter maintenant"
+  },
 
 
 

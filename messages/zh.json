@@ -86,7 +86,10 @@
   "back": "返回",
   "projectId": "项目ID",
   "payment1": "您的支付金额",
-  "payment2": "已成功处理。"
+  "payment2": "已成功处理。",
+  "modalTitle": "完成您的付款",
+  "description1": "您即将支付",
+  "description2": "用于您的项目"
 },
 "StoryFormText": {
   "selecMagazineSection": "选择杂志部分",
@@ -115,8 +118,21 @@
   "selectMusic": "选择音乐",
   "uploadStory": "上传故事"
 },
-
-
+"Story": {
+    "memorialMoment": "纪念时刻",
+    "comment": "评论",
+    "words": "话语"
+  },
+  "Details": {
+    "title": "已发布故事详情"
+  },
+  "Subscriptions": {
+    "activefor": "有效期",
+     "pictures": "图片",
+    "days": "天",
+    "wordsperstory": "每篇故事字数",
+    "buynow": "立即购买"
+  },
 
 
     "Footer": {

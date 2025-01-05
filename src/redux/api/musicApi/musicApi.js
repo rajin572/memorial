@@ -2,11 +2,11 @@
 import { tagTypes } from "@/redux/tagTypes";
 import { baseApi } from "../baseApi";
 import Cookies from "universal-cookie";
-const cookies = new Cookies();
+// const cookies = new Cookies();
 // import { tagTypes } from "../tagTypes";
 
 // Retrieve the access token from cookies
-const accessToken = cookies.get("mm_accessToken");
+// const accessToken = cookies.get("mm_accessToken");
 
 const MUSIC_URL = "/music";
 

@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import Navbar from "../components/shared/Navbar";
 import Banner from "../components/shared/Banner";
 import RecentStories from "../components/SiteComponents/RecentStories";
@@ -9,14 +11,18 @@ import DownloadAppSection from "../components/SiteComponents/DownloadAppSection"
 import { useTranslations } from "next-intl";
 
 const HomePage = () => {
-  const t = useTranslations("RecentStory")
+  const [language, setLanguage] = useState("en");
+  const t = useTranslations("RecentStory");
+  // console.log('home page navber text', language);
   return (
     <div>
-      <Navbar />
+      <Navbar  />
       <Banner />
       <RecentStories
         // title="Recent Stories"
         // description="Cherishing the Moments and Celebrating Lives Well Lived."
+        // language={language}
+        // setLanguage={setLanguage}
         title={t("title")}
         description={t("description")}
         showAll={false}
