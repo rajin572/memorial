@@ -19,7 +19,7 @@ const SignUpOTPVerify = () => {
   const [verifiedEmail] = useVerifiedEmailMutation();
   const [resendOTP] = useResendOTPMutation();
   const navigate = useRouter();
-  const cookies = new Cookies();
+  // const cookies = new Cookies();
 
   const [otp, setOtp] = useState("");
 

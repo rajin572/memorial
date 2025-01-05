@@ -86,7 +86,10 @@
   "back": "戻る",
   "projectId": "プロジェクトID",
   "payment1": "お支払い金額",
-  "payment2": "が正常に処理されました。"
+  "payment2": "が正常に処理されました。",
+  "modalTitle": "お支払いを完了してください",
+  "description1": "あなたは支払いをしようとしています",
+  "description2": "あなたのプロジェクトのために"
 },
 "StoryFormText": {
   "selecMagazineSection": "雑誌セクションを選択",
@@ -115,7 +118,21 @@
   "selectMusic": "音楽を選択",
   "uploadStory": "ストーリーをアップロード"
 },
-
+"Story": {
+  "memorialMoment": "記念の瞬間",
+  "comment": "コメント",
+  "words": "言葉"
+},
+"Details": {
+  "title": "公開された物語の詳細"
+},
+"Subscriptions": {
+  "activefor": "有効期間",
+  "pictures": "写真",
+  "days": "日間",
+  "wordsperstory": "1話あたりの単語数",
+  "buynow": "今すぐ購入"
+},
 
     "Footer": {
       "details": "メモリアルモーメントマガジンは、人生の大切な思い出を称え、感動的なストーリーと心温まる瞬間を捉えています。私たちと一緒に忘れられない体験を記録しましょう。",

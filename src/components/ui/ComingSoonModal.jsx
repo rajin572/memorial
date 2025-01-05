@@ -2,9 +2,11 @@ import { Button, ConfigProvider, Modal } from "antd";
 import Link from "next/link";
 import React from "react";
 import CheckoutWrapper from "../Pyament/PyamentCheckout/PyamentCheckout";
+import { useTranslations } from "next-intl";
 
 const ComingSoonModal = ({ isModalOpen, handleCancel, message, modalPaymentData }) => {
   console.log("paymentData", modalPaymentData);
+  const tb = useTranslations("Payment");
 
   return (
     <div>
@@ -22,10 +24,10 @@ const ComingSoonModal = ({ isModalOpen, handleCancel, message, modalPaymentData 
         <Modal centered open={isModalOpen} onCancel={handleCancel} footer={null}>
           <div>
             <div className="text-center">
-              <h2 className="text-3xl font-extrabold text-gray-900">Complete Your Payment</h2>
+              <h2 className="text-3xl font-extrabold text-gray-900">{tb("modalTitle")}</h2>
               <p className="mt-2 text-sm text-gray-600">
-                You are about to pay{" "}
-                <span className="font-medium">${modalPaymentData?.amount}</span> for your project.
+                {tb("description1")}{" "}
+                <span className="font-medium">${modalPaymentData?.amount}</span> {tb("description2")}.
               </p>
             </div>
           </div>

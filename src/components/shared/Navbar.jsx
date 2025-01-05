@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button, Dropdown, ConfigProvider } from "antd";
 import Image from "next/image";
 import { IoLogOut, IoMenu } from "react-icons/io5";
@@ -14,8 +14,11 @@ import { toast } from "sonner";
 import Cookies from "universal-cookie";
 import { DownOutlined } from "@ant-design/icons";
 import { useTranslations } from "next-intl";
+import { useLanguage } from "../AppContext";
 
 const Navbar = () => {
+  const { state, setStateLanguage } = useLanguage();
+  console.log("state provider", state);
   const t = useTranslations("Navbar")
   const path = usePathname();
   const [selected, setSelected] = useState(null);
@@ -26,7 +29,8 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
   const dispatch = useDispatch();
-  const cookies = new Cookies();
+  // const cookies = new Cookies();
+  const cookies = useMemo(() => new Cookies(), []);
   const router = useRouter();
   
   const [language, setLanguage] = useState("en");
@@ -40,11 +44,17 @@ const Navbar = () => {
   }, [token]);
   console.log(isLogin);
 
+  // useEffect(() => {
+  //   // const locale = cookies.get("NEXT_LOCALE");
+  //   const locale = cookies.get("NEXT_LOCALE") || "en";
+  //   console.log({ locale });
+  //   setLanguage(locale);
+  // }, []);
   useEffect(() => {
-    const locale = cookies.get("NEXT_LOCALE");
-    console.log({ locale });
+    const locale = cookies.get("NEXT_LOCALE") || "en";
     setLanguage(locale);
-  }, []);
+    setStateLanguage(locale);
+  }, [cookies, setStateLanguage]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -131,35 +141,36 @@ const Navbar = () => {
 
   // dropdown 
   const handleLanguageChange = (lang) => {
-    console.log({lang});
+    console.log('lang',{lang});
     setLanguage(lang);
+    setStateLanguage(lang);
     cookies.set("NEXT_LOCALE", lang, { path: "/", sameSite: "strict" });
       router.refresh();
       window.location.reload();
   };
 
+  
   const items = [
-    { key: "en", label: "English", onClick: () => handleLanguageChange("en") },
-    { key: "au", label: "Australian", onClick: () => handleLanguageChange("au") },
-    { key: "fnc", label: "French", onClick: () => handleLanguageChange("fnc") },
-    { key: "gr", label: "German", onClick: () => handleLanguageChange("gr") },
-    { key: "spain", label: "Spanish", onClick: () => handleLanguageChange("spain") },
-    { key: "korean", label: "Korean", onClick: () => handleLanguageChange("korean") },
-    { key: "japanese", label: "Japanese", onClick: () => handleLanguageChange("japanese") },
-    { key: "chinese", label: "Chinese", onClick: () => handleLanguageChange("chinese") },
-    { key: "hindi", label: "Hindi", onClick: () => handleLanguageChange("hindi") },
+    { key: "en", label: "English", onClick: () => handleLanguageChange("en") }, // English
+    { key: "fr", label: "French", onClick: () => handleLanguageChange("fr") }, // French
+    { key: "de", label: "German", onClick: () => handleLanguageChange("de") }, // German
+    { key: "es", label: "Spanish", onClick: () => handleLanguageChange("es") }, // Spanish
+    { key: "ko", label: "Korean", onClick: () => handleLanguageChange("ko") }, // Korean
+    { key: "ja", label: "Japanese", onClick: () => handleLanguageChange("ja") }, // Japanese
+    { key: "zh", label: "Chinese", onClick: () => handleLanguageChange("zh") }, // Chinese (Simplified)
+    { key: "hi", label: "Hindi", onClick: () => handleLanguageChange("hi") }, // Hindi
   ];
+  
 
   const languageDisplay = {
     en: "English",
-    au: "Australian",
-    fnc: "French",
-    gr: "German",
-    spain: "Spanish",
-    korean: "Korean",
-    japanese: "Japanese",
-    chinese: "Chinese",
-    hindi: "Hindi",
+    fr: "French",
+    de: "German",
+    es: "Spanish",
+    ko: "Korean",
+    ja: "Japanese",
+    zh: "Chinese",
+    hi: "Hindi",
   };
   // dropdown 
 

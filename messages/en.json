@@ -89,7 +89,10 @@
       "back":"Back",
       "projectId":"Project ID",
       "payment1":"Your payment of",
-      "payment2":"has been processed successfully."
+      "payment2":"has been processed successfully.",
+      "modalTitle":"Complete Your Payment",
+      "description1":"You are about to pay",
+      "description2":"for your project"
     },
 
     "StoryFormText":{
@@ -121,6 +124,23 @@
       
 
     },
+    "Story":{
+      "memorialMoment":"Memorial_Moments",
+      "comment":"Comments",
+      "words":"Words"
+    },
+    "Details":{
+      "title":"Published stories details"
+    },
+
+    "Subscriptions":{
+      "activefor":"Active for",
+      "pictures":"pictures",
+      "days":"days",
+      "wordsperstory":"Words per story",
+      "buynow":"Buy Now"
+    },
+   
 
 
 

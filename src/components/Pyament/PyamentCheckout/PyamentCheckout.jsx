@@ -77,7 +77,7 @@ const CheckoutPage = ({ amount, projectId, clientSecret, offerPackageId="", stor
         </div> */}
 
         <form onSubmit={handleSubmit} className="space-y-6 rounded-lg bg-white p-8 shadow-md">
-          {clientSecret && <PaymentElement />}
+          {clientSecret && <PaymentElement  />}
           {errorMessage && <div className="text-red-500">{errorMessage}</div>}
           <button
             disabled={!stripe || loading}
@@ -135,7 +135,7 @@ const CheckoutWrapper = ({ amount, projectId, storyQuantity = "", offerPackageId
   }
 
   return (
-    <Elements stripe={stripePromise} options={{ clientSecret }}>
+    <Elements stripe={stripePromise} options={{ clientSecret, paymentMethodOrder: ["card"], }}  >
       <CheckoutPage
         amount={amount}
         projectId={projectId}
@@ -144,6 +144,8 @@ const CheckoutWrapper = ({ amount, projectId, storyQuantity = "", offerPackageId
         storyQuantity={storyQuantity}
         numOfImages={numOfImages}
       />
+
+       
     </Elements>
   );
 };

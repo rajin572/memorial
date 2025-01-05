@@ -95,7 +95,7 @@ const AboutApp = () => {
         <div className="flex flex-col lg:flex-row relative my-28 ">
           <div className="flex-shrink-0 lg:w-1/5 py-5 ">
             <nav className="space-y-4 sticky lg:top-52 lg:mt-10 lg:mb-60 border-l border-primary-color py-8">
-              {sections.map((section) => (
+              {sections?.map((section) => (
                 <div className="-ml-[6px]  flex items-center" key={section.id}>
                   <span
                     className={classNames(

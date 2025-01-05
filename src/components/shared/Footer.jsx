@@ -9,6 +9,7 @@ import { useState } from "react";
 import Container from "../ui/Container";
 import { useTranslations } from "next-intl";
 
+
 export default function Footer() {
   const t = useTranslations("Footer");
   const [isModalOpen, setIsModalOpen] = useState(false);

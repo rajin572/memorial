@@ -5,6 +5,8 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import Providers from "@/lib/Providers";
 import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
+import { LanguageProvider } from "@/components/AppContext";
+// import { AppProvider } from "@/components/AppContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,20 +16,21 @@ export const metadata = {
 };
 
 
-
 export default async function RootLayout({ children }) {
-  const locale = await getLocale();
+  const locale = await  getLocale();
 
   const messages = await getMessages();
   return (
     <html lang={locale}>
       <body className={inter.className}>
+        <LanguageProvider >
         <NextIntlClientProvider  messages={messages}>
         <Providers>
           <Toaster position="top-center" />
           <AntdRegistry>{children}</AntdRegistry>
         </Providers>
         </NextIntlClientProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

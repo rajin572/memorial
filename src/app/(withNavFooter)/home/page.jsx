@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 
 export default function Home() {
   const t = useTranslations("RecentStory")
+  // const [language, setLanguage] = useState("en");
   return (
     <div className="flex flex-col gap-32">
       {/* <Banner /> */}
@@ -16,6 +17,7 @@ export default function Home() {
         title={t("title")}
         description={t("description")}
         showAll={false}
+        // language={language}
       />
 
       <AboutUs />

@@ -86,7 +86,10 @@
   "back": "뒤로",
   "projectId": "프로젝트 ID",
   "payment1": "결제 금액",
-  "payment2": "이 성공적으로 처리되었습니다."
+  "payment2": "이 성공적으로 처리되었습니다.",
+  "modalTitle": "결제를 완료하세요",
+  "description1": "결제하려고 합니다",
+  "description2": "귀하의 프로젝트를 위해"
 },
 "StoryFormText": {
   "selecMagazineSection": "잡지 섹션 선택",
@@ -115,7 +118,21 @@
   "selectMusic": "음악 선택",
   "uploadStory": "스토리 업로드"
 },
-
+"Story": {
+  "memorialMoment": "기념 순간",
+  "comment": "댓글",
+  "words": "단어"
+},
+"Details": {
+  "title": "게시된 이야기 세부사항"
+},
+"Subscriptions": {
+    "activefor": "유효 기간",
+    "pictures": "사진",
+    "days": "일",
+    "wordsperstory": "이야기당 단어 수",
+    "buynow": "지금 구매"
+  },
 
     "Footer": {
       "details": "추억의 순간 매거진은 인생의 소중한 추억을 기념하며, 감동적인 이야기와 영감을 주는 순간을 담아냅니다. 우리와 함께 잊을 수 없는 경험을 기념하세요.",
